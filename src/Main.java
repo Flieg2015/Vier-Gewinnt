@@ -9,6 +9,6 @@ public class Main {
         System.out.println(spielfeld1.pruefe_Steinsetzen(2));
     }
 
-    int i=2;
+    int i=3;
 
 }

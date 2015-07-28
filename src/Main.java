@@ -10,6 +10,7 @@ public class Main {
 
         int i=6675;
         int h=63;
+        int j=4;
     }
 
 

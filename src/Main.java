@@ -7,8 +7,10 @@ public class Main {
         Spielfeld spielfeld1 = new Spielfeld ();
         spielfeld1.ausgeben();
         System.out.println(spielfeld1.pruefe_Steinsetzen(2));
+
+        int i=4;
     }
 
-    int i=3;
+
 
 }

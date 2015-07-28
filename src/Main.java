@@ -8,7 +8,7 @@ public class Main {
         spielfeld1.ausgeben();
         System.out.println(spielfeld1.pruefe_Steinsetzen(2));
 
-        int i=5;
+        int i=15;
     }
 
 

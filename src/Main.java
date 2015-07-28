@@ -9,7 +9,7 @@ public class Main {
         System.out.println(spielfeld1.pruefe_Steinsetzen(2));
 
         int i=6675;
-        int h=9;
+        int h=8;
         int j=3;
     }
 

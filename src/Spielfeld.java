@@ -42,7 +42,10 @@ public class Spielfeld {
     }
 
     public void setzte_Stein(int spalte, int wert){
-
+        int i = 0;
+        for (i=0; brett[spalte][i]==0);i++){
+            brett[spalte][i]=wert;
+        }
 
     }
 

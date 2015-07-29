@@ -1,7 +1,5 @@
-package db.city;
+package db.spieler;
 
-import db.city.City;
-import db.city.CityDAO;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -12,17 +10,17 @@ import java.util.ArrayList;
 /**
  * Created by weishauptj on 26.05.2015.
  */
-public class CityDAOJDBCImpl implements CityDAO {
-    protected Connection c = null;
+public class SpielerDAOJDBCImpl implements SpielerDAO {
+    protected Connection s = null;
     private Statement stmt = null;
 
-    public CityDAOJDBCImpl() {
+    public SpielerDAOJDBCImpl() {
 
     }
 
     public void close() {
         try {
-            c.close();
+            s.close();
             System.out.println("Closed database successfully");
         } catch (SQLException ex) {
             System.out.println("Errore closing connections");
@@ -30,20 +28,18 @@ public class CityDAOJDBCImpl implements CityDAO {
     }
 
     @Override
-    public City findById(int id_) {
-        City city = null;
+    public Spieler findByName(String name_) {
+        Spieler spieler = null;
         try {
-            String sql = "SELECT * FROM City WHERE id = " + id_ + ";";
-            stmt = c.createStatement();
+            String sql = "SELECT * FROM Spieler WHERE Name = '" + name_ + "';";
+            stmt = s.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
-                int id = rs.getInt("id");
                 String name = rs.getString("Name");
-                String countryCode = rs.getString("CountryCode");
-                String district = rs.getString("District");
-                int population = rs.getInt("Population");
+                String passwd = rs.getString("Passwort");
+                int highscore = rs.getInt("Highscore");
 
-                city = new City(id, name, countryCode, district, population);
+                spieler = new Spieler(name, passwd, highscore);
 
             }
             rs.close();
@@ -52,27 +48,25 @@ public class CityDAOJDBCImpl implements CityDAO {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
             System.exit(0);
         }
-        return city;
+        return spieler;
     }
 
     @Override
-    public ArrayList<City> getAllCities() {
+    public ArrayList<Spieler> getAllSpieler() {
 
-        ArrayList<City> list = new ArrayList<>();
+        ArrayList<Spieler> list = new ArrayList<>();
 
         try {
-            String sql = "SELECT * FROM City;";
-            stmt = c.createStatement();
+            String sql = "SELECT * FROM Spieler;";
+            stmt = s.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
-                int id = rs.getInt("id");
                 String name = rs.getString("Name");
-                String countryCode = rs.getString("CountryCode");
-                String district = rs.getString("District");
-                int population = rs.getInt("Population");
+                String passwd = rs.getString("Passwort");
+                int highscore = rs.getInt("Highscore");
 
-                City city = new City(id, name, countryCode, district, population);
-                list.add(city);
+                Spieler spieler = new Spieler(name, passwd, highscore);
+                list.add(spieler);
             }
             rs.close();
             stmt.close();
@@ -84,10 +78,10 @@ public class CityDAOJDBCImpl implements CityDAO {
     }
 
     @Override
-    public void add(City city) {
+    public void add(Spieler spieler) {
         try {
-            String sql = "INSERT INTO City VALUES (" + city.getId() + ", '" + city.getName() + "', '" + city.getCountryCode() + "', '" + city.getDistrict() + "', " + city.getPopulation() + ");";
-            stmt = c.createStatement();
+            String sql = "INSERT INTO Spieler VALUES ( '" + spieler.getName() + "', '" + spieler.getPasswd() + "', '" + spieler.getHighscore() + "');";
+            stmt = s.createStatement();
             stmt.executeUpdate(sql);
             stmt.close();
 
@@ -98,11 +92,11 @@ public class CityDAOJDBCImpl implements CityDAO {
     }
 
     @Override
-    public void update(City city) {
+    public void update(Spieler spieler) {
         try {
-            String sql = "UPDATE City SET Name = '" + city.getName() + "', CountryCode = '" + city.getCountryCode() +
-                    "', District = '" + city.getDistrict() + "', Population = " + city.getPopulation() + " WHERE id = " + city.getId() + ";";
-            stmt = c.createStatement();
+            String sql = "UPDATE Spieler SET Passwort = '" + spieler.getPasswd() +
+                    "', Highscore = " + spieler.getHighscore() + " WHERE name = '" + spieler.getName() + "';";
+            stmt = s.createStatement();
             stmt.executeUpdate(sql);
             stmt.close();
 
@@ -113,10 +107,10 @@ public class CityDAOJDBCImpl implements CityDAO {
     }
 
     @Override
-    public void delete(City city) {
+    public void delete(Spieler spieler) {
         try {
-            String sql = "DELETE FROM City WHERE id = " + city.getId() + ";";
-            stmt = c.createStatement();
+            String sql = "DELETE FROM Spieler WHERE name = '" + spieler.getName() + "';";
+            stmt = s.createStatement();
             stmt.executeUpdate(sql);
             stmt.close();
 
@@ -128,3 +122,5 @@ public class CityDAOJDBCImpl implements CityDAO {
 
 
 }
+
+

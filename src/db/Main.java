@@ -1,4 +1,4 @@
-package db.city;
+package db;
 
 import java.util.ArrayList;
 

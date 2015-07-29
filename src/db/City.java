@@ -1,4 +1,4 @@
-package db.city;
+package db;
 
 /**
  * Created by weishauptj on 26.05.2015.

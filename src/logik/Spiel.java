@@ -13,7 +13,7 @@ public class Spiel {
     private static int anzahl_spielzuege=0;
 
 
-    public Spiel (db.spieler.Spieler spieler1, db.spieler.Spieler spieler2){                /** Spieler Mensch gegen Spieler Mensch  **/
+    public Spiel(db.spieler.Spieler spieler1, db.spieler.Spieler spieler2){                /** Spieler Mensch gegen Spieler Mensch  **/
         this.spieler1=spieler1;
         this.spieler2=spieler2;
         aktuellerSpieler=spieler1;

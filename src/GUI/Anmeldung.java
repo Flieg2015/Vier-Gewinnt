@@ -26,6 +26,7 @@ public class Anmeldung extends JFrame implements ActionListener {
     private JPasswordField passwortPasswordField;
     private JButton anmeldenButton;
     private JButton registrierenButton;
+    private JLabel ausgabe;
 
 
     public static void main(String[] args) {
@@ -43,7 +44,7 @@ public class Anmeldung extends JFrame implements ActionListener {
         anmeldenButton.addActionListener(this);
         registrierenButton.addActionListener(this);
 
-        frame.setContentPane(new Start().panel1);
+       // frame.setContentPane(new Start().panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
@@ -70,7 +71,7 @@ public class Anmeldung extends JFrame implements ActionListener {
 
             if (spielerDAO.proofByName(spieler.getName()) == false) {
 
-                titel.setText(("Benutzername falsch"));
+                ausgabe.setText(("Benutzername falsch"));
             }
 
 
@@ -84,9 +85,9 @@ public class Anmeldung extends JFrame implements ActionListener {
                 if (spieler.getPasswd().equals(mySpieler.getPasswd())) {
 
 
-                    titel.setText(("Anmeldung Erfolgreich"));
+                   ausgabe.setText(("Anmeldung Erfolgreich"));
                 } else {
-                    titel.setText(("Passwd falsch"));
+                    ausgabe.setText(("Passwd falsch"));
                 }
 
 

@@ -51,6 +51,43 @@ public class SpielerDAOJDBCImpl implements SpielerDAO {
         return spieler;
     }
 
+// methodeprüft ob der Benutzer existiert
+    public boolean proofByName(String name_) {
+        Spieler spieler = null;
+        try {
+            String sql = "SELECT * FROM Spieler WHERE Name = '" + name_ + "';";
+
+
+            stmt = s.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+
+            spieler = new Spieler("dffergferejetee5srhw455657urefe", "ddd", 22);
+
+            while (rs.next()) {
+                String name = rs.getString("Name");
+                String passwd = rs.getString("Passwort");
+                int highscore = rs.getInt("Highscore");
+
+                spieler = new Spieler(name, passwd, highscore);
+
+            }
+            rs.close();
+            stmt.close();
+
+
+        } catch (SQLException e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+
+        }
+
+        if(name_.equals(spieler.getName())){return true;}
+        else {return false;}
+
+    }
+
+
+
+
     @Override
     public ArrayList<Spieler> getAllSpieler() {
 

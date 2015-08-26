@@ -12,11 +12,11 @@ public class SpielerDAOMySql extends SpielerDAOJDBCImpl {
 
     // JDBC driver name and database URL
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-   static final String DB_URL = "jdbc:mysql://10.36.104.130/flieg02";
+   static final String DB_URL = "jdbc:mysql://192.168.0.104/VierGewinnt"; //Hier muss die IP der virtuellen Maschine eingetragen werden Benutzer ="administrator" Passwd= "123456"
 
     // Database credentials
-    static final String USER = "flieg02";
-    static final String PASS = "flieg02";
+    static final String USER = "flieg";
+    static final String PASS = "123456";
     // JDBC driver name and database URL
     //static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
    // static final String DB_URL = "jdbc:mysql://10.36.30.116/VierGewinnt";

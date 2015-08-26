@@ -7,6 +7,7 @@ import java.util.ArrayList;
  */
 public interface SpielerDAO {
     public Spieler findByName(String name);
+    public boolean proofByName(String name);
     public ArrayList<Spieler> getAllSpieler();
     public void add(Spieler s);
     public void update(Spieler s);

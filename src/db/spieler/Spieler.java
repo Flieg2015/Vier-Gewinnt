@@ -21,6 +21,13 @@ public class Spieler {
         this.passwd=passwd;
         this.highscore=highscore;
     }
+    public Spieler (String name, String passwd){     /** Standardkonstruktor zum Erzeugen eines Spielers  ohne Highsorw **/
+        aktuelle_punkte=0;
+        this.name=name;
+        this.passwd=passwd;
+
+            }
+
 
     public Spieler (String name) {
         this.name=name;

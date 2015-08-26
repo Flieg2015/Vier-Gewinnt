@@ -17,6 +17,11 @@ public class Main {
         Spieler mySpieler = spielerDAO.findByName("tim");
         System.out.println(mySpieler.toString());
 
+        // findByName (name = "tim");
+        boolean mySpieler1 = spielerDAO.proofByName("tim");
+        System.out.println(mySpieler1);
+
+
         // add Spieler
         Spieler newSpieler = new Spieler("susi", "USA",321);
         spielerDAO.add(newSpieler);
@@ -26,11 +31,11 @@ public class Main {
         newSpieler.setPasswd("YourCity");
         newSpieler.setHighscore(789);
         spielerDAO.update(newSpieler);
-        System.out.println("veränderter Spieler: " + newSpieler.toString());
+        System.out.println("verÃ¤enderter Spieler: " + newSpieler.toString());
 
         // delete Spieler
         spielerDAO.delete(newSpieler);
-        System.out.println("gelöschter Spieler: " + newSpieler.toString());
+        System.out.println("geloeschter Spieler: " + newSpieler.toString());
 
         ((SpielerDAOJDBCImpl) spielerDAO).close();
     }

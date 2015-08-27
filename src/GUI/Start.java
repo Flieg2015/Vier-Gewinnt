@@ -9,7 +9,7 @@ public class Start {
     public JPanel panel1;
     private JLabel titel;
 
-    public static void main(String[] args) {
+    public static void main(String args) {
         JFrame frame = new JFrame("Start");
         frame.setContentPane(new Start().panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

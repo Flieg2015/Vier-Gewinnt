@@ -15,7 +15,7 @@ import java.awt.event.ActionListener;
 public class Anmeldung extends JFrame implements ActionListener {
 
 
-    private JPanel panel1;
+    public JPanel panel1;
     private JPanel oben;
     private JPanel links;
     private JPanel rechts;

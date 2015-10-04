@@ -157,7 +157,37 @@ public class SpielerDAOJDBCImpl implements SpielerDAO {
         }
     }
 
+    @Override
+    public ArrayList<String> getBestenliste() {
 
+        ArrayList<String> list = new ArrayList<>();
+
+        try {
+            String sql = "SELECT * FROM Spieler ORDER BY highscore DESC;";
+            stmt = s.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            int i=0;
+            while (rs.next() && i<10) {
+                String name = rs.getString("Name");
+                String passwd = rs.getString("Passwort");
+                int highscore = rs.getInt("Highscore");
+
+                list.add(name);
+                list.add(Integer.toString(highscore));
+                i++;
+            }
+            rs.close();
+            stmt.close();
+        } catch (SQLException e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
+        return list;
+
+
+
+
+    }
 }
 
 

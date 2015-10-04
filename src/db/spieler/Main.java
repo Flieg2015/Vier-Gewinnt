@@ -23,7 +23,7 @@ public class Main {
 
 
         // add Spieler
-        Spieler newSpieler = new Spieler("susi", "USA",321);
+        Spieler newSpieler = new Spieler("Thomas", "USA",321);
         spielerDAO.add(newSpieler);
         System.out.println("Neuer Spieler: " + newSpieler.toString());
 
@@ -34,8 +34,21 @@ public class Main {
         System.out.println("veräenderter Spieler: " + newSpieler.toString());
 
         // delete Spieler
-        spielerDAO.delete(newSpieler);
-        System.out.println("geloeschter Spieler: " + newSpieler.toString());
+        //spielerDAO.delete(newSpieler);
+        //System.out.println("geloeschter Spieler: " + newSpieler.toString());
+
+
+
+        //gib Highscoreliste aus
+        ArrayList<String> bestenliste= new ArrayList<String>();
+         bestenliste= spielerDAO.getBestenliste();
+       int i=0;
+        int platz=1;
+        while(bestenliste.size()>i) {
+            //System.out.println("geloeschter Spieler: " );
+            System.out.println("Nummer " + platz++ +" "+bestenliste.get(i)+" Punkte "+bestenliste.get(i+1));
+            i=i+2;
+                   }
 
         ((SpielerDAOJDBCImpl) spielerDAO).close();
     }

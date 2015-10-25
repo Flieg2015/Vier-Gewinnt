@@ -63,20 +63,29 @@ public class Screen {
 
 
         //Initialisieren Anmeldebildschirm (1. Card)
-        JPanel anmeldescreen = new JPanel();
+        JLabel anmeldescreen = new JLabel();
         anmeldescreen.setBackground(Color.LIGHT_GRAY);
+        anmeldescreen.setLayout(new GridLayout(3, 1));
+
+            //Label Spielername
+            JLabel spielername = new JLabel("Spielername");
+            spielername.setSize(new Dimension(320, 64));
+            spielername.setVisible(true);
 
             //Textfeld Spielername
-            JTextField spielernamefeld = new JTextField("Spielername");
+            JTextField spielernamefeld = new JTextField();
             spielernamefeld.setSize(new Dimension(320, 64));
             spielernamefeld.setVisible(true);
 
+             //Label Passwort
+             JLabel passwort = new JLabel("Passwort");
+             spielername.setSize(new Dimension(320, 64));
+             spielername.setVisible(true);
+
             //Textfeld Spielername
-            JTextField passwortfeld = new JTextField("Passwort");
+            JTextField passwortfeld = new JTextField();
             passwortfeld.setSize(new Dimension(320, 64));
             passwortfeld.setVisible(true);
-
-
 
             //Anmeldebutton --> zum Wechseln des Bildschirms
             JButton anmeldeButton = new JButton("Anmelden");
@@ -88,8 +97,11 @@ public class Screen {
                 }
             });
 
+
             //Hinzufügen der Elemente zum Anmeldescreen
+            anmeldescreen.add(spielername);
             anmeldescreen.add(spielernamefeld);
+            anmeldescreen.add(passwort);
             anmeldescreen.add(passwortfeld);
             anmeldescreen.add(anmeldeButton);
             addButton(anmeldescreen, "Abbrechen");

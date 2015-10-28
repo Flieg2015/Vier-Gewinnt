@@ -25,7 +25,7 @@ public final class GUI2 extends JPanel implements ActionListener {
         GridBagConstraints c = new GridBagConstraints();
 
 
-        c.fill = GridBagConstraints.HORIZONTAL;
+        c.fill = GridBagConstraints.BOTH;
 
         createPanels();
 
@@ -43,32 +43,40 @@ public final class GUI2 extends JPanel implements ActionListener {
 
     private JPanel createAnmeldeScreen() {
         GridBagConstraints c = new GridBagConstraints();
-        c.gridx = GridBagConstraints.REMAINDER;
-        c.fill = GridBagConstraints.HORIZONTAL;
+        //c.gridx = GridBagConstraints.REMAINDER;
+        c.fill = GridBagConstraints.BOTH;
 
         JPanel anmeldeScreen = new JPanel(new GridBagLayout());
 
         //Spielername Label
         JLabel spielername = new JLabel("Spielername");
+        c.fill = GridBagConstraints.BOTH;
         c.weightx = 0.0;
+        c.weighty = 0.1;
         c.gridwidth = 0;
         c.gridx = 0;
         c.gridy = 0;
-        c.insets = new Insets(10, 10, 0, 0);
+        c.insets = new Insets(10, 10, 10, 10);
         anmeldeScreen.add(spielername, c);
 
         //Spielername Textfeld
         JTextField spielernamefeld = new JTextField();
-        c.weightx = 0.0;
-        c.gridwidth = 0;
+        c.fill = GridBagConstraints.BOTH;
+        c.weightx = 0.1;
+        c.weighty = 0.6;
+        c.gridwidth = 1;
         c.gridx = 1;
         c.gridy = 0;
+        c.ipady = 5;
+        c.ipadx = 100;
         c.insets = new Insets(10, 10, 0, 0);
         anmeldeScreen.add(spielernamefeld, c);
 
         //Passwort Label
         JLabel passwort = new JLabel("Passwort");
+        c.fill = GridBagConstraints.BOTH;
         c.weightx = 0.0;
+        c.weighty = 0.1;
         c.gridwidth = 0;
         c.gridx = 0;
         c.gridy = 1;
@@ -77,10 +85,14 @@ public final class GUI2 extends JPanel implements ActionListener {
 
         //Passwort Textfeld
         JTextField passwortfeld = new JTextField();
+        c.fill = GridBagConstraints.BOTH;
         c.weightx = 0.0;
-        c.gridwidth = 0;
+        c.weighty = 0.6;
+        c.gridwidth = 1;
         c.gridx = 1;
         c.gridy = 1;
+        c.ipady = 5;
+        c.ipadx = 100;
         c.insets = new Insets(10, 10, 0, 0);
         anmeldeScreen.add(passwortfeld, c);
 
@@ -89,8 +101,9 @@ public final class GUI2 extends JPanel implements ActionListener {
         // Anmelden-Button
         JButton anmeldeButton = new JButton("Anmelden");
         anmeldeScreen.add(anmeldeButton, c);
-        //c.fill = GridBagConstraints.HORIZONTAL;
+        c.fill = GridBagConstraints.BOTH;
         c.weightx = 0.0;
+        c.weighty = 0.0;
         c.gridwidth = 1;
         c.gridx = 0;
         c.gridy = 2;
@@ -103,8 +116,9 @@ public final class GUI2 extends JPanel implements ActionListener {
         // Registrieren-Button
         JButton registrierenButton = new JButton("Registrieren");
         anmeldeScreen.add(registrierenButton, c);
-        //c.fill = GridBagConstraints.HORIZONTAL;
+        c.fill = GridBagConstraints.BOTH;
         c.weightx = 0.0;
+        c.weighty = 0.0;
         c.gridwidth = 1;
         c.gridx = 1;
         c.gridy = 2;

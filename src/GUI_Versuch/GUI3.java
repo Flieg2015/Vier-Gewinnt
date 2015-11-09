@@ -168,6 +168,41 @@ public final class GUI3 extends JPanel {
         anmeldeScreen.add(registrierenButton, c);
 
 
+
+        registrierenButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+
+                SpielerDAO spielerDAO = SpielerDAOFactory.createSpielerDAO();
+                if (ae.getSource() == registrierenButton) {
+
+                    Spieler spieler = new Spieler(spielernamefeld.getText(), passwortfeld.getText());
+
+                    System.out.println(spieler.toString());
+
+
+                    if (spielerDAO.proofByName(spieler.getName()) == false) {
+                        spielerDAO.add(spieler);
+                        System.out.println("Neuer Spieler: " + spieler.toString());
+                        ausgabe.setForeground(Color.green);
+                        ausgabe.setText(("Sie wurden als neuer Spieler regestriert"));
+                    } else {
+
+
+
+                            ausgabe.setForeground(Color.red);
+                            ausgabe.setText(("Dieser Name ist schon vergeben"));
+
+                    }
+                }
+            }
+        });
+
+
+
+
+
+
         return anmeldeScreen;
     }
 

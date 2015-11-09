@@ -22,6 +22,7 @@ public final class GUI3 extends JPanel {
 
     private JPanel panels;
     private JLabel ausgabe;
+    private CardLayout cl;
 
     public void addComponentToPane(Container pane) {
 
@@ -37,8 +38,8 @@ public final class GUI3 extends JPanel {
         JPanel anmeldeScreen = createAnmeldeScreen();
         JPanel auswahlScreen = createAuswahlScreen();
         JPanel spielScreen = createSpielScreen();
-
-        panels = new JPanel(new CardLayout());
+        cl = new CardLayout();
+        panels = new JPanel( cl);
         panels.add(anmeldeScreen, "Anmeldescreen");
         panels.add(auswahlScreen, "Spielauswahl");
         panels.add(spielScreen, "Spielscreen");
@@ -147,6 +148,7 @@ public final class GUI3 extends JPanel {
 
                             ausgabe.setForeground(Color.green);
                             ausgabe.setText(("Anmeldung Erfolgreich"));
+                            cl.next(panels); // Wechsel auf das nachste Panel
                         } else {
                             ausgabe.setText(("Passwd falsch"));
                         }

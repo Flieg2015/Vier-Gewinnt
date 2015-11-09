@@ -14,7 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-public final class GUI3 extends JPanel  {
+public final class GUI3 extends JPanel {
 
     //final static boolean shouldFill = true;
     //final static boolean shouldWeightX = true;
@@ -55,14 +55,24 @@ public final class GUI3 extends JPanel  {
 
         //Titel Label
         JLabel titel = new JLabel("Vier gewinnt");
-        titel.setFont(new Font("Arial",Font.BOLD, 25));
+        titel.setFont(new Font("Arial", Font.BOLD, 25));
         c.weightx = 0.0;
         c.gridwidth = 0;
         c.gridx = 0;
         c.gridy = 0;
         c.insets = new Insets(0, 35, 25, 25);
-        anmeldeScreen.add(titel,c);
+        anmeldeScreen.add(titel, c);
 
+        //Titel Ausgabe
+        JLabel ausgabe = new JLabel("");
+        ausgabe.setFont(new Font("Arial", Font.BOLD, 21));
+        ausgabe.setForeground(Color.red);
+        c.weightx = 0.0;
+        c.gridwidth = 0;
+        c.gridx = 0;
+        c.gridy = 4;
+        c.insets = new Insets(0, 35, 25, 25);
+        anmeldeScreen.add(ausgabe, c);
 
         //Spielername Label
         JLabel spielername = new JLabel("Spielername");
@@ -112,6 +122,7 @@ public final class GUI3 extends JPanel  {
         c.insets = new Insets(10, 10, 0, 0);
         anmeldeScreen.add(anmeldeButton, c);
 
+
         anmeldeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
@@ -121,7 +132,7 @@ public final class GUI3 extends JPanel  {
 
                     Spieler spieler = new Spieler(spielernamefeld.getText(), passwortfeld.getText());
 
-                    // System.out.println(spieler.toString());
+                    System.out.println(spieler.toString());
 
 
                     if (spielerDAO.proofByName(spieler.getName()) == false) {
@@ -130,11 +141,11 @@ public final class GUI3 extends JPanel  {
 
                         Spieler mySpieler = spielerDAO.findByName(spieler.getName()); // mySpieler ist der Der richtige Spieler aus der DB
 
-                        // System.out.println(mySpieler.toString());
+                        System.out.println(mySpieler.toString());
 
                         if (spieler.getPasswd().equals(mySpieler.getPasswd())) {
 
-
+                            ausgabe.setForeground(Color.green);
                             ausgabe.setText(("Anmeldung Erfolgreich"));
                         } else {
                             ausgabe.setText(("Passwd falsch"));
@@ -229,6 +240,7 @@ public final class GUI3 extends JPanel  {
         frame.setSize(new Dimension(720, 480));
 
     }
+
 
     public static void main(String[] args) {
         createGUI();

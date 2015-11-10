@@ -32,12 +32,15 @@ public final class GUI_ohne_DB extends JPanel implements ActionListener {
         JPanel anmeldeScreen = createAnmeldeScreen();
         JPanel auswahlScreen = createAuswahlScreen();
         JPanel spielScreen = createSpielScreen();
+        JPanel spiel = createSpielScreen();
+
 
         panels = new JPanel(new CardLayout());
         panels.add(anmeldeScreen, "Anmeldescreen");
         panels.add(auswahlScreen, "Spielauswahl");
         panels.add(spielScreen, "Spielscreen");
         panels.add(new JLabel("Registrieren"), "Registrieren");
+        panels.add(spiel, "Spielscreen");
     }
 
     //Erstellen des Anmeldescreens

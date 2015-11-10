@@ -1,19 +1,19 @@
 /**
  * Created by Cornelia on 28.07.2015.
  */
-package logik;
+package src;
 
 
-import src.logik.Spiel;
-import src.logik.Spielfeld;
 //import java.lang.*;
-import java.io.Console;
 
-public class Main {
+
+import src.logik.Spielfeld2;
+
+public class Main2 {
 
     public static void main (String[] args) {
 
-        Spielfeld spielfeld1 = new Spielfeld();
+        Spielfeld2 spielfeld1 = new Spielfeld2();
         // spielfeld1.ausgeben();
         //System.out.println(spielfeld1.pruefe_Steinsetzen(2));
 
@@ -50,7 +50,7 @@ public class Main {
         // db.spieler.Spieler spieler1 = new db.spieler.Spieler("Paul");
         // Spiel spiel1 = new Spiel(spieler1);
 
-        int num_zug=0;
+        int num_zug;
         int aktiver_spieler=1;
         boolean sieg=false;
 
@@ -63,7 +63,7 @@ public class Main {
             spielfeld1.ausgeben();
 
             if (sieg){System.out.println("Spieler " + aktiver_spieler + " gewinnt!"); break;}
-            try {Thread.sleep(3000);} catch (InterruptedException e){};
+            try {Thread.sleep(3000);} catch (InterruptedException e){System.out.println("ups");}
             aktiver_spieler=spielfeld1.get_gegner(aktiver_spieler);
         }
 
@@ -77,3 +77,4 @@ public class Main {
 
 
 }
+

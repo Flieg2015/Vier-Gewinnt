@@ -624,6 +624,21 @@ public class Spielfeld2 {
                 }
                 break;
 
+            case 4:    //mit Bewertung der verschiedenen Setzmöglichkeiten und der des Gegeners
+
+                beste_spalte = entscheide_zug(w,2);
+                if (beste_spalte>-1) break;
+
+                beste_spalte=0;
+                double faktor=0.5;      //faktor, da man selber am Zug ist und nicht der Gegner
+                double[] bewertungswerte_eigen = bewerte(w);
+                double[] bewertungswerte_gegner = bewerte(get_gegner(w));
+                for (ii=0; ii<=6; ii++) {
+                    if ((bewertungswerte_eigen[ii] + faktor * bewertungswerte_gegner[ii])>
+                            (bewertungswerte_eigen[beste_spalte] + faktor * bewertungswerte_gegner[beste_spalte]))
+                        beste_spalte = ii;
+                }
+                break;
         }
 
         if (beste_spalte==-1) beste_spalte = entscheide_zug(w,1);       //notfalls nochmal zufaellig (Kommt vor, wenn case 2 weder eigenen noch Gegnergewinn ermittelt.)

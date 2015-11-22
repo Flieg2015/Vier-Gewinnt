@@ -57,10 +57,18 @@ public class Main2 {
         for (num_zug=6;num_zug<40;num_zug++){
             System.out.println(">>> Spielzug #" + num_zug + " (Spieler " + aktiver_spieler + ") <<<");
 
-            int spalte=spielfeld1.entscheide_zug(aktiver_spieler, 3);
+            int spalte_1=spielfeld1.entscheide_zug(aktiver_spieler, 1);  //hier geht es nicht um spalte 1 sondern um den case 1
+            int spalte_2=spielfeld1.entscheide_zug(aktiver_spieler, 2);
+            int spalte_3=spielfeld1.entscheide_zug(aktiver_spieler, 3);
+            int spalte=spielfeld1.entscheide_zug(aktiver_spieler, 4);
             if (spielfeld1.pruefe_sieg(aktiver_spieler)[spalte]){sieg=true;}
             spielfeld1.setzte_Stein(spalte, aktiver_spieler);
             spielfeld1.ausgeben();
+            System.out.println(" Case 1 (Zufall): " + spalte_1);     //Gibt die Setzalternativen bei den verschiedenen Fällen an.
+            System.out.println(" Case 2 (Gewinnen, Verlieren): " + spalte_2);
+            System.out.println(" Case 3 (eigene Bewertung der Spalten): " + spalte_3);
+            System.out.println(" Case 4 (Bewertung der Spalten auch fuer den Gegner): " + spalte);
+
 
             if (sieg){System.out.println("Spieler " + aktiver_spieler + " gewinnt!"); break;}
             try {Thread.sleep(3000);} catch (InterruptedException e){System.out.println("ups");}

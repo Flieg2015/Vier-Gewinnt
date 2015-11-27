@@ -4,6 +4,8 @@
 
 package GUI_Versuch;
 
+import logik.Spiel;
+
 import db.spieler.Spieler;
 import db.spieler.SpielerDAO;
 import db.spieler.SpielerDAOFactory;
@@ -24,6 +26,9 @@ public final class GUI3 extends JPanel {
     private JLabel ausgabe;
     private CardLayout cl;
 
+    Spiel aktuelles_Spiel=new Spiel(null);
+
+
     public void addComponentToPane(Container pane) {
 
 
@@ -39,8 +44,9 @@ public final class GUI3 extends JPanel {
         JPanel auswahlScreen = createAuswahlScreen();
         JPanel spielScreen = createSpielScreen();
         cl = new CardLayout();
-        panels = new JPanel( cl);
+        panels = new JPanel(cl);
         panels.add(anmeldeScreen, "Anmeldescreen");
+        panels.add(anmeldeScreen, "Anmeldescreen2");
         panels.add(auswahlScreen, "Spielauswahl");
         panels.add(spielScreen, "Spielscreen");
         panels.add(new JLabel("Registrieren"), "Registrieren");
@@ -128,6 +134,9 @@ public final class GUI3 extends JPanel {
             @Override
             public void actionPerformed(ActionEvent ae) {
 
+
+                //cl.next(panels); // Test auskommentieren um Funktion wieder herzustellen
+
                 SpielerDAO spielerDAO = SpielerDAOFactory.createSpielerDAO();
                 if (ae.getSource() == anmeldeButton) {
 
@@ -142,19 +151,46 @@ public final class GUI3 extends JPanel {
 
                         Spieler mySpieler = spielerDAO.findByName(spieler.getName()); // mySpieler ist der Der richtige Spieler aus der DB
 
-                        System.out.println(mySpieler.toString());
+                        //System.out.println(mySpieler.toString());
 
-                        if (spieler.getPasswd().equals(mySpieler.getPasswd())) {
+                        if (spieler.getPasswd().equals(mySpieler.getPasswd()) && aktuelles_Spiel.getSpieler1()==null ) {
+
+                            aktuelles_Spiel.setSpieler1(mySpieler);
+
+                            System.out.print("Spieler 1"+aktuelles_Spiel.getSpieler1().toString());
+                            cl.next(panels); // Wechsel auf das nachste Panel                            // spieler1 wird gesetzt als angemeldet
 
                             ausgabe.setForeground(Color.green);
-                            ausgabe.setText(("Anmeldung Erfolgreich"));
-                            cl.next(panels); // Wechsel auf das nachste Panel
+                            //ausgabe.setText(("Anmeldung Erfolgreich"));
+                            passwortfeld.setText("");
+                            spielernamefeld.setText("");
+                            ausgabe.setText((""));
+                            ausgabe.setForeground(Color.red);
+
+
+                        } else if (spieler.getPasswd().equals(mySpieler.getPasswd()) && aktuelles_Spiel.getSpieler2() == null && !aktuelles_Spiel.getSpieler1().equals(mySpieler)) {
+                            aktuelles_Spiel.setSpieler2(mySpieler);
+                            cl.show(panels, "Spielscreen"); // Wechsel auf das nachste Panel                            // spieler2 wird gesetzt als angemeldet
+                            System.out.print("Spieler 1"+aktuelles_Spiel.getSpieler1().toString());
+                            System.out.print("Spieler 2"+aktuelles_Spiel.getSpieler2().toString());
+
+                            passwortfeld.setText("");
+                            spielernamefeld.setText("");
+                            ausgabe.setText((""));
+                            ausgabe.setForeground(Color.red);
+
+
                         } else {
                             ausgabe.setText(("Passwd falsch"));
                         }
                     }
+
                 }
+
+
             }
+
+
         });
 
 
@@ -168,7 +204,6 @@ public final class GUI3 extends JPanel {
         c.gridy = 3;
         c.insets = new Insets(10, 10, 0, 0);
         anmeldeScreen.add(registrierenButton, c);
-
 
 
         registrierenButton.addActionListener(new ActionListener() {
@@ -191,18 +226,13 @@ public final class GUI3 extends JPanel {
                     } else {
 
 
-
-                            ausgabe.setForeground(Color.red);
-                            ausgabe.setText(("Dieser Name ist schon vergeben"));
+                        ausgabe.setForeground(Color.red);
+                        ausgabe.setText(("Dieser Name ist schon vergeben"));
 
                     }
                 }
             }
         });
-
-
-
-
 
 
         return anmeldeScreen;
@@ -226,6 +256,19 @@ public final class GUI3 extends JPanel {
         c.insets = new Insets(10, 10, 0, 0);
         auswahlScreen.add(auswahl, c);
 
+
+        // Infofeld 1 über angemeldeten Spieler
+        JTextField info_spieler = new JTextField();
+        c.weightx = 0.0;
+        c.gridwidth = 0;
+        c.gridx = 4;
+        c.gridy = 2;
+        c.insets = new Insets(10, 10, 0, 0);
+        auswahlScreen.add(info_spieler, c);
+
+
+
+
         // Player vs. Computer -Button
         JButton pvcButton = new JButton("Player vs. Computer");
         auswahlScreen.add(pvcButton, c);
@@ -236,6 +279,43 @@ public final class GUI3 extends JPanel {
         c.gridy = 3;
         c.insets = new Insets(10, 10, 0, 0);
         auswahlScreen.add(pvcButton, c);
+
+
+        JButton backButton = new JButton("Abmelden");
+        auswahlScreen.add(backButton, c);
+        //c.fill = GridBagConstraints.HORIZONTAL;
+        c.weightx = 0.0;
+        c.gridwidth = 1;
+        c.gridx = 2;
+        c.gridy = 5;
+        c.insets = new Insets(10, 10, 0, 0);
+        auswahlScreen.add(backButton, c);
+
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                aktuelles_Spiel.setSpieler1(null);
+                cl.first(panels);
+            }
+        });
+
+        JButton pvpButton = new JButton("Player vs. Player");
+        auswahlScreen.add(pvpButton, c);
+        //c.fill = GridBagConstraints.HORIZONTAL;
+        c.weightx = 0.0;
+        c.gridwidth = 1;
+        c.gridx = 2;
+        c.gridy = 4;
+        c.insets = new Insets(10, 10, 0, 0);
+        auswahlScreen.add(pvpButton, c);
+
+        pvpButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                // setSpieler1(null);
+                cl.show(panels, "Anmeldescreen2");
+            }
+        });
 
 
         return auswahlScreen;
@@ -265,6 +345,8 @@ public final class GUI3 extends JPanel {
 
     private static void createGUI() {
 
+
+
         JFrame frame = new JFrame("Vier Gewinnt");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null); //Zentrieren des Bildschirms
@@ -282,4 +364,7 @@ public final class GUI3 extends JPanel {
     public static void main(String[] args) {
         createGUI();
     }
+
 }
+
+

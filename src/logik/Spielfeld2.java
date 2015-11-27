@@ -1,4 +1,4 @@
-package src.logik;
+package logik;
 
 public class Spielfeld2 {
 

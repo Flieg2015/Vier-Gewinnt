@@ -1,13 +1,13 @@
 /**
  * Created by Cornelia on 28.07.2015.
  */
-package src;
+package logik;
 
 
 //import java.lang.*;
 
 
-import src.logik.Spielfeld2;
+import logik.Spielfeld2;
 
 public class Main2 {
 

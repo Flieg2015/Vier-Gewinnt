@@ -4,60 +4,7 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0472844-2193-4e2d-ac18-721ad096fb5b" name="Default" comment="GUI mit Spielfeld (Steinen), Klasse Bilder; SQLite DB">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/spieler/spieler.s3db" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/db/spieler/SpielerDAOSqlite.java" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\.idea\.name" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\.idea\libraries\mysql_connector_java_5_1_37_bin.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\GUI\Anmeldung.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\GUI\Hauptscreen$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\GUI\Hauptscreen.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\GUI\Start.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\GUI\k.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\GUI_Versuch\Screen$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\GUI_Versuch\Screen$2.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\GUI_Versuch\Screen.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\GUI_Versuch\SwingLayoutDemo$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\GUI_Versuch\SwingLayoutDemo$2.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\GUI_Versuch\SwingLayoutDemo.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\Neu.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\com\intellij\uiDesigner\core\AbstractLayout.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\com\intellij\uiDesigner\core\DimensionInfo.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\com\intellij\uiDesigner\core\GridConstraints.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\com\intellij\uiDesigner\core\GridLayoutManager.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\com\intellij\uiDesigner\core\HorizontalInfo.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\com\intellij\uiDesigner\core\LayoutState.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\com\intellij\uiDesigner\core\Spacer.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\com\intellij\uiDesigner\core\SupportCode$TextWithMnemonic.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\com\intellij\uiDesigner\core\SupportCode.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\com\intellij\uiDesigner\core\Util.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\com\intellij\uiDesigner\core\VerticalInfo.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\db\City.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\db\CityDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\db\CityDAOFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\db\CityDAOJDBCImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\db\CityDAOMySql.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\db\CityDAOSqlite.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\db\Main.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\db\spieler\Main.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\db\spieler\Spieler.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\db\spieler\SpielerDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\db\spieler\SpielerDAOFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\db\spieler\SpielerDAOJDBCImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\db\spieler\SpielerDAOMySql.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\logik\KI_1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\logik\Main.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\logik\Spiel.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\logik\Spielfeld.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\out\production\Vier-Gewinnt\src.iml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\src\GUI_Versuch\Screen_GridBag.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\src\GUI_Versuch\SwingLayoutDemo.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\src\Main_1.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt\src\logik\KI_1.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI_Versuch/Bilder.java" afterPath="$PROJECT_DIR$/src/GUI_Versuch/Bilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Neu.java" afterPath="$PROJECT_DIR$/src/Neu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/db/spieler/SpielerDAOFactory.java" afterPath="$PROJECT_DIR$/src/db/spieler/SpielerDAOFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/db/spieler/SpielerDAOMySql.java" afterPath="$PROJECT_DIR$/src/db/spieler/SpielerDAOMySql.java" />
+    <list default="true" id="a0472844-2193-4e2d-ac18-721ad096fb5b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="7c16e96b-fe73-4fef-944d-cb832d5cf785" name="Failed commit: Default" comment="Anmeldescreen jetzt mit gridbaglayout" />
@@ -86,7 +33,7 @@
     </SUITE>
   </component>
   <component name="CreatePatchCommitExecutor">
-    <option name="PATCH_PATH" value="" />
+    <option name="PATCH_PATH" value="C:\Users\Thomas\IdeaProjects\Vier-Gewinnt" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -107,8 +54,8 @@
       <file leaf-file-name="SpielerDAOJDBCImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/db/spieler/SpielerDAOJDBCImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.450801">
-              <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.578534">
+              <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
               <folding>
                 <marker date="1452277185839" expanded="true" signature="754:804" placeholder="SELECT * FRO..Spieler..." />
                 <marker date="1452277185839" expanded="true" signature="1572:1622" placeholder="SELECT * FRO..Spieler..." />
@@ -161,18 +108,6 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GUI3.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI_Versuch/GUI3.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -440,6 +375,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="spieler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Vier-Gewinnt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Vier-Gewinnt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value=".idea" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -914,7 +863,7 @@
       <workItem from="1452274735173" duration="302000" />
       <workItem from="1452275165331" duration="1711000" />
       <workItem from="1452277102726" duration="265000" />
-      <workItem from="1452277444344" duration="577000" />
+      <workItem from="1452277444344" duration="952000" />
     </task>
     <task id="LOCAL-00001" summary="Cardlayout (sehr einfach gehalten, Card-Wechsel funktioniert)">
       <created>1445789157734</created>
@@ -958,11 +907,23 @@
       <option name="project" value="LOCAL" />
       <updated>1452236917327</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="GUI mit Spielfeld (Steinen), Klasse Bilder; SQLite DB">
+      <created>1452278055591</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1452278055591</updated>
+    </task>
+    <task id="LOCAL-00009" summary="GUI mit Spielfeld (Steinen), Klasse Bilder; SQLite DB">
+      <created>1452278272221</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1452278272221</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82013000" />
+    <option name="totallyTimeSpent" value="82388000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -972,14 +933,14 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32676518" sideWeight="0.3623719" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2364532" sideWeight="0.4568082" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32676518" sideWeight="0.5102489" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3281075" sideWeight="0.49284008" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2364532" sideWeight="0.5431918" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32676518" sideWeight="0.4897511" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2364532" sideWeight="0.5431918" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18594436" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18594436" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1084,16 +1045,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI_Versuch/GUI3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/db/spieler/SpielerDAOFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1176,16 +1127,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI_Versuch/GUI3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1339,16 +1280,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI_Versuch/GUI3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI_Versuch/GUI2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1378,8 +1309,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/db/spieler/SpielerDAOJDBCImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.450801">
-          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.578534">
+          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
           <folding>
             <marker date="1452277185839" expanded="true" signature="754:804" placeholder="SELECT * FRO..Spieler..." />
             <marker date="1452277185839" expanded="true" signature="1572:1622" placeholder="SELECT * FRO..Spieler..." />

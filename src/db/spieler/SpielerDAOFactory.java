@@ -5,8 +5,10 @@ package db.spieler;
  */
 public class SpielerDAOFactory {
 
-    public static SpielerDAOJDBCImpl createSpielerDAO (){
-        return new SpielerDAOMySql();
+    public static SpielerDAOJDBCImpl createSpielerDAO ()
+    {
+        //return new SpielerDAOMySql();
+        return new SpielerDAOSqlite();
     }
 
 }

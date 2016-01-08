@@ -75,7 +75,7 @@ public class Bilder extends JPanel {
         return null;
     }
 
-    //getter für farbe schreiben
+    //getter fÃ¼r farbe schreiben
 
         public static void main(String[] args){
             JFrame jf = new JFrame();

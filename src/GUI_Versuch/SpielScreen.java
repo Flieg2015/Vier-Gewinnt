@@ -44,7 +44,8 @@ public class SpielScreen extends JPanel{
                 //Methode zum Zeichnen der Steine
 
 
-                stein[i][j] = new JLabel(new ImageIcon("C:/Users/Thomas/IdeaProjects/Vier-Gewinnt/pics/rot1.png"));
+
+                stein[i][j] = new JLabel(new ImageIcon("src/pics/rot1.png"));
                 c.weightx = 0.0;
                 c.gridwidth = 1;
                 c.gridx = i;

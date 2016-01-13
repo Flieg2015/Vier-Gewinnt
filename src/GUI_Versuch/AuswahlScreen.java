@@ -26,21 +26,22 @@ public class AuswahlScreen extends JPanel {
         c.fill = GridBagConstraints.HORIZONTAL;
 
         //Spielername Label
-
+        auswahl.setFont(new Font("Arial", Font.BOLD, 25));
+        auswahl.setHorizontalAlignment(SwingConstants.CENTER);
         c.weightx = 0.0;
         c.gridwidth = 0;
-        c.gridx = 0;
+        c.gridx = 1;
         c.gridy = 0;
-        c.insets = new Insets(0, 0, 0, 0);
+        c.insets = new Insets(0, 0, 25, 25);
         Seite1.add(auswahl, c);
 
-        // Infofeld 1 über angemeldeten Spieler ToDo Was soll hier rein?
+        // Infofeld 1 über angemeldeten Spieler
 
         c.weightx = 0.0;
         c.gridwidth = 0;
-        c.gridx = 0;
+        c.gridx = 1;
         c.gridy = 1;
-        c.insets = new Insets(0, 0, 0, 0);
+        c.insets = new Insets(0, 0, 10, 10);
         Seite1.add(info_spieler, c);
 
         // Player vs. Computer -Button
@@ -49,32 +50,28 @@ public class AuswahlScreen extends JPanel {
         //c.fill = GridBagConstraints.HORIZONTAL;
         c.weightx = 0.0;
         c.gridwidth = 1;
-        c.gridx = 2;
-        c.gridy = 3;
-        c.insets = new Insets(0, 0, 0, 0);
+        c.gridx = 1;
+        c.gridy = 4;
+        c.insets = new Insets(0, 0, 10, 10);
         Seite1.add(pvcButton, c);
 
-
-
-        Seite1.add(backButton, c);
+        Seite1.add(pvpButton, c);
         //c.fill = GridBagConstraints.HORIZONTAL;
         c.weightx = 0.0;
         c.gridwidth = 1;
-        c.gridx = 2;
+        c.gridx = 1;
         c.gridy = 5;
-        c.insets = new Insets(0, 0, 0, 0);
-        Seite1.add(backButton, c);
-
-
-
+        c.insets = new Insets(0, 0, 10, 10);
         Seite1.add(pvpButton, c);
+
+        Seite1.add(backButton, c);
         //c.fill = GridBagConstraints.HORIZONTAL;
         c.weightx = 0.0;
         c.gridwidth = 1;
-        c.gridx = 2;
-        c.gridy = 4;
-        c.insets = new Insets(10, 10, 0, 0);
-        Seite1.add(pvpButton, c);
+        c.gridx = 1;
+        c.gridy = 6;
+        c.insets = new Insets(0, 0, 10, 10);
+        Seite1.add(backButton, c);
     }
 
 

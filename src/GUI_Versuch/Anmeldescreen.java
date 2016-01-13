@@ -13,7 +13,9 @@ import java.awt.event.ActionEvent;
  */
 public class Anmeldescreen extends JPanel {
 
-    JPanel Seite1 = new JPanel(new GridBagLayout());
+    JPanel Seite1 = new JPanel(new BorderLayout());
+    JPanel rechts = new JPanel();
+    JPanel mitte = new JPanel(new GridBagLayout());
     JLabel titel = new JLabel("Vier gewinnt");
     JLabel ausgabe = new JLabel("");
     JLabel spielername = new JLabel("Spielername");
@@ -22,9 +24,12 @@ public class Anmeldescreen extends JPanel {
     JTextField passwortfeld = new JPasswordField();
     JButton anmeldeButton = new JButton("Anmelden");
     JButton registrierenButton = new JButton("Registrieren");
+    JLabel bild = new JLabel();
+
 
     public  Anmeldescreen()
     {
+
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = GridBagConstraints.REMAINDER;
         c.fill = GridBagConstraints.HORIZONTAL;
@@ -36,10 +41,9 @@ public class Anmeldescreen extends JPanel {
         c.gridx = 0;
         c.gridy = 0;
         c.insets = new Insets(0, 35, 25, 25);
-        Seite1.add(titel, c);
+        mitte.add(titel, c);
 
         //Titel Ausgabe
-
         ausgabe.setFont(new Font("Arial", Font.BOLD, 21));
         ausgabe.setForeground(Color.red);
         c.weightx = 0.0;
@@ -47,66 +51,67 @@ public class Anmeldescreen extends JPanel {
         c.gridx = 0;
         c.gridy = 4;
         c.insets = new Insets(0, 35, 25, 25);
-        Seite1.add(ausgabe, c);
+        mitte.add(ausgabe, c);
 
         //Spielername Label
-
         c.weightx = 0.0;
         c.gridwidth = 0;
         c.gridx = 0;
-        c.gridy = 1;
+        c.gridy = 3;
         c.insets = new Insets(10, 10, 0, 0);
-        Seite1.add(spielername, c);
+        mitte.add(spielername, c);
 
         //Passwort Label
-
         c.weightx = 0.0;
         c.gridwidth = 0;
         c.gridx = 0;
-        c.gridy = 2;
+        c.gridy = 4;
         c.insets = new Insets(10, 10, 0, 0);
-        Seite1.add(passwort, c);
+        mitte.add(passwort, c);
 
         //Spielername Textfeld
-
         c.weightx = 0.0;
-        c.gridwidth = 0;
+        c.gridwidth = 1;
         c.gridx = 2;
-        c.gridy = 1;
+        c.gridy = 3;
         c.insets = new Insets(10, 10, 0, 0);
-        Seite1.add(spielernamefeld, c);
+        mitte.add(spielernamefeld, c);
 
         //Passwort Textfeld
 
         c.weightx = 0.0;
-        c.gridwidth = 0;
+        c.gridwidth = 1;
         c.gridx = 2;
-        c.gridy = 2;
+        c.gridy = 4;
         c.insets = new Insets(10, 10, 0, 0);
-        Seite1.add(passwortfeld, c);
+        mitte.add(passwortfeld, c);
 
         // Anmelden-Button
-
-        Seite1.add(anmeldeButton, c);
         //c.fill = GridBagConstraints.HORIZONTAL;
-        c.weightx = 0.0;
+        c.weightx = 0.5;
         c.gridwidth = 1;
         c.gridx = 0;
-        c.gridy = 3;
+        c.gridy = 5;
         c.insets = new Insets(10, 10, 0, 0);
-        Seite1.add(anmeldeButton, c);
+        mitte.add(anmeldeButton, c);
 
 
         // Registrieren-Button
-
-        Seite1.add(registrierenButton, c);
         //c.fill = GridBagConstraints.HORIZONTAL;
-        c.weightx = 0.0;
+        c.weightx = 0.5;
         c.gridwidth = 1;
         c.gridx = 2;
-        c.gridy = 3;
+        c.gridy = 5;
         c.insets = new Insets(10, 10, 0, 0);
-        Seite1.add(registrierenButton, c);
+        mitte.add(registrierenButton, c);
+
+        //Bild auf der rechten Seite
+        bild = new JLabel(new ImageIcon("src/pics/spiel.png"));
+        rechts.add(bild);
+
+
+        Seite1.add(mitte, java.awt.BorderLayout.CENTER);
+        Seite1.add(rechts, java.awt.BorderLayout.EAST);
 
     }
 

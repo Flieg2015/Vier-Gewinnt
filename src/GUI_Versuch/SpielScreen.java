@@ -12,29 +12,54 @@ import java.io.IOException;
 public class SpielScreen extends JPanel{
 
     private Bilder meinespielsteine = new Bilder();
-    private JPanel Seite1 = new JPanel(new GridBagLayout());
+    private JPanel Seite1 = new JPanel(new BorderLayout());
+    private JPanel Feld = new JPanel(new GridBagLayout());
+    private JPanel Einwurf = new JPanel (new GridBagLayout());
+    private JPanel Spieler1 = new JPanel(new GridBagLayout());
+    private JPanel Spieler2 = new JPanel(new GridBagLayout());
+    private JPanel tpanel = new JPanel();
+
     private JLabel[][] stein = new JLabel[7][6];
+    private JLabel s1 = new JLabel();
+    private JLabel s2 = new JLabel();
+    private JLabel tlabel = new JLabel();
+
 
     private JButton[] wurfButton = new JButton[7];
 
+
+
     public SpielScreen() {
 
-        GridBagConstraints c = new GridBagConstraints();
-        c.gridx = GridBagConstraints.REMAINDER;
-        c.fill = GridBagConstraints.HORIZONTAL;
+        tlabel = new JLabel("Vier Gewinnt");
+        tlabel.setFont(new Font("Arial", Font.BOLD, 25));
+        tpanel.add(tlabel);
+
+        GridBagConstraints cs = new GridBagConstraints();
+        cs.gridx = GridBagConstraints.REMAINDER;
+        cs.fill = GridBagConstraints.HORIZONTAL;
 
 
-        //Spielername Label
-        //JLabel Spielfeld = new JLabel("Spielfeld");
-        //c.weightx = 0.0;
-        //c.gridwidth = 0;
-        //c.gridx = 0;
-        //c.gridy = 0;
-        //c.insets = new Insets(0, 0, 0, 0);
-        //Spielscreen.add(Spielfeld, c);
+        s1 = new JLabel("Infos Spieler 1");
+        cs.weightx = 0.0;
+        cs.gridwidth = 1;
+        cs.gridx = 0;
+        cs.gridy = 0;
+        cs.insets = new Insets(10, 10, 10, 10);
+        Spieler1.add(s1, cs);
+
+        s2 = new JLabel("Infos Spieler 2");
+        cs.weightx = 0.0;
+        cs.gridwidth = 1;
+        cs.gridx = 0;
+        cs.gridy = 0;
+        cs.insets = new Insets(10, 10, 10, 10);
+        Spieler2.add(s2, cs);
 
 
 
+
+        Feld.setBackground(Color.blue);
 
         //Spielstein
         int i = 0;
@@ -45,13 +70,13 @@ public class SpielScreen extends JPanel{
 
 
 
-                stein[i][j] = new JLabel(new ImageIcon("src/pics/rot1.png"));
-                c.weightx = 0.0;
-                c.gridwidth = 1;
-                c.gridx = i;
-                c.gridy = j;
-                c.insets = new Insets(10, 10, 0, 0);
-                Seite1.add(stein[i][j], c);
+                stein[i][j] = new JLabel(new ImageIcon("src/pics/weiss1.png"));
+                cs.weightx = 0.0;
+                cs.gridwidth = 1;
+                cs.gridx = i;
+                cs.gridy = j;
+                cs.insets = new Insets(10, 10, 10, 10);
+                Feld.add(stein[i][j], cs);
             }
         }
 
@@ -59,15 +84,21 @@ public class SpielScreen extends JPanel{
         i = 0;
         for (i = 0; i <= 6; i++) {
             wurfButton[i] = new JButton("Einwerfen");
-            Seite1.add(wurfButton[i], c);
             //c.fill = GridBagConstraints.HORIZONTAL;
-            c.weightx = 0.0;
-            c.gridwidth = 1;
-            c.gridx = i;
-            c.gridy = 8;
-            c.insets = new Insets(25, 10, 0, 0);
-            Seite1.add(wurfButton[i], c);
+            cs.weightx = 0.0;
+            cs.gridwidth = 1;
+            cs.gridx = i;
+            cs.gridy = 0;
+            cs.insets = new Insets(25, 10, 0, 0);
+            Einwurf.add(wurfButton[i], cs);
         }
+
+
+        Seite1.add(Feld, java.awt.BorderLayout.CENTER);
+        Seite1.add(Einwurf, BorderLayout.SOUTH);
+        Seite1.add(Spieler1, BorderLayout.WEST);
+        Seite1.add(Spieler2, BorderLayout.EAST);
+        Seite1.add(tpanel, BorderLayout.NORTH);
 
 
 

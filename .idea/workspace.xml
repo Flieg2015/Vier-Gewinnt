@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0472844-2193-4e2d-ac18-721ad096fb5b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GUI_Versuch/Anmeldescreen.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GUI_Versuch/AuswahlScreen.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GUI_Versuch/GUI1.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GUI_Versuch/SpielScreen.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/db/spieler/SpielerDAOFactory.java" afterPath="$PROJECT_DIR$/src/db/spieler/SpielerDAOFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Vier-Gewinnt.iml" afterPath="$PROJECT_DIR$/.idea/Vier-Gewinnt.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI_Versuch/GUI1.java" afterPath="$PROJECT_DIR$/src/GUI_Versuch/GUI1.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/logik/Main2.java" afterPath="$PROJECT_DIR$/src/logik/Main2.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/logik/Spiel.java" afterPath="$PROJECT_DIR$/src/logik/Spiel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI_Versuch/SpielScreen.java" afterPath="$PROJECT_DIR$/src/GUI_Versuch/SpielScreen.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/db/spieler/Spieler.java" afterPath="$PROJECT_DIR$/src/db/spieler/Spieler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/logik/Spielfeld2.java" afterPath="$PROJECT_DIR$/src/logik/Spielfeld2.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="7c16e96b-fe73-4fef-944d-cb832d5cf785" name="Failed commit: Default" comment="Anmeldescreen jetzt mit gridbaglayout" />
@@ -48,43 +47,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SpielerDAOSqlite.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/db/spieler/SpielerDAOSqlite.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SpielerDAOJDBCImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/db/spieler/SpielerDAOJDBCImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
-              <folding>
-                <marker date="1452329396516" expanded="true" signature="754:804" placeholder="SELECT * FRO..Spieler..." />
-                <marker date="1452329396516" expanded="true" signature="1572:1622" placeholder="SELECT * FRO..Spieler..." />
-                <marker date="1452329396516" expanded="true" signature="2514:2535" placeholder="SELECT * FRO..Spieler..." />
-                <marker date="1452329396516" expanded="true" signature="3274:3396" placeholder="INSERT INTO ..." />
-                <marker date="1452329396516" expanded="true" signature="3760:3924" placeholder="UPDATE Spiel..." />
-                <marker date="1452329396516" expanded="true" signature="4288:4348" placeholder="DELETE FROM ..." />
-                <marker date="1452329396516" expanded="true" signature="4772:4817" placeholder="SELECT * FRO..Spieler..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GUI1.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GUI1.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GUI_Versuch/GUI1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="168" column="0" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.2913386">
+              <caret line="207" column="0" selection-start-line="207" selection-start-column="0" selection-end-line="207" selection-end-column="0" />
               <folding>
-                <element signature="method#configAnmeldeScreenButton#0;class#GUI1#0" expanded="false" />
-                <element signature="class#5150:5544" expanded="false" />
-                <element signature="method#actionPerformed#0;class#5616:5824" expanded="false" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#8943#8944#0" expanded="true" />
+                <element signature="e#8981#8982#0" expanded="true" />
+                <element signature="e#9042#9043#0" expanded="true" />
+                <element signature="e#9096#9097#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -103,32 +76,92 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CityDAOSqlite.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/db/CityDAOSqlite.java">
+      <file leaf-file-name="Main2.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/logik/Main2.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
+              <caret line="36" column="9" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="59" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SpielerDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/db/spieler/SpielerDAO.java">
+      <file leaf-file-name="Spiel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/logik/Spiel.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+              <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+              <folding>
+                <element signature="docComment;class#Spiel#0" expanded="false" />
+                <element signature="e#1981#1982#0" expanded="true" />
+                <element signature="e#2022#2023#0" expanded="true" />
+                <element signature="e#2087#2088#0" expanded="true" />
+                <element signature="e#2142#2143#0" expanded="true" />
+                <element signature="e#2173#2174#0" expanded="true" />
+                <element signature="e#2200#2201#0" expanded="true" />
+                <element signature="e#2241#2242#0" expanded="true" />
+                <element signature="e#2273#2274#0" expanded="true" />
+                <element signature="e#2309#2310#0" expanded="true" />
+                <element signature="e#2341#2342#0" expanded="true" />
+                <element signature="e#2391#2392#0" expanded="true" />
+                <element signature="e#2427#2428#0" expanded="true" />
+                <element signature="e#2476#2477#0" expanded="true" />
+                <element signature="e#2517#2518#0" expanded="true" />
+                <element signature="e#2589#2590#0" expanded="true" />
+                <element signature="e#2649#2650#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpielScreen.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI_Versuch/SpielScreen.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2826#2827#0" expanded="true" />
+                <element signature="e#2860#2861#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Spieler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/db/spieler/Spieler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+              <folding>
+                <element signature="e#1544#1545#0" expanded="true" />
+                <element signature="e#1572#1573#0" expanded="true" />
+                <element signature="e#1611#1612#0" expanded="true" />
+                <element signature="e#1645#1646#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Spielfeld.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/logik/Spielfeld.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/db/spieler/Main.java">
+      <file leaf-file-name="Spielfeld2.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/logik/Spielfeld2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
-              <folding />
+            <state vertical-scroll-proportion="3.3666666">
+              <caret line="40" column="21" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="21" />
+              <folding>
+                <element signature="e#24331#24332#0" expanded="true" />
+                <element signature="e#24365#24366#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -138,26 +171,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SpielerDAOSqlite" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/db/spieler/SpielerDAOSqlite">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Spieler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/db/spieler/Spieler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -190,11 +203,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/GUI_Versuch/Abbrechen_Button.java" />
-        <option value="$PROJECT_DIR$/src/GUI_Versuch/SwingLayoutDemo.java" />
-        <option value="$PROJECT_DIR$/src/GUI_Versuch/Anmeldescreen.java" />
-        <option value="$PROJECT_DIR$/src/GUI_Versuch/CardLayoutExample.java" />
-        <option value="$PROJECT_DIR$/src/GUI/Hauptscreen.java" />
         <option value="$PROJECT_DIR$/src/GUI_Versuch/Screen.java" />
         <option value="$PROJECT_DIR$/src/GUI_Versuch/Screen_GridBag.java" />
         <option value="$PROJECT_DIR$/src/GUI_Versuch/GridBayLayout1.java" />
@@ -233,13 +241,19 @@
         <option value="$PROJECT_DIR$/src/db/Spieler/Main.java" />
         <option value="$PROJECT_DIR$/src/db/Spieler/SpielerDAOMySql.java" />
         <option value="$PROJECT_DIR$/src/db/Spieler/SpielerDAOSqlite.java" />
-        <option value="$PROJECT_DIR$/src/db/spieler/Spieler.java" />
         <option value="$PROJECT_DIR$/src/db/spieler/SpielerDAO.java" />
         <option value="$PROJECT_DIR$/src/db/spieler/SpielerDAOJDBCImpl.java" />
         <option value="$PROJECT_DIR$/src/db/spieler/SpielerDAOMySql.java" />
         <option value="$PROJECT_DIR$/src/db/spieler/Main.java" />
         <option value="$PROJECT_DIR$/src/db/spieler/SpielerDAOSqlite.java" />
         <option value="$PROJECT_DIR$/src/db/spieler/SpielerDAOFactory.java" />
+        <option value="$PROJECT_DIR$/src/db/spieler/SpielerDAOSqlite" />
+        <option value="$PROJECT_DIR$/src/logik/Main2.java" />
+        <option value="$PROJECT_DIR$/src/logik/Spielfeld2.java" />
+        <option value="$PROJECT_DIR$/src/GUI_Versuch/SpielScreen.java" />
+        <option value="$PROJECT_DIR$/src/db/spieler/Spieler.java" />
+        <option value="$PROJECT_DIR$/src/logik/Spiel.java" />
+        <option value="$PROJECT_DIR$/src/GUI_Versuch/GUI1.java" />
       </list>
     </option>
   </component>
@@ -251,9 +265,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
-    <option name="width" value="1052" />
-    <option name="height" value="1680" />
+    <option name="x" value="1049" />
+    <option name="y" value="600" />
+    <option name="width" value="1922" />
+    <option name="height" value="1055" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -279,6 +294,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -401,6 +417,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Spieler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Vier-Gewinnt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Vier-Gewinnt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value=".idea" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -408,7 +446,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -418,7 +455,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="dynamic.classpath" value="false" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="FullScreen" value="false" />
@@ -446,6 +483,117 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="GUI_Versuch" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/GUI_Versuch/Anmeldescreen.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/GUI_Versuch/SpielScreen.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunManager" selected="Application.GUI1">
     <configuration default="false" name="GUI2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -878,6 +1026,8 @@
       <workItem from="1452277444344" duration="952000" />
       <workItem from="1452329406735" duration="104000" />
       <workItem from="1452329620966" duration="350000" />
+      <workItem from="1452936547253" duration="2586000" />
+      <workItem from="1452943350426" duration="7971000" />
     </task>
     <task id="LOCAL-00001" summary="Cardlayout (sehr einfach gehalten, Card-Wechsel funktioniert)">
       <created>1445789157734</created>
@@ -937,24 +1087,24 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82842000" />
+    <option name="totallyTimeSpent" value="93399000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="0" width="1052" height="1680" extended-state="6" />
+    <frame x="1049" y="600" width="1922" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32628205" sideWeight="0.35956174" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3262032" sideWeight="0.35059762" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23589744" sideWeight="0.46115538" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39358288" sideWeight="0.4791889" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32628205" sideWeight="0.48207173" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23589744" sideWeight="0.53884465" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32628205" sideWeight="0.47808766" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39358288" sideWeight="0.5208111" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36553785" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19583778" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -969,6 +1119,33 @@
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293556" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32676518" sideWeight="0.49707174" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39358288" sideWeight="0.4791889" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3809524" sideWeight="0.4816984" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32628205" sideWeight="0.35059762" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39977604" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32628205" sideWeight="0.47808766" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39358288" sideWeight="0.5208111" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293556" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19583778" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32676518" sideWeight="0.49707174" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -1000,30 +1177,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/db/spieler/SpielerDAOSqlite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/db/spieler/SpielerDAOJDBCImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1452329396516" expanded="true" signature="754:804" placeholder="SELECT * FRO..Spieler..." />
-            <marker date="1452329396516" expanded="true" signature="1572:1622" placeholder="SELECT * FRO..Spieler..." />
-            <marker date="1452329396516" expanded="true" signature="2514:2535" placeholder="SELECT * FRO..Spieler..." />
-            <marker date="1452329396516" expanded="true" signature="3274:3396" placeholder="INSERT INTO ..." />
-            <marker date="1452329396516" expanded="true" signature="3760:3924" placeholder="UPDATE Spiel..." />
-            <marker date="1452329396516" expanded="true" signature="4288:4348" placeholder="DELETE FROM ..." />
-            <marker date="1452329396516" expanded="true" signature="4772:4817" placeholder="SELECT * FRO..Spieler..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI_Versuch/GUI2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1039,7 +1192,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1047,7 +1199,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1088,13 +1239,13 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
           <folding>
-            <marker date="1452329396516" expanded="true" signature="754:804" placeholder="SELECT * FRO..Spieler..." />
-            <marker date="1452329396516" expanded="true" signature="1572:1622" placeholder="SELECT * FRO..Spieler..." />
-            <marker date="1452329396516" expanded="true" signature="2514:2535" placeholder="SELECT * FRO..Spieler..." />
-            <marker date="1452329396516" expanded="true" signature="3274:3396" placeholder="INSERT INTO ..." />
-            <marker date="1452329396516" expanded="true" signature="3760:3924" placeholder="UPDATE Spiel..." />
-            <marker date="1452329396516" expanded="true" signature="4288:4348" placeholder="DELETE FROM ..." />
-            <marker date="1452329396516" expanded="true" signature="4772:4817" placeholder="SELECT * FRO..Spieler..." />
+            <marker date="1452936507350" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Spieler..." />
+            <marker date="1452936507350" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Spieler..." />
+            <marker date="1452936507350" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Spieler..." />
+            <marker date="1452936507350" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1452936507350" expanded="true" signature="-1:-1" placeholder="UPDATE Spiel..." />
+            <marker date="1452936507350" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1452936507350" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Spieler..." />
           </folding>
         </state>
       </provider>
@@ -1114,7 +1265,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1122,7 +1272,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1163,13 +1312,13 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
           <folding>
-            <marker date="1452329396516" expanded="true" signature="754:804" placeholder="SELECT * FRO..Spieler..." />
-            <marker date="1452329396516" expanded="true" signature="1572:1622" placeholder="SELECT * FRO..Spieler..." />
-            <marker date="1452329396516" expanded="true" signature="2514:2535" placeholder="SELECT * FRO..Spieler..." />
-            <marker date="1452329396516" expanded="true" signature="3274:3396" placeholder="INSERT INTO ..." />
-            <marker date="1452329396516" expanded="true" signature="3760:3924" placeholder="UPDATE Spiel..." />
-            <marker date="1452329396516" expanded="true" signature="4288:4348" placeholder="DELETE FROM ..." />
-            <marker date="1452329396516" expanded="true" signature="4772:4817" placeholder="SELECT * FRO..Spieler..." />
+            <marker date="1452936507350" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Spieler..." />
+            <marker date="1452936507350" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Spieler..." />
+            <marker date="1452936507350" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Spieler..." />
+            <marker date="1452936507350" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1452936507350" expanded="true" signature="-1:-1" placeholder="UPDATE Spiel..." />
+            <marker date="1452936507350" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1452936507350" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Spieler..." />
           </folding>
         </state>
       </provider>
@@ -1189,7 +1338,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1197,7 +1345,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1238,13 +1385,13 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
           <folding>
-            <marker date="1452329396516" expanded="true" signature="754:804" placeholder="SELECT * FRO..Spieler..." />
-            <marker date="1452329396516" expanded="true" signature="1572:1622" placeholder="SELECT * FRO..Spieler..." />
-            <marker date="1452329396516" expanded="true" signature="2514:2535" placeholder="SELECT * FRO..Spieler..." />
-            <marker date="1452329396516" expanded="true" signature="3274:3396" placeholder="INSERT INTO ..." />
-            <marker date="1452329396516" expanded="true" signature="3760:3924" placeholder="UPDATE Spiel..." />
-            <marker date="1452329396516" expanded="true" signature="4288:4348" placeholder="DELETE FROM ..." />
-            <marker date="1452329396516" expanded="true" signature="4772:4817" placeholder="SELECT * FRO..Spieler..." />
+            <marker date="1452936507350" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Spieler..." />
+            <marker date="1452936507350" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Spieler..." />
+            <marker date="1452936507350" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Spieler..." />
+            <marker date="1452936507350" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1452936507350" expanded="true" signature="-1:-1" placeholder="UPDATE Spiel..." />
+            <marker date="1452936507350" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1452936507350" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Spieler..." />
           </folding>
         </state>
       </provider>
@@ -1265,7 +1412,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1274,7 +1421,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1282,7 +1428,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1324,20 +1469,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/db/spieler/SpielerDAOMySql.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="12" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI_Versuch/Bilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1346,7 +1483,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1354,15 +1490,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/db/spieler/Spieler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1374,50 +1501,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI_Versuch/GUI2.java">
+    <entry file="file://$PROJECT_DIR$/src/db/spieler/SpielerDAOSqlite">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="136" column="0" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/db/spieler/SpielerDAOSqlite.java">
+    <entry file="file://$PROJECT_DIR$/src/db/spieler/SpielerDAOMySql.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/db/spieler/SpielerDAOJDBCImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
-          <folding>
-            <marker date="1452329396516" expanded="true" signature="754:804" placeholder="SELECT * FRO..Spieler..." />
-            <marker date="1452329396516" expanded="true" signature="1572:1622" placeholder="SELECT * FRO..Spieler..." />
-            <marker date="1452329396516" expanded="true" signature="2514:2535" placeholder="SELECT * FRO..Spieler..." />
-            <marker date="1452329396516" expanded="true" signature="3274:3396" placeholder="INSERT INTO ..." />
-            <marker date="1452329396516" expanded="true" signature="3760:3924" placeholder="UPDATE Spiel..." />
-            <marker date="1452329396516" expanded="true" signature="4288:4348" placeholder="DELETE FROM ..." />
-            <marker date="1452329396516" expanded="true" signature="4772:4817" placeholder="SELECT * FRO..Spieler..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI_Versuch/GUI1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="168" column="0" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
-          <folding>
-            <element signature="method#configAnmeldeScreenButton#0;class#GUI1#0" expanded="false" />
-            <element signature="class#5150:5544" expanded="false" />
-            <element signature="method#actionPerformed#0;class#5616:5824" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1429,11 +1524,138 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/db/spieler/SpielerDAOSqlite">
+    <entry file="file://$PROJECT_DIR$/src/db/spieler/SpielerDAOSqlite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14187446">
+          <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/db/spieler/SpielerDAOJDBCImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.03267412">
+          <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
+          <folding>
+            <marker date="1452936507350" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Spieler..." />
+            <marker date="1452936507350" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Spieler..." />
+            <marker date="1452936507350" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Spieler..." />
+            <marker date="1452936507350" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1452936507350" expanded="true" signature="-1:-1" placeholder="UPDATE Spiel..." />
+            <marker date="1452936507350" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1452936507350" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Spieler..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/logik/Spielfeld.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/logik/Spielfeld2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.3666666">
+          <caret line="40" column="21" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="21" />
+          <folding>
+            <element signature="e#24331#24332#0" expanded="true" />
+            <element signature="e#24365#24366#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/security/ProtectionDomain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33271375">
+          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI_Versuch/GUI2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="136" column="0" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/logik/Main2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="9" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI_Versuch/SpielScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2826#2827#0" expanded="true" />
+            <element signature="e#2860#2861#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/db/spieler/Spieler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+          <folding>
+            <element signature="e#1544#1545#0" expanded="true" />
+            <element signature="e#1572#1573#0" expanded="true" />
+            <element signature="e#1611#1612#0" expanded="true" />
+            <element signature="e#1645#1646#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/logik/Spiel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#Spiel#0" expanded="false" />
+            <element signature="e#1981#1982#0" expanded="true" />
+            <element signature="e#2022#2023#0" expanded="true" />
+            <element signature="e#2087#2088#0" expanded="true" />
+            <element signature="e#2142#2143#0" expanded="true" />
+            <element signature="e#2173#2174#0" expanded="true" />
+            <element signature="e#2200#2201#0" expanded="true" />
+            <element signature="e#2241#2242#0" expanded="true" />
+            <element signature="e#2273#2274#0" expanded="true" />
+            <element signature="e#2309#2310#0" expanded="true" />
+            <element signature="e#2341#2342#0" expanded="true" />
+            <element signature="e#2391#2392#0" expanded="true" />
+            <element signature="e#2427#2428#0" expanded="true" />
+            <element signature="e#2476#2477#0" expanded="true" />
+            <element signature="e#2517#2518#0" expanded="true" />
+            <element signature="e#2589#2590#0" expanded="true" />
+            <element signature="e#2649#2650#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI_Versuch/GUI1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2913386">
+          <caret line="207" column="0" selection-start-line="207" selection-start-column="0" selection-end-line="207" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#8943#8944#0" expanded="true" />
+            <element signature="e#8981#8982#0" expanded="true" />
+            <element signature="e#9042#9043#0" expanded="true" />
+            <element signature="e#9096#9097#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1495,6 +1717,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

@@ -2,9 +2,7 @@ package GUI_Versuch;
 
 import javax.swing.*;
 import java.awt.*;
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
+
 
 /**
  * Created by tim on 08.01.16.
@@ -20,7 +18,9 @@ public class SpielScreen extends JPanel{
     private JLabel s1 = new JLabel();
     private JLabel s2 = new JLabel();
     private JLabel tlabel = new JLabel();
-
+    private ImageIcon Weiss= new ImageIcon("src/pics/weiss1.png");
+    private ImageIcon Rot= new ImageIcon("src/pics/rot1.png");
+    private ImageIcon Gelb= new ImageIcon("src/pics/gelb1.png");
 
     private JButton[] wurfButton = new JButton[7];
 
@@ -74,7 +74,7 @@ public class SpielScreen extends JPanel{
 
 
 
-                stein[i][j] = new JLabel(new ImageIcon("src/pics/weiss1.png"));
+               stein[i][j] = new JLabel(Weiss);
                 cs.weightx = 0.0;
                 cs.gridwidth = 1;
                 cs.gridx = i+1;
@@ -114,20 +114,30 @@ public class SpielScreen extends JPanel{
         Seite1 = seite1;
     }
 
-    public JLabel[][] getStein() {
-        return stein;
+    public JLabel getStein(int i, int j) {
+        return stein[i][j];
     }
 
-    public void setStein(JLabel[][] stein) {
-        this.stein = stein;
+    public void setStein(int i, int j, int farbe) {
+
+
+        if(farbe==1)  stein[i][j].setIcon(Rot);
+      if(farbe==0)  stein[i][j].setIcon(Weiss);
+        if(farbe==2)  stein[i][j].setIcon(Gelb);
+
     }
 
-    public JButton[] getWurfButton() {return wurfButton;
+    public JButton getWurfButton(int  i) {return wurfButton[i];
     }
+
+
+
 
     public void setWurfButton(JButton[] wurfButton) {
         this.wurfButton = wurfButton;
     }
+
+
 
 
 

@@ -11,14 +11,15 @@ public class Spiel {
     private db.spieler.Spieler spieler1;
     private db.spieler.Spieler spieler2;
     private db.spieler.Spieler aktuellerSpieler=spieler1;
+    private db.spieler.Spieler KI=new Spieler("Computer");
     private int Intelligenz_der_KI=1;             // Die Ki kann 4 Stufen haben von 1 bis 4
-    private boolean Spielmode=true;// true Player VS Comuter false Player vs Player
+
 
     private Spielfeld2 aktuellesSpielfeld=new Spielfeld2();
 
     private static int anzahl_spielzuege=0;
 
-    boolean sieg=false;
+    private boolean sieg=false;
 
 
 
@@ -87,7 +88,7 @@ public class Spiel {
         Intelligenz_der_KI = intelligenz_der_KI;
     }
 
-    public boolean isSieg() {
+    public boolean getSieg() {
         return sieg;
     }
 
@@ -95,13 +96,9 @@ public class Spiel {
         this.sieg = sieg;
     }
 
-    public boolean isSpielmode() {
-        return Spielmode;
-    }
 
-    public void setSpielmode(boolean sielmode) {
-        Spielmode = sielmode;
-    }
+
+
 
     public Spielfeld2 getAktuellesSpielfeld() {
         return aktuellesSpielfeld;
@@ -109,5 +106,9 @@ public class Spiel {
 
     public void setAktuellesSpielfeld(Spielfeld2 aktuellesSpielfeld) {
         this.aktuellesSpielfeld = aktuellesSpielfeld;
+    }
+
+    public Spieler getKI() {
+        return KI;
     }
 }

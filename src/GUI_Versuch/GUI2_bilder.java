@@ -23,7 +23,7 @@ public final class GUI2_bilder extends JPanel {
     //final static boolean shouldFill = true;
     //final static boolean shouldWeightX = true;
     //final static boolean RIGHT_TO_LEFT = false;
-
+    Spiel aktuelles_Spiel=new Spiel();
 
     private JLabel ausgabe;
     private CardLayout cl=new CardLayout();
@@ -34,7 +34,7 @@ public final class GUI2_bilder extends JPanel {
     private AuswahlScreen auswahlScreen= new AuswahlScreen();
     private SpielScreen spielScreen=new SpielScreen();
 
-    Spiel aktuelles_Spiel=new Spiel(null);
+
 
 
 
@@ -116,6 +116,10 @@ public final class GUI2_bilder extends JPanel {
 
                         } else if (spieler.getPasswd().equals(mySpieler.getPasswd()) && aktuelles_Spiel.getSpieler2() == null && !aktuelles_Spiel.getSpieler1().equals(mySpieler)) {
                             aktuelles_Spiel.setSpieler2(mySpieler);
+
+                            spielScreen.setTextInfo(aktuelles_Spiel.getSpieler1(),aktuelles_Spiel.getSpieler2());
+
+
                             cl.show(panels, "Spielscreen"); // Wechsel auf das nachste Panel                            // spieler2 wird gesetzt als angemeldet
                             System.out.print("Spieler 1" + aktuelles_Spiel.getSpieler1().toString());
                             System.out.print("Spieler 2" + aktuelles_Spiel.getSpieler2().toString());
@@ -152,7 +156,7 @@ public final class GUI2_bilder extends JPanel {
                 aktuelles_Spiel.setSpieler2(KI);
                 aktuelles_Spiel.setAktuellerSpieler(aktuelles_Spiel.getSpieler1());
                 panels.updateUI();
-
+                spielScreen.setTextInfo(aktuelles_Spiel.getSpieler1(),aktuelles_Spiel.getSpieler2());
                 cl.show(panels, "Spielscreen");
 
             }

@@ -1,5 +1,7 @@
 package GUI_Versuch;
 
+import db.spieler.Spieler;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -15,8 +17,16 @@ public class SpielScreen extends JPanel{
 
 
     private JLabel[][] stein = new JLabel[7][6];
-    private JLabel s1 = new JLabel();
-    private JLabel s2 = new JLabel();
+    //private JLabel s1 = new JLabel();
+    //private JLabel s2 = new JLabel();
+
+
+    private JTextArea s1;
+
+   private JTextArea s2;
+
+
+
     private JLabel tlabel = new JLabel();
     private ImageIcon Weiss= new ImageIcon("src/pics/weiss1.png");
     private ImageIcon Rot= new ImageIcon("src/pics/rot1.png");
@@ -27,6 +37,26 @@ public class SpielScreen extends JPanel{
 
 
     public SpielScreen() {
+
+
+
+        s1 = new JTextArea(5,20);
+
+
+        //Zeilenumbruch wird eingeschaltet
+        s1.setLineWrap(true);
+
+        //Zeilenumbrüche erfolgen nur nach ganzen Wörtern
+        s1.setWrapStyleWord(true);
+
+
+        s2 = new JTextArea(5,20);
+
+        //Zeilenumbruch wird eingeschaltet
+        s2.setLineWrap(true);
+
+        //Zeilenumbrüche erfolgen nur nach ganzen Wörtern
+        s2.setWrapStyleWord(true);
 
         GridBagConstraints cs = new GridBagConstraints();
         cs.gridx = GridBagConstraints.REMAINDER;
@@ -43,7 +73,7 @@ public class SpielScreen extends JPanel{
 
 
 
-        s1 = new JLabel("Infos Spieler 1");
+       // s1 = new JLabel("Infos Spieler 1");
         cs.weightx = 0.0;
         cs.gridwidth = 1;
         cs.gridx = 0;
@@ -52,7 +82,7 @@ public class SpielScreen extends JPanel{
         Seite1.add(s1, cs);
 
 
-        s2 = new JLabel("Infos Spieler 2");
+        //s2 = new JLabel("Infos Spieler 2");
         cs.weightx = 0.0;
         cs.gridwidth = 1;
         cs.gridx = 9;
@@ -137,10 +167,27 @@ public class SpielScreen extends JPanel{
         this.wurfButton = wurfButton;
     }
 
+    public void setTextInfo(Spieler spieler1, Spieler spieler2){
 
+        s1.setText("Spieler 1\n " +
+                spieler1.getName()+"\n" +
+                "Dein Score \n" +
+                spieler1.getHighscore());
 
+        s2.setText("Spieler 2\n " +
+                spieler2.getName()+"\n" +
+                "Dein Score \n" +
+                spieler2.getHighscore());
 
+    }
 
+    public JLabel getTlabel() {
+        return tlabel;
+    }
+
+    public void setTlabel(JLabel tlabel) {
+        this.tlabel = tlabel;
+    }
 }
 
 

@@ -24,7 +24,7 @@ public final class GUI1 extends JPanel {
     //final static boolean shouldWeightX = true;
     //final static boolean RIGHT_TO_LEFT = false;
 
-
+    private Spiel aktuelles_Spiel=new Spiel();
     private CardLayout cl=new CardLayout();
     private Bilder meinespielsteine = new Bilder();
     private JPanel panels= new JPanel(cl);
@@ -33,7 +33,8 @@ public final class GUI1 extends JPanel {
     private AuswahlScreen auswahlScreen= new AuswahlScreen();
     private SpielScreen spielScreen=new SpielScreen();
 
-    private Spiel aktuelles_Spiel=new Spiel();
+
+
 
 
 
@@ -119,6 +120,10 @@ public final class GUI1 extends JPanel {
                             aktuelles_Spiel.setSpieler2(mySpieler);
                             aktuelles_Spiel.getSpieler2().setFarbe(2);
                             aktuelles_Spiel.setAktuellerSpieler(aktuelles_Spiel.getSpieler1());
+
+
+                            spielScreen.setTextInfo(aktuelles_Spiel.getSpieler1(),aktuelles_Spiel.getSpieler2());
+
                             cl.show(panels, "Spielscreen"); // Wechsel auf das nachste Panel                            // spieler2 wird gesetzt als angemeldet
                             System.out.print("Spieler 1"+aktuelles_Spiel.getSpieler1().toString());
                             System.out.print("Spieler 2"+aktuelles_Spiel.getSpieler2().toString());
@@ -149,6 +154,36 @@ public final class GUI1 extends JPanel {
 
     });
 
+
+        anmeldeScreen.registrierenButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+
+                SpielerDAO spielerDAO = SpielerDAOFactory.createSpielerDAO();
+                if (ae.getSource() == anmeldeScreen.registrierenButton) {
+
+                    Spieler spieler = new Spieler(anmeldeScreen.spielernamefeld.getText(), anmeldeScreen.passwortfeld.getText());
+
+                    System.out.println(spieler.toString());
+
+
+                    if (spielerDAO.proofByName(spieler.getName()) == false) {
+                        spielerDAO.add(spieler);
+                        System.out.println("Neuer Spieler: " + spieler.toString());
+                        anmeldeScreen.ausgabe.setForeground(Color.green);
+                        anmeldeScreen.ausgabe.setText(("Sie wurden als neuer Spieler regestriert"));
+                    } else {
+
+
+                        anmeldeScreen.ausgabe.setForeground(Color.red);
+                        anmeldeScreen.ausgabe.setText(("Dieser Name ist schon vergeben"));
+
+                    }
+                }
+            }
+        });
+
+
 }
     private void configAuswahlScreenButton() {
 
@@ -157,12 +192,14 @@ public final class GUI1 extends JPanel {
             @Override
             public void actionPerformed(ActionEvent ae) {
 
-                Spieler KI=new Spieler("Computer");
 
-                aktuelles_Spiel.setSpieler2(KI);
+
+                aktuelles_Spiel.setSpieler2(aktuelles_Spiel.getKI());
                 aktuelles_Spiel.getSpieler2().setFarbe(2);
                 aktuelles_Spiel.setAktuellerSpieler(aktuelles_Spiel.getSpieler1());
                 panels.updateUI();
+
+                spielScreen.setTextInfo(aktuelles_Spiel.getSpieler1(),aktuelles_Spiel.getSpieler2());
 
                 cl.show(panels, "Spielscreen");
 
@@ -209,9 +246,36 @@ public final class GUI1 extends JPanel {
                     //System.out.println(aktuelles_Spiel.getSpieler2().toString());
                    // System.out.println(aktuelles_Spiel.getSpieler1() == aktuelles_Spiel.getAktuellerSpieler());
 
-                    aktuelles_Spiel.getAktuellesSpielfeld().setzte_Stein(finalI,aktuelles_Spiel.getAktuellerSpieler().getFarbe());
-                    spielfeldAktualsieren();
-                    changeSpieler();
+                    if(aktuelles_Spiel.getAktuellesSpielfeld().pruefe_Steinsetzen(finalI)) {
+
+
+                        aktuelles_Spiel.getAktuellesSpielfeld().setzte_Stein(finalI, aktuelles_Spiel.getAktuellerSpieler().getFarbe());
+
+                        if (aktuelles_Spiel.getAktuellesSpielfeld().pruefe_sieg(aktuelles_Spiel.getAktuellerSpieler().getFarbe())[finalI]) {
+                            aktuelles_Spiel.setSieg(true);
+                        }
+
+                        changeSpieler();
+
+                        if (aktuelles_Spiel.getAktuellerSpieler() == aktuelles_Spiel.getKI()) {
+                            aktuelles_Spiel.getAktuellesSpielfeld().setzte_Stein(aktuelles_Spiel.getAktuellesSpielfeld().entscheide_zug(aktuelles_Spiel.getAktuellerSpieler().getFarbe(), aktuelles_Spiel.getIntelligenz_der_KI()), aktuelles_Spiel.getAktuellerSpieler().getFarbe());
+
+                            if (aktuelles_Spiel.getAktuellesSpielfeld().pruefe_sieg(aktuelles_Spiel.getAktuellerSpieler().getFarbe())[finalI]) {
+                                aktuelles_Spiel.setSieg(true);
+                            }
+                            changeSpieler();
+                        } else {
+
+                        }
+                        spielfeldAktualsieren();
+
+                    }
+
+                    else{
+                        spielScreen.getTlabel().setText("Stein setzen nicht möglich \n " +
+                                "Bitte nochmal                                 ");
+                    }
+
 
                 }
             });
@@ -228,6 +292,12 @@ public final class GUI1 extends JPanel {
 
 private void spielfeldAktualsieren(){
 
+    if(aktuelles_Spiel.getSieg()){
+        changeSpieler();
+        spielScreen.getTlabel().setText(aktuelles_Spiel.getAktuellerSpieler().getName()+" is Winner");
+
+    }
+
     for (int i = 0; i <= 6; i++){
         for(int j = 0;  j <= 5; j++){
 
@@ -237,9 +307,7 @@ private void spielfeldAktualsieren(){
                spielScreen.setStein(i,j,aktuelles_Spiel.getAktuellesSpielfeld().getbrett(i,j));
            }
 
-            //Methode zum Zeichnen der Steine
 
-            // spielScreen.setStein(finalI,j,aktuelles_Spiel.getSpielfeld().getBrett(i,j));
         }
     }
 }

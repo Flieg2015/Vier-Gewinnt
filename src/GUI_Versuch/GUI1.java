@@ -247,28 +247,34 @@ public final class GUI1 extends JPanel {
                    // System.out.println(aktuelles_Spiel.getSpieler1() == aktuelles_Spiel.getAktuellerSpieler());
 
                     if(aktuelles_Spiel.getAktuellesSpielfeld().pruefe_Steinsetzen(finalI)) {
-
-
-                        aktuelles_Spiel.getAktuellesSpielfeld().setzte_Stein(finalI, aktuelles_Spiel.getAktuellerSpieler().getFarbe());
-
                         if (aktuelles_Spiel.getAktuellesSpielfeld().pruefe_sieg(aktuelles_Spiel.getAktuellerSpieler().getFarbe())[finalI]) {
                             aktuelles_Spiel.setSieg(true);
                         }
 
-                        changeSpieler();
+                        aktuelles_Spiel.getAktuellesSpielfeld().setzte_Stein(finalI, aktuelles_Spiel.getAktuellerSpieler().getFarbe());
 
+                        spielfeldAktualsieren();
+
+                    if (!aktuelles_Spiel.getSieg()) {
+                        changeSpieler();
                         if (aktuelles_Spiel.getAktuellerSpieler() == aktuelles_Spiel.getKI()) {
-                            aktuelles_Spiel.getAktuellesSpielfeld().setzte_Stein(aktuelles_Spiel.getAktuellesSpielfeld().entscheide_zug(aktuelles_Spiel.getAktuellerSpieler().getFarbe(), aktuelles_Spiel.getIntelligenz_der_KI()), aktuelles_Spiel.getAktuellerSpieler().getFarbe());
+
+                            int finalI = aktuelles_Spiel.getAktuellesSpielfeld().entscheide_zug(aktuelles_Spiel.getAktuellerSpieler().getFarbe(), aktuelles_Spiel.getIntelligenz_der_KI());
 
                             if (aktuelles_Spiel.getAktuellesSpielfeld().pruefe_sieg(aktuelles_Spiel.getAktuellerSpieler().getFarbe())[finalI]) {
                                 aktuelles_Spiel.setSieg(true);
                             }
+
+                            aktuelles_Spiel.getAktuellesSpielfeld().setzte_Stein(finalI, aktuelles_Spiel.getAktuellerSpieler().getFarbe());
+
+
                             changeSpieler();
                         } else {
 
                         }
-                        spielfeldAktualsieren();
 
+                        spielfeldAktualsieren();
+                    }
                     }
 
                     else{
@@ -291,11 +297,11 @@ public final class GUI1 extends JPanel {
 
 
 private void spielfeldAktualsieren(){
+    try {Thread.sleep(0);} catch (InterruptedException e){System.out.println("ups, haette man mal kein Delay eingebaut...");}
 
     if(aktuelles_Spiel.getSieg()){
-        changeSpieler();
+        //changeSpieler();
         spielScreen.getTlabel().setText(aktuelles_Spiel.getAktuellerSpieler().getName()+" is Winner");
-
     }
 
     for (int i = 0; i <= 6; i++){

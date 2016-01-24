@@ -14,6 +14,7 @@ public class Spieler {
     private String passwd;
     private int highscore;
     private int aktuelle_punkte;
+    private int farbe=1;
 
     public Spieler (String name, String passwd, int highscore){     /** Standardkonstruktor zum Erzeugen eines Spielers  **/
         aktuelle_punkte=0;
@@ -65,7 +66,15 @@ public class Spieler {
         this.aktuelle_punkte = aktuelle_punkte;
     }
 
-    public String toString() { return this.getName() + ", " + this.getPasswd() + ": " + this.getHighscore();}  /** Gibt die kompletten
+    public String toString() { return this.getName() + ", " + this.getPasswd() + ": " + this.getHighscore()+ " Farbe "+this.getFarbe();}
+
+    public int getFarbe() {
+        return farbe;
+    }
+
+    public void setFarbe(int farbe) {
+        this.farbe = farbe;
+    }  /** Gibt die kompletten
                                                                                                             Daten eines Spielers, die in
                                                                                                             Datenbank hinterlegt sind, an**/
 }

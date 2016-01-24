@@ -651,5 +651,9 @@ public class Spielfeld2 {
         else return 1;
     }
 
+    public int getbrett(int i, int j){
+        return brett[i][j];
+    }
+
 }
 

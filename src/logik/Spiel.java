@@ -12,7 +12,7 @@ public class Spiel {
     private db.spieler.Spieler spieler2;
     private db.spieler.Spieler aktuellerSpieler=spieler1;
     private db.spieler.Spieler KI=new Spieler("Computer");
-    private int Intelligenz_der_KI=1;             // Die Ki kann 4 Stufen haben von 1 bis 4
+    private int Intelligenz_der_KI=2;             // Die Ki kann 4 Stufen haben von 1 bis 4
 
 
     private Spielfeld2 aktuellesSpielfeld=new Spielfeld2();
@@ -20,18 +20,22 @@ public class Spiel {
     private static int anzahl_spielzuege=0;
 
     private boolean sieg=false;
+    private int siegfarbe = 0;
+    private String siegername;
 
 
 
     public Spiel(db.spieler.Spieler spieler1, db.spieler.Spieler spieler2){                /** Spieler Mensch gegen Spieler Mensch  **/
         this.spieler1=spieler1;
         this.spieler2=spieler2;
+//        if (Math.random()<0.5) { aktuellerSpieler=spieler1; } else {aktuellerSpieler=spieler2;}       // Zufall, wer anfaengt
         aktuellerSpieler=spieler1;
 
             }
 
     public Spiel (db.spieler.Spieler spieler1){                /** Spieler Mensch gegen Spieler Computer **/
         this.spieler1=spieler1;
+//        if (Math.random()<0.5) { aktuellerSpieler=spieler1;} else {aktuellerSpieler=KI;}       // Zufall, wer anfaengt
         aktuellerSpieler=spieler1;
         //this.spieler2=KI_1.spielerK;                  /** TO DO **/
     }
@@ -88,14 +92,32 @@ public class Spiel {
         Intelligenz_der_KI = intelligenz_der_KI;
     }
 
-    public boolean getSieg() {
+    public boolean getSieg() {                              // hat jemand gesiegt?
         return sieg;
     }
 
-    public void setSieg(boolean sieg) {
+    public void setSieg(boolean sieg) {                     // setzte, dass jemand gesiegt hat
         this.sieg = sieg;
     }
+    public void setSiegFarbe(int farbe) {
+        this.siegfarbe = farbe;
+    }   // setzt die Siegerfarbe
 
+    public int getSiegfarbe() { return this.siegfarbe;}     // gibt die Farbe des Siegers aus
+
+    public String getSiegername() {         // gibt den Siegernamen als String aus
+        switch(siegfarbe){
+            case 0:
+                siegername = "Niemand";
+                break;
+            case 1:
+                siegername = spieler1.getName();
+                break;
+            case 2:
+                siegername = spieler2.getName();
+        }
+        return siegername;
+    }
 
 
 
@@ -111,4 +133,10 @@ public class Spiel {
     public Spieler getKI() {
         return KI;
     }
+
+    public void replayMatch() {                 // Methode zur Spielwiederholung --> funktioniert noch nicht
+        anzahl_spielzuege=0;
+        aktuellesSpielfeld=new Spielfeld2();
+    }
 }
+

@@ -94,6 +94,7 @@ public class Anmeldescreen extends JPanel {
         Seite1.add(anmeldeButton, ca);
 
 
+
         // Registrieren-Button
         //c.fill = GridBagConstraints.HORIZONTAL;
         ca.weightx = 0;

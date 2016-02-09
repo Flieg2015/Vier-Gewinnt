@@ -234,6 +234,15 @@ public final class GUI1 extends JPanel {
 
         // Action lister reagieren
         // TOdo Einfügen der action listener für die Einfurbuttons
+        spielScreen.getReplayButton().addActionListener(new ActionListener() {          // Methode, um Spielwiederholung zu starten --> funktioniert noch nicht
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                aktuelles_Spiel.replayMatch();
+                changeSpieler();
+                spielfeldAktualisieren();
+            }
+        });
+
 
         for(int i=0;i<7;i++) {
 
@@ -249,11 +258,12 @@ public final class GUI1 extends JPanel {
                     if(aktuelles_Spiel.getAktuellesSpielfeld().pruefe_Steinsetzen(finalI)) {
                         if (aktuelles_Spiel.getAktuellesSpielfeld().pruefe_sieg(aktuelles_Spiel.getAktuellerSpieler().getFarbe())[finalI]) {
                             aktuelles_Spiel.setSieg(true);
+                            aktuelles_Spiel.setSiegFarbe(aktuelles_Spiel.getAktuellerSpieler().getFarbe());
                         }
 
                         aktuelles_Spiel.getAktuellesSpielfeld().setzte_Stein(finalI, aktuelles_Spiel.getAktuellerSpieler().getFarbe());
 
-                        spielfeldAktualsieren();
+                        spielfeldAktualisieren();
 
                     if (!aktuelles_Spiel.getSieg()) {
                         changeSpieler();
@@ -263,17 +273,15 @@ public final class GUI1 extends JPanel {
 
                             if (aktuelles_Spiel.getAktuellesSpielfeld().pruefe_sieg(aktuelles_Spiel.getAktuellerSpieler().getFarbe())[finalI]) {
                                 aktuelles_Spiel.setSieg(true);
+                                aktuelles_Spiel.setSiegFarbe(aktuelles_Spiel.getAktuellerSpieler().getFarbe());
                             }
 
                             aktuelles_Spiel.getAktuellesSpielfeld().setzte_Stein(finalI, aktuelles_Spiel.getAktuellerSpieler().getFarbe());
 
-
                             changeSpieler();
-                        } else {
-
                         }
 
-                        spielfeldAktualsieren();
+                        spielfeldAktualisieren();
                     }
                     }
 
@@ -296,26 +304,28 @@ public final class GUI1 extends JPanel {
 
 
 
-private void spielfeldAktualsieren(){
-    try {Thread.sleep(0);} catch (InterruptedException e){System.out.println("ups, haette man mal kein Delay eingebaut...");}
-
-    if(aktuelles_Spiel.getSieg()){
-        //changeSpieler();
-        spielScreen.getTlabel().setText(aktuelles_Spiel.getAktuellerSpieler().getName()+" is Winner");
-    }
+private void spielfeldAktualisieren(){
 
     for (int i = 0; i <= 6; i++){
-        for(int j = 0;  j <= 5; j++){
-
-
-           if(aktuelles_Spiel.getAktuellesSpielfeld().getbrett(i,j)!=0)
+        for(int j = 5;  j >= 0; j--){
+          if(aktuelles_Spiel.getAktuellesSpielfeld().getbrett(i,j)!=0)
            {
                spielScreen.setStein(i,j,aktuelles_Spiel.getAktuellesSpielfeld().getbrett(i,j));
+               if(j==0)  {spielScreen.sperreButton(i);} else {spielScreen.aktiviereButton(i);}
            }
-
-
         }
     }
+
+    if(aktuelles_Spiel.getSieg()){
+        spielScreen.markiereAktuellerSpieler(aktuelles_Spiel.getSiegfarbe());
+        spielScreen.getTlabel().setText(aktuelles_Spiel.getSiegername() + " is Winner");
+        spielScreen.sperreButtons();
+        spielScreen.aktiviereSpielwiederholungsButton();
+        //    aktuelles_Spiel.replayMatch();
+        //    changeSpieler();
+    }
+    //try {Thread.sleep(250);} catch (InterruptedException e){System.out.println("ups, haette man mal kein Delay eingebaut...");}
+
 }
 
 
@@ -364,6 +374,8 @@ private void spielfeldAktualsieren(){
 
         if (aktuelles_Spiel.getSpieler1()== aktuelles_Spiel.getAktuellerSpieler()){aktuelles_Spiel.setAktuellerSpieler(aktuelles_Spiel.getSpieler2());}
        else {aktuelles_Spiel.setAktuellerSpieler(aktuelles_Spiel.getSpieler1());}
+        spielScreen.markiereAktuellerSpieler(aktuelles_Spiel.getAktuellerSpieler().getFarbe());
+
 
     }
 }

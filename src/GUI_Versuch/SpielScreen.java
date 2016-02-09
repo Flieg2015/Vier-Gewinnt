@@ -33,6 +33,7 @@ public class SpielScreen extends JPanel{
     private ImageIcon Gelb= new ImageIcon("src/pics/gelb1.png");
 
     private JButton[] wurfButton = new JButton[7];
+    private JButton replayButton = new JButton("Nochmal");
 
 
 
@@ -80,6 +81,7 @@ public class SpielScreen extends JPanel{
         cs.gridy = 2;
         cs.insets = new Insets(10, 10, 10, 10);
         Seite1.add(s1, cs);
+        s1.setBackground(Color.red);
 
 
         //s2 = new JLabel("Infos Spieler 2");
@@ -127,6 +129,18 @@ public class SpielScreen extends JPanel{
             Seite1.add(wurfButton[i], cs);
         }
 
+        // Einwurf-Button
+        //replayButton = new JButton("Nochmal!");
+        //c.fill = GridBagConstraints.HORIZONTAL;
+        cs.weightx = 0.0;
+        cs.gridwidth = 1;
+        cs.gridx = 0;
+        cs.gridy = 3;
+        cs.insets = new Insets(10, 10, 10, 10);
+        Seite1.add(replayButton, cs);
+        replayButton.setVisible(false);           // zum Debuggen ausgeschaltet
+
+
 
         //Seite1.add(Feld, java.awt.BorderLayout.CENTER);
 
@@ -135,6 +149,35 @@ public class SpielScreen extends JPanel{
 
 
     }
+
+    public void sperreButtons() {       // sperren der Einwurf-Buttons (bei Sieg angewendet)
+        int i;
+
+        for (i = 0; i <= 6; i++) {
+            wurfButton[i].setEnabled(false);
+        }
+    }
+
+    public void sperreButton(int i) {       // sperren eines Einwurf-Button, wenn Spalte voll
+            wurfButton[i].setEnabled(false);
+            wurfButton[i].setText("Spalte voll");
+    }
+
+    public void aktiviereButton(int i) {       // sperren eines Einwurf-Button, wenn Spalte voll
+        wurfButton[i].setEnabled(true);
+        wurfButton[i].setText("Einwerfen");
+    }
+
+    public void markiereAktuellerSpieler(int i) {       // faerbt den Hintergrund des aktuellen Spielers ein
+        if (i==1){ s1.setBackground(Color.red);s2.setBackground(Color.white);}
+        if (i==2){ s1.setBackground(Color.white);s2.setBackground(Color.yellow);}
+    }
+
+    public void aktiviereSpielwiederholungsButton() {   // macht den Spielwiederholungsbutton sichtbar
+        replayButton.setVisible(true);
+    }
+
+    public JButton getReplayButton(){return replayButton;}
 
     public JPanel getSeite1() {
         return Seite1;
@@ -152,7 +195,7 @@ public class SpielScreen extends JPanel{
 
 
         if(farbe==1)  stein[i][j].setIcon(Rot);
-      if(farbe==0)  stein[i][j].setIcon(Weiss);
+        if(farbe==0)  stein[i][j].setIcon(Weiss);
         if(farbe==2)  stein[i][j].setIcon(Gelb);
 
     }

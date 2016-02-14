@@ -101,14 +101,14 @@ public final class GUI1 extends JPanel {
 
                         //System.out.println(mySpieler.toString());
 
-                        if (spieler.getPasswd().equals(mySpieler.getPasswd()) && aktuelles_Spiel.getSpieler1()==null ) {
+                        if (spieler.getPasswd().equals(mySpieler.getPasswd()) && aktuelles_Spiel.getSpieler1() == null) {
 
                             aktuelles_Spiel.setSpieler1(mySpieler);
                             aktuelles_Spiel.getSpieler1().setFarbe(1);
                             aktuelles_Spiel.setAktuellerSpieler(aktuelles_Spiel.getSpieler1());
 
-                            System.out.print("Spieler 1"+aktuelles_Spiel.getSpieler1().toString());
-                            auswahlScreen.getInfo_spieler().setText("Angemeldet als "+aktuelles_Spiel.getSpieler1().getName()+" dein Score "+aktuelles_Spiel.getSpieler1().getHighscore());
+                            System.out.print("Spieler 1" + aktuelles_Spiel.getSpieler1().toString());
+                            auswahlScreen.getInfo_spieler().setText("Angemeldet als " + aktuelles_Spiel.getSpieler1().getName() + " dein Score " + aktuelles_Spiel.getSpieler1().getHighscore());
 
                             cl.next(panels); // Wechsel auf das nachste Panel                            // spieler1 wird gesetzt als angemeldet
 
@@ -126,11 +126,11 @@ public final class GUI1 extends JPanel {
                             aktuelles_Spiel.setAktuellerSpieler(aktuelles_Spiel.getSpieler1());
 
 
-                            spielScreen.setTextInfo(aktuelles_Spiel.getSpieler1(),aktuelles_Spiel.getSpieler2());
+                            spielScreen.setTextInfo(aktuelles_Spiel.getSpieler1(), aktuelles_Spiel.getSpieler2());
 
                             cl.show(panels, "Spielscreen"); // Wechsel auf das nachste Panel                            // spieler2 wird gesetzt als angemeldet
-                            System.out.print("Spieler 1"+aktuelles_Spiel.getSpieler1().toString());
-                            System.out.print("Spieler 2"+aktuelles_Spiel.getSpieler2().toString());
+                            System.out.print("Spieler 1" + aktuelles_Spiel.getSpieler1().toString());
+                            System.out.print("Spieler 2" + aktuelles_Spiel.getSpieler2().toString());
 
                             anmeldeScreen.getPasswortfeld().setText("");
                             anmeldeScreen.getSpielernamefeld().setText("");
@@ -149,14 +149,7 @@ public final class GUI1 extends JPanel {
             }
 
 
-
-
-
-
-
-
-
-    });
+        });
 
 
         anmeldeScreen.registrierenButton.addActionListener(new ActionListener() {
@@ -241,9 +234,11 @@ public final class GUI1 extends JPanel {
         spielScreen.getReplayButton().addActionListener(new ActionListener() {          // Methode, um Spielwiederholung zu starten --> funktioniert noch nicht
             @Override
             public void actionPerformed(ActionEvent e) {
+                cl.show(panels, "Spielscreen");
                 aktuelles_Spiel.replayMatch();
                 changeSpieler();
                 spielfeldAktualisieren();
+
             }
         });
 
@@ -337,7 +332,7 @@ private void spielfeldAktualisieren(){
           if(aktuelles_Spiel.getAktuellesSpielfeld().getbrett(i,j)!=0)
            {
                spielScreen.setStein(i,j,aktuelles_Spiel.getAktuellesSpielfeld().getbrett(i,j));
-               if(j==0)  {spielScreen.sperreButton(i);} else {spielScreen.aktiviereButton(i);}
+               if(j==0)  {spielScreen.sperreButton(i);} else {spielScreen.aktiviereButton(i);}    // falls letzter Stein eingesetzt wird Button gesperrt
            }
         }
     }
@@ -347,14 +342,23 @@ private void spielfeldAktualisieren(){
         spielScreen.getTlabel().setText(aktuelles_Spiel.getSiegername() + " is Winner");
         spielScreen.sperreButtons();
         //spielScreen.aktiviereSpielwiederholungsButton();
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        cl.show(panels, "Endscreen");
+        //try {
+        //    Thread.sleep(2000);
+        //} catch (InterruptedException e) {
+        //    e.printStackTrace();
+        //}
+        //cl.show(panels, "Endscreen");
         //    aktuelles_Spiel.replayMatch();
         //    changeSpieler();
+
+        for (int i = 0; i <= 6; i++){           // Schleife, um siegreiche Steinkombination(en) zu markieren
+            for(int j = 5;  j >= 0; j--){
+                // Falls aktuelle Position gleich der Siegerfarbe und pruefe_Sieg fuer die Siegfarbe auch wahr ist, dann gehoert Stein zu einer Siegkombination
+                if((aktuelles_Spiel.getAktuellesSpielfeld().getbrett(i,j)==aktuelles_Spiel.getSiegfarbe()) && (aktuelles_Spiel.getAktuellesSpielfeld().pruefe_sieg(aktuelles_Spiel.getSiegfarbe(),i,j))) {
+                    spielScreen.setSteinSieg(i, j, aktuelles_Spiel.getSiegfarbe());
+                }
+            }
+        }
     }
 
 

@@ -31,6 +31,8 @@ public class SpielScreen extends JPanel{
     private ImageIcon Weiss= new ImageIcon("src/pics/weiss1.png");
     private ImageIcon Rot= new ImageIcon("src/pics/rot1.png");
     private ImageIcon Gelb= new ImageIcon("src/pics/gelb1.png");
+    private ImageIcon Rot_Sieg= new ImageIcon("src/pics/rot1_gewinnt1.png");        // ImageIcon fuer roten Sieg
+    private ImageIcon Gelb_Sieg= new ImageIcon("src/pics/gelb1_gewinnt1.png");      // ImageIcon fuer gelben Sieg
 
     private JButton[] wurfButton = new JButton[7];
     private JButton replayButton = new JButton("Nochmal");
@@ -193,12 +195,19 @@ public class SpielScreen extends JPanel{
 
     public void setStein(int i, int j, int farbe) {
 
-
         if(farbe==1)  stein[i][j].setIcon(Rot);
         if(farbe==0)  stein[i][j].setIcon(Weiss);
         if(farbe==2)  stein[i][j].setIcon(Gelb);
 
     }
+
+    public void setSteinSieg(int i, int j, int farbe) {     // Methode zum markieren der siegreichen Steinkombination(en)
+
+        if(farbe==1)  stein[i][j].setIcon(Rot_Sieg);
+        if(farbe==2)  stein[i][j].setIcon(Gelb_Sieg);
+
+    }
+
 
     public JButton getWurfButton(int  i) {return wurfButton[i];
     }

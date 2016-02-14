@@ -562,7 +562,7 @@ public class Spielfeld2 {
         return wert;
     }
 
-    public boolean[] pruefe_sieg (int w){
+    public boolean[] pruefe_sieg (int w){       //Pruefung muss vor dem Steinsetzen erfolgen. (Ueberlegung: Wuerde ich siegen, wenn ich in irgendeine Spalte einen Stein setze?)
 
         boolean[] wert = {false,false,false,false,false,false,false};
 
@@ -571,6 +571,23 @@ public class Spielfeld2 {
         for (ii=0;ii<=6;ii++) {                 //verwendet Methode get_hoehe, die die Zeilennummer an, die in der Spalte als nächstes belegt werden kann.
 
             wert[ii] = pruefe_sieg(w, ii, get_hoehe(ii));
+        }
+
+        return wert;
+    }
+
+    public boolean[] pruefe_sieg_nach_Zug (int w,int spalte){       //Pruefung nach dem Steinsetzen in Spalte
+// FUNKTIONERT NICHT!
+        boolean[] wert = {false,false,false,false,false,false,false};
+
+        int ii;   //Laufparameter
+        int pruefhoehe; // Zelle, die ausgewertet werden soll;
+
+        for (ii=0;ii<=6;ii++) {                 //verwendet Methode get_hoehe, die die Zeilennummer an, die in der Spalte als nächstes belegt werden kann.
+            pruefhoehe=get_hoehe(ii);
+            if (ii==spalte){
+                pruefhoehe=pruefhoehe-1;}
+            wert[ii] = pruefe_sieg(w, ii,pruefhoehe);
         }
 
         return wert;

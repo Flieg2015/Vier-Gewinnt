@@ -32,15 +32,10 @@ public final class GUI1 extends JPanel {
     //private Anmeldescreen anmeldeScreen2= new Anmeldescreen();
     private AuswahlScreen auswahlScreen= new AuswahlScreen();
     private SpielScreen spielScreen=new SpielScreen();
-
-
-
-
+    private Endscreen endScreen = new Endscreen();
 
 
     public void addComponentToPane(Container pane) {
-
-
         pane.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
         c.fill = GridBagConstraints.HORIZONTAL;
@@ -65,6 +60,10 @@ public final class GUI1 extends JPanel {
         panels.add(spielScreen.getSeite1(), "Spielscreen");
         configSpielScreenButton();
         panels.revalidate();
+
+        panels.add(endScreen.getSeite1(), "Endscreen");
+        configEndScreenButton();
+        panels.revalidate();
     }
 
 
@@ -72,12 +71,9 @@ public final class GUI1 extends JPanel {
     //Erstellen des Anmeldescreens
     public void configAnmeldeScreenButton() {
 
-
-
         anmeldeScreen.getAnmeldeButton().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-
 
                 //cl.next(panels); // Test auskommentieren um Funktion wieder herzustellen
 
@@ -143,15 +139,6 @@ public final class GUI1 extends JPanel {
 
 
             }
-
-
-
-
-
-
-
-
-
     });
 
 
@@ -163,9 +150,7 @@ public final class GUI1 extends JPanel {
                 if (ae.getSource() == anmeldeScreen.registrierenButton) {
 
                     Spieler spieler = new Spieler(anmeldeScreen.spielernamefeld.getText(), anmeldeScreen.passwortfeld.getText());
-
                     System.out.println(spieler.toString());
-
 
                     if (spielerDAO.proofByName(spieler.getName()) == false) {
                         spielerDAO.add(spieler);
@@ -173,11 +158,8 @@ public final class GUI1 extends JPanel {
                         anmeldeScreen.ausgabe.setForeground(Color.green);
                         anmeldeScreen.ausgabe.setText(("Sie wurden als neuer Spieler regestriert"));
                     } else {
-
-
                         anmeldeScreen.ausgabe.setForeground(Color.red);
                         anmeldeScreen.ausgabe.setText(("Dieser Name ist schon vergeben"));
-
                     }
                 }
             }
@@ -186,32 +168,22 @@ public final class GUI1 extends JPanel {
 
 }
     private void configAuswahlScreenButton() {
-
-
         auswahlScreen.getPvcButton().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-
-
-
                 aktuelles_Spiel.setSpieler2(aktuelles_Spiel.getKI());
                 aktuelles_Spiel.getSpieler2().setFarbe(2);
                 aktuelles_Spiel.setAktuellerSpieler(aktuelles_Spiel.getSpieler1());
                 panels.updateUI();
-
                 spielScreen.setTextInfo(aktuelles_Spiel.getSpieler1(),aktuelles_Spiel.getSpieler2());
-
                 cl.show(panels, "Spielscreen");
-
             }
         });
 
-
-               auswahlScreen.getBackButton().addActionListener(new ActionListener() {
+        auswahlScreen.getBackButton().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
                 aktuelles_Spiel.setSpieler1(null);
-
                 cl.first(panels);
             }
         });
@@ -221,73 +193,79 @@ public final class GUI1 extends JPanel {
             @Override
             public void actionPerformed(ActionEvent ae) {
                 // setSpieler1(null);
-
                 cl.show(panels, "Anmeldescreen2");
             }
         });
-
-
-
     }
+
+
     //Spielscreen
     private void configSpielScreenButton() {
-
         // Action lister reagieren
-        // TOdo Einfügen der action listener für die Einfurbuttons
+        for (int i = 0; i < 7; i++) {
+        final int finalI = i;
+        spielScreen.getWurfButton(finalI).addActionListener(new ActionListener() {
+          @Override
+          public void actionPerformed(ActionEvent ae) {
+            //System.out.println(aktuelles_Spiel.getSpieler1().toString());
+            //System.out.println(aktuelles_Spiel.getSpieler2().toString());
+            // System.out.println(aktuelles_Spiel.getSpieler1() == aktuelles_Spiel.getAktuellerSpieler());
+            if (aktuelles_Spiel.getSieg() == true) {
+              cl.show(panels, "Endscreen");
+            } else {
+              if (aktuelles_Spiel.getAktuellesSpielfeld().pruefe_Steinsetzen(finalI)) {
+                aktuelles_Spiel.getAktuellesSpielfeld().setzte_Stein(finalI, aktuelles_Spiel.getAktuellerSpieler().getFarbe());
+                  if (aktuelles_Spiel.getAktuellesSpielfeld().pruefe_sieg(aktuelles_Spiel.getAktuellerSpieler().getFarbe())[finalI]) {
+                    aktuelles_Spiel.setSieg(true);
+                                }
+                                changeSpieler();
+                                if (aktuelles_Spiel.getAktuellerSpieler() == aktuelles_Spiel.getKI()) {
+                                    aktuelles_Spiel.getAktuellesSpielfeld().setzte_Stein(aktuelles_Spiel.getAktuellesSpielfeld().entscheide_zug(aktuelles_Spiel.getAktuellerSpieler().getFarbe(), aktuelles_Spiel.getIntelligenz_der_KI()), aktuelles_Spiel.getAktuellerSpieler().getFarbe());
 
-        for(int i=0;i<7;i++) {
+                                    if (aktuelles_Spiel.getAktuellesSpielfeld().pruefe_sieg(aktuelles_Spiel.getAktuellerSpieler().getFarbe())[finalI]) {
+                                        aktuelles_Spiel.setSieg(true);
+                                    }
+                                    changeSpieler();
+                                } else {
 
-            final int finalI = i;
-            spielScreen.getWurfButton(finalI).addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent ae) {
-
-                    //System.out.println(aktuelles_Spiel.getSpieler1().toString());
-                    //System.out.println(aktuelles_Spiel.getSpieler2().toString());
-                   // System.out.println(aktuelles_Spiel.getSpieler1() == aktuelles_Spiel.getAktuellerSpieler());
-
-                    if(aktuelles_Spiel.getAktuellesSpielfeld().pruefe_Steinsetzen(finalI)) {
-
-
-                        aktuelles_Spiel.getAktuellesSpielfeld().setzte_Stein(finalI, aktuelles_Spiel.getAktuellerSpieler().getFarbe());
-
-                        if (aktuelles_Spiel.getAktuellesSpielfeld().pruefe_sieg(aktuelles_Spiel.getAktuellerSpieler().getFarbe())[finalI]) {
-                            aktuelles_Spiel.setSieg(true);
-                        }
-
-                        changeSpieler();
-
-                        if (aktuelles_Spiel.getAktuellerSpieler() == aktuelles_Spiel.getKI()) {
-                            aktuelles_Spiel.getAktuellesSpielfeld().setzte_Stein(aktuelles_Spiel.getAktuellesSpielfeld().entscheide_zug(aktuelles_Spiel.getAktuellerSpieler().getFarbe(), aktuelles_Spiel.getIntelligenz_der_KI()), aktuelles_Spiel.getAktuellerSpieler().getFarbe());
-
-                            if (aktuelles_Spiel.getAktuellesSpielfeld().pruefe_sieg(aktuelles_Spiel.getAktuellerSpieler().getFarbe())[finalI]) {
-                                aktuelles_Spiel.setSieg(true);
+                                }
+                                spielfeldAktualsieren();
+                            } else {
+                                spielScreen.getTlabel().setText("Stein setzen nicht möglich \n " +
+                                        "Bitte nochmal                                 ");
                             }
-                            changeSpieler();
-                        } else {
-
                         }
-                        spielfeldAktualsieren();
-
-                    }
-
-                    else{
-                        spielScreen.getTlabel().setText("Stein setzen nicht möglich \n " +
-                                "Bitte nochmal                                 ");
-                    }
-
-
                 }
-            });
+                });
+            }
 
-        }
-
-
-
-
-        }
+    }
 
 
+    private void configEndScreenButton() {
+        endScreen.getNochmalButton().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+
+                cl.show(panels, "Spielscreen");
+            }
+        });
+
+        endScreen.getModusButton().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                aktuelles_Spiel.setSpieler1(null);
+                cl.show(panels, "Spielauswahl");
+            }
+        });
+
+        endScreen.getEndeButton().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                System.exit(0);
+            }
+        });
+    }
 
 
 private void spielfeldAktualsieren(){
@@ -295,28 +273,21 @@ private void spielfeldAktualsieren(){
     if(aktuelles_Spiel.getSieg()){
         changeSpieler();
         spielScreen.getTlabel().setText(aktuelles_Spiel.getAktuellerSpieler().getName()+" is Winner");
-
     }
 
     for (int i = 0; i <= 6; i++){
         for(int j = 0;  j <= 5; j++){
 
-
            if(aktuelles_Spiel.getAktuellesSpielfeld().getbrett(i,j)!=0)
            {
                spielScreen.setStein(i,j,aktuelles_Spiel.getAktuellesSpielfeld().getbrett(i,j));
            }
-
-
         }
     }
 }
 
 
     private static void createGUI() {
-
-
-
         JFrame frame = new JFrame("Vier Gewinnt");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null); //Zentrieren des Bildschirms
@@ -329,7 +300,7 @@ private void spielfeldAktualsieren(){
         frame.setSize(new Dimension(720, 480));
 
     }
-
+/**
     public void paint(Graphics gr){
         Graphics2D g = (Graphics2D) gr;
         g.setColor(Color.BLUE);
@@ -339,6 +310,9 @@ private void spielfeldAktualsieren(){
         g.drawImage(meinespielsteine.gelb, 120, 0, 50, 50, null);
         g.drawImage(meinespielsteine.weiss, 250, 250, 75, 75, null);
     }
+ */
+
+
     public static void main(String[] args) {
         createGUI();
     }

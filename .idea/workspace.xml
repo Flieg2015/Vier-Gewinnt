@@ -4,7 +4,7 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0472844-2193-4e2d-ac18-721ad096fb5b" name="Default" comment="- Einwurfbuttons angepasst (bei Sieg und voller Spalte deaktivieren)&#10;- Markierung aktueller Spieler hinzugefuegt&#10;- &quot;Nochmal&quot;-Button eingefuegt (kann noch nichts)&#10;- Siegerausgabe korrigiert">
+    <list default="true" id="a0472844-2193-4e2d-ac18-721ad096fb5b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="7c16e96b-fe73-4fef-944d-cb832d5cf785" name="Failed commit: Default" comment="Anmeldescreen jetzt mit gridbaglayout" />
@@ -924,7 +924,7 @@
       <workItem from="1453018381840" duration="5368000" />
       <workItem from="1453653303507" duration="8440000" />
       <workItem from="1455044743106" duration="11504000" />
-      <workItem from="1455442015094" duration="533000" />
+      <workItem from="1455442015094" duration="565000" />
     </task>
     <task id="LOCAL-00001" summary="Cardlayout (sehr einfach gehalten, Card-Wechsel funktioniert)">
       <created>1445789157734</created>
@@ -1004,11 +1004,17 @@
       <option name="project" value="LOCAL" />
       <updated>1455442236292</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="- Einwurfbuttons angepasst (bei Sieg und voller Spalte deaktivieren)&#10;- Markierung aktueller Spieler hinzugefuegt&#10;- &quot;Nochmal&quot;-Button eingefuegt (kann noch nichts)&#10;- Siegerausgabe korrigiert">
+      <created>1455442598649</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1455442598649</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121332000" />
+    <option name="totallyTimeSpent" value="121364000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1080,7 +1086,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="Cardlayout (sehr einfach gehalten, Card-Wechsel funktioniert)" />
     <MESSAGE value="Cardlayout (sehr einfach gehalten, Card-Wechsel funktioniert, mit GridLayout)" />
     <MESSAGE value="Anmeldescreen: Wechsel der Screens und DB-Anbindung (nicht getestet)" />

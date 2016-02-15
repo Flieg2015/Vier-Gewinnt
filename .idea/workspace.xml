@@ -5,10 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0472844-2193-4e2d-ac18-721ad096fb5b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/spiel.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI_Versuch/GUI1.java" afterPath="$PROJECT_DIR$/src/GUI_Versuch/GUI1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/logik/Spiel.java" afterPath="$PROJECT_DIR$/src/logik/Spiel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/db/spieler/Spieler.java" afterPath="$PROJECT_DIR$/src/db/spieler/Spieler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="7c16e96b-fe73-4fef-944d-cb832d5cf785" name="Failed commit: Default" comment="Anmeldescreen jetzt mit gridbaglayout" />
@@ -941,7 +937,7 @@
       <workItem from="1453653303507" duration="8440000" />
       <workItem from="1455044743106" duration="11504000" />
       <workItem from="1455442015094" duration="565000" />
-      <workItem from="1455547394814" duration="5818000" />
+      <workItem from="1455547394814" duration="5925000" />
     </task>
     <task id="LOCAL-00001" summary="Cardlayout (sehr einfach gehalten, Card-Wechsel funktioniert)">
       <created>1445789157734</created>
@@ -1027,11 +1023,17 @@
       <option name="project" value="LOCAL" />
       <updated>1455442598649</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="- KI grad hängt von score ab&#10;- Variable Spielende eingefügt&#10;- unentscieden eingefügt&#10;- Highscore anderung hinzugefügt&#10;- TODO&#10;Aänderung in DB schreiben">
+      <created>1455553318003</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1455553318003</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127182000" />
+    <option name="totallyTimeSpent" value="127289000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1049" y="600" width="1922" height="1055" extended-state="6" />
@@ -1111,7 +1113,8 @@
     <MESSAGE value="Action Listener für Button funktionieren&#10;&#10;Übergabe der Farbe funktioniert" />
     <MESSAGE value="pruefe_siege Reihenfolge geändert&#10;zusaetzlichen Computerzug nach Spielersieg entfernt" />
     <MESSAGE value="- Einwurfbuttons angepasst (bei Sieg und voller Spalte deaktivieren)&#10;- Markierung aktueller Spieler hinzugefuegt&#10;- &quot;Nochmal&quot;-Button eingefuegt (kann noch nichts)&#10;- Siegerausgabe korrigiert" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Einwurfbuttons angepasst (bei Sieg und voller Spalte deaktivieren)&#10;- Markierung aktueller Spieler hinzugefuegt&#10;- &quot;Nochmal&quot;-Button eingefuegt (kann noch nichts)&#10;- Siegerausgabe korrigiert" />
+    <MESSAGE value="- KI grad hängt von score ab&#10;- Variable Spielende eingefügt&#10;- unentscieden eingefügt&#10;- Highscore anderung hinzugefügt&#10;- TODO&#10;Aänderung in DB schreiben" />
+    <option name="LAST_COMMIT_MESSAGE" value="- KI grad hängt von score ab&#10;- Variable Spielende eingefügt&#10;- unentscieden eingefügt&#10;- Highscore anderung hinzugefügt&#10;- TODO&#10;Aänderung in DB schreiben" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

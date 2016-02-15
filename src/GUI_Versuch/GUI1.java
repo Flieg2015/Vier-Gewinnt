@@ -268,7 +268,7 @@ public final class GUI1 extends JPanel {
                                 changeSpieler();
                                 if (aktuelles_Spiel.getAktuellerSpieler() == aktuelles_Spiel.getKI()) {
 
-                                    int finalI = aktuelles_Spiel.getAktuellesSpielfeld().entscheide_zug(aktuelles_Spiel.getAktuellerSpieler().getFarbe(), aktuelles_Spiel.getIntelligenz_der_KI());
+                                    int finalI = aktuelles_Spiel.getAktuellesSpielfeld().entscheide_zug(aktuelles_Spiel.getAktuellerSpieler().getFarbe(), aktuelles_Spiel.getSpieler1().getKILevel());
 
                                     if (aktuelles_Spiel.getAktuellesSpielfeld().pruefe_sieg(aktuelles_Spiel.getAktuellerSpieler().getFarbe())[finalI]) {
                                         aktuelles_Spiel.setSieg(true);
@@ -326,7 +326,7 @@ public final class GUI1 extends JPanel {
 
 
 private void spielfeldAktualisieren(){
-
+int b=0;
     for (int i = 0; i <= 6; i++){
         for(int j = 5;  j >= 0; j--){
           if(aktuelles_Spiel.getAktuellesSpielfeld().getbrett(i,j)!=0)
@@ -334,13 +334,30 @@ private void spielfeldAktualisieren(){
                spielScreen.setStein(i,j,aktuelles_Spiel.getAktuellesSpielfeld().getbrett(i,j));
                if(j==0)  {spielScreen.sperreButton(i);} else {spielScreen.aktiviereButton(i);}    // falls letzter Stein eingesetzt wird Button gesperrt
            }
+          else b++;
+
+
         }
     }
 
+    if(b==0) {
+        aktuelles_Spiel.setSpielende(true);
+        spielScreen.getTlabel().setText("UNENTSCHIEDEN");
+        aktuelles_Spiel.getSpieler1().updateHighscore(2, aktuelles_Spiel.getSpieler2());
+    }
+
+
     if(aktuelles_Spiel.getSieg()){
+        aktuelles_Spiel.setSpielende(true);
         spielScreen.markiereAktuellerSpieler(aktuelles_Spiel.getSiegfarbe());
         spielScreen.getTlabel().setText(aktuelles_Spiel.getSiegername() + " is Winner");
-        spielScreen.sperreButtons();
+
+        aktuelles_Spiel.getSieger().updateHighscore(1,aktuelles_Spiel.getVerlierer());
+        aktuelles_Spiel.getVerlierer().updateHighscore(0,aktuelles_Spiel.getSieger());
+
+
+System.out.println("neuer HIGHSCORE"+aktuelles_Spiel.getSpieler1().getHighscore());
+
         //spielScreen.aktiviereSpielwiederholungsButton();
         //try {
         //    Thread.sleep(2000);
@@ -359,6 +376,10 @@ private void spielfeldAktualisieren(){
                 }
             }
         }
+    }
+
+    if(aktuelles_Spiel.isSpielende()){  // Hier kommt ales rein was Pasiert wenn das Spiel zu ende ist auch bei unentschieden Bestenliste usw.
+        spielScreen.sperreButtons();
     }
 
 

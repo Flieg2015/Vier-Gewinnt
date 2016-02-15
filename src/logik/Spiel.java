@@ -12,7 +12,7 @@ public class Spiel {
     private db.spieler.Spieler spieler2;
     private db.spieler.Spieler aktuellerSpieler=spieler1;
     private db.spieler.Spieler KI=new Spieler("Computer");
-    private int Intelligenz_der_KI=2;             // Die Ki kann 4 Stufen haben von 1 bis 4
+          // Die Ki kann 4 Stufen haben von 1 bis 4
 
 
     private Spielfeld2 aktuellesSpielfeld=new Spielfeld2();
@@ -22,6 +22,7 @@ public class Spiel {
     private boolean sieg=false;
     private int siegfarbe = 0;
     private String siegername;
+    private boolean spielende=false;
 
 
 
@@ -84,13 +85,7 @@ public class Spiel {
 
 
 
-    public int getIntelligenz_der_KI() {
-        return Intelligenz_der_KI;
-    }
 
-    public void setIntelligenz_der_KI(int intelligenz_der_KI) {
-        Intelligenz_der_KI = intelligenz_der_KI;
-    }
 
     public boolean getSieg() {                              // hat jemand gesiegt?
         return sieg;
@@ -119,7 +114,30 @@ public class Spiel {
         return siegername;
     }
 
+    public Spieler getSieger() {         // gibt den Siegernamen als String aus
+        switch(siegfarbe){
 
+           case 1:
+               return spieler1;
+
+            case 2:
+                return spieler2;
+        }
+        return spieler1;
+    }
+
+
+    public Spieler getVerlierer() {         // gibt den Siegernamen als String aus
+        switch(siegfarbe){
+
+            case 2:
+                return spieler1;
+
+            case 1:
+                return spieler2;
+        }
+        return spieler1;
+    }
 
 
     public Spielfeld2 getAktuellesSpielfeld() {
@@ -137,6 +155,14 @@ public class Spiel {
     public void replayMatch() {                 // Methode zur Spielwiederholung --> funktioniert noch nicht
         anzahl_spielzuege=0;
         aktuellesSpielfeld=new Spielfeld2();
+    }
+
+    public boolean isSpielende() {
+        return spielende;
+    }
+
+    public void setSpielende(boolean spielende) {
+        this.spielende = spielende;
     }
 }
 

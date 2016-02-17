@@ -93,6 +93,15 @@ public final class GUI1 extends JPanel {
                     System.out.println(spieler.toString());
 
 
+                    if(aktuelles_Spiel.getSpieler1()!=null && spieler.getName().equals(aktuelles_Spiel.getSpieler1().getName())){
+                        anmeldeScreen.getAusgabe().setText(("Du bist schon angemeldet"));
+
+                    }
+
+                    else{
+
+
+
                     if (spielerDAO.proofByName(spieler.getName()) == false) {
                         anmeldeScreen.getAusgabe().setText(("Benutzername falsch"));
                     } else {
@@ -147,6 +156,9 @@ public final class GUI1 extends JPanel {
 
 
             }
+
+            }
+
 
 
         });
@@ -268,7 +280,9 @@ public final class GUI1 extends JPanel {
                                 changeSpieler();
                                 if (aktuelles_Spiel.getAktuellerSpieler() == aktuelles_Spiel.getKI()) {
 
-                                    int finalI = aktuelles_Spiel.getAktuellesSpielfeld().entscheide_zug(aktuelles_Spiel.getAktuellerSpieler().getFarbe(), aktuelles_Spiel.getSpieler1().getKILevel());
+
+
+                                    int finalI = aktuelles_Spiel.getAktuellesSpielfeld().entscheide_zug(aktuelles_Spiel.getAktuellerSpieler().getFarbe(),aktuelles_Spiel.getSpieler1().getKILevel());
 
                                     if (aktuelles_Spiel.getAktuellesSpielfeld().pruefe_sieg(aktuelles_Spiel.getAktuellerSpieler().getFarbe())[finalI]) {
                                         aktuelles_Spiel.setSieg(true);
@@ -380,6 +394,9 @@ System.out.println("neuer HIGHSCORE"+aktuelles_Spiel.getSpieler1().getHighscore(
 
     if(aktuelles_Spiel.isSpielende()){  // Hier kommt ales rein was Pasiert wenn das Spiel zu ende ist auch bei unentschieden Bestenliste usw.
         spielScreen.sperreButtons();
+        SpielerDAO spielerDAO = SpielerDAOFactory.createSpielerDAO();
+        spielerDAO.update(aktuelles_Spiel.getSieger());
+        spielerDAO.update(aktuelles_Spiel.getVerlierer());
     }
 
 

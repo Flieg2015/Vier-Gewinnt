@@ -76,11 +76,11 @@ public class Spieler {
     }
 
     public int getKILevel(){
-        if(highscore<51) return 0;
-        if(highscore>50 &&  highscore<101) return 1;
-        if(highscore>100 && highscore<151) return 2;
-        if(highscore>200) return 3;
-else return 0;
+        if(highscore<51) return 1;
+        if(highscore>50 &&  highscore<101) return 2;
+        if(highscore>100 && highscore<151) return 3;
+        if(highscore>200) return 4;
+else return 4;
     }
 
     public void updateHighscore(int ausgang, Spieler gegner){ // 0 für verloren 1 für Sieg 2 für unentschieden

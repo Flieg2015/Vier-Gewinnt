@@ -1,10 +1,10 @@
 package GUI_Versuch;
 
+import db.spieler.Spieler;
+
 import javax.swing.*;
 import java.awt.*;
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
+
 
 /**
  * Created by tim on 08.01.16.
@@ -13,28 +13,76 @@ public class SpielScreen extends JPanel{
 
     private Bilder meinespielsteine = new Bilder();
     private JPanel Seite1 = new JPanel(new GridBagLayout());
+    //private JPanel Feld = new JPanel(new GridBagLayout());
+
+
     private JLabel[][] stein = new JLabel[7][6];
+    //private JLabel s1 = new JLabel();
+    //private JLabel s2 = new JLabel();
+
+
+    private JTextArea s1;
+    private JTextArea s2;
+
+
+
+    private JLabel tlabel = new JLabel();
+    private ImageIcon Weiss= new ImageIcon("src/pics/weiss1.png");
+    private ImageIcon Rot= new ImageIcon("src/pics/rot1.png");
+    private ImageIcon Gelb= new ImageIcon("src/pics/gelb1.png");
+    private ImageIcon Rot_Sieg= new ImageIcon("src/pics/rot1_gewinnt1.png");        // ImageIcon fuer roten Sieg
+    private ImageIcon Gelb_Sieg= new ImageIcon("src/pics/gelb1_gewinnt1.png");      // ImageIcon fuer gelben Sieg
+    private JLabel dummy = new JLabel();
 
     private JButton[] wurfButton = new JButton[7];
+    private JButton replayButton = new JButton("Nochmal Spielen");
+    private JButton wechselnButton = new JButton("Spielmodus wechseln");
+
 
     public SpielScreen() {
+        s1 = new JTextArea(5,20);
+        s1.setLineWrap(true); //Zeilenumbruch wird eingeschaltet
+        s1.setWrapStyleWord(true); //Zeilenumbrüche erfolgen nur nach ganzen Wörtern
 
-        GridBagConstraints c = new GridBagConstraints();
-        c.gridx = GridBagConstraints.REMAINDER;
-        c.fill = GridBagConstraints.HORIZONTAL;
+        s2 = new JTextArea(5,20);
+        s2.setLineWrap(true);  //Zeilenumbruch wird eingeschaltet
+        s2.setWrapStyleWord(true); //Zeilenumbrüche erfolgen nur nach ganzen Wörtern
+
+        GridBagConstraints cs = new GridBagConstraints();
+        cs.gridx = GridBagConstraints.REMAINDER;
+        cs.fill = GridBagConstraints.HORIZONTAL;
+
+        tlabel = new JLabel("Vier Gewinnt");
+        tlabel.setFont(new Font("Arial", Font.BOLD, 25));
+        cs.weightx = 0.5;
+        cs.gridwidth = 0;
+        cs.gridx = 4;
+        cs.gridy = 0;
+        cs.insets = new Insets(10, 10, 10, 10);
+        Seite1.add(tlabel, cs);
+
+        // s1 = new JLabel("Infos Spieler 1");
+        cs.weightx = 0.0;
+        cs.gridwidth = 1;
+        cs.gridx = 0;
+        cs.gridy = 2;
+        cs.insets = new Insets(10, 10, 10, 10);
+        Seite1.add(s1, cs);
+        s1.setBackground(Color.red);
 
 
-        //Spielername Label
-        //JLabel Spielfeld = new JLabel("Spielfeld");
-        //c.weightx = 0.0;
-        //c.gridwidth = 0;
-        //c.gridx = 0;
-        //c.gridy = 0;
-        //c.insets = new Insets(0, 0, 0, 0);
-        //Spielscreen.add(Spielfeld, c);
+        //s2 = new JLabel("Infos Spieler 2");
+        cs.weightx = 0.0;
+        cs.gridwidth = 1;
+        cs.gridx = 9;
+        cs.gridy = 2;
+        cs.insets = new Insets(10, 10, 10, 10);
+        Seite1.add(s2, cs);
 
 
 
+
+        //Feld.setBackground(Color.blue);
 
         //Spielstein
         int i = 0;
@@ -45,13 +93,13 @@ public class SpielScreen extends JPanel{
 
 
 
-                stein[i][j] = new JLabel(new ImageIcon("src/pics/rot1.png"));
-                c.weightx = 0.0;
-                c.gridwidth = 1;
-                c.gridx = i;
-                c.gridy = j;
-                c.insets = new Insets(10, 10, 0, 0);
-                Seite1.add(stein[i][j], c);
+               stein[i][j] = new JLabel(Weiss);
+                cs.weightx = 0.0;
+                cs.gridwidth = 1;
+                cs.gridx = i+1;
+                cs.gridy = j+1;
+                cs.insets = new Insets(10, 10, 10, 10);
+                Seite1.add(stein[i][j], cs);
             }
         }
 
@@ -59,20 +107,91 @@ public class SpielScreen extends JPanel{
         i = 0;
         for (i = 0; i <= 6; i++) {
             wurfButton[i] = new JButton("Einwerfen");
-            Seite1.add(wurfButton[i], c);
             //c.fill = GridBagConstraints.HORIZONTAL;
-            c.weightx = 0.0;
-            c.gridwidth = 1;
-            c.gridx = i;
-            c.gridy = 8;
-            c.insets = new Insets(25, 10, 0, 0);
-            Seite1.add(wurfButton[i], c);
+            cs.weightx = 0.0;
+            cs.gridwidth = 1;
+            cs.gridx = i+1;
+            cs.gridy = 8;
+            cs.insets = new Insets(25, 10, 0, 0);
+            Seite1.add(wurfButton[i], cs);
         }
+
+        dummy = new JLabel("");
+        cs.weightx = 0.0;
+        cs.weighty = 0.0;
+        cs.gridx = 0;
+        cs.gridy = 9;
+        cs.insets = new Insets(10, 10, 10, 10);
+        Seite1.add(dummy, cs);
+
+        // Replay-Button
+        replayButton = new JButton("Neues Spiel");
+        cs.fill = GridBagConstraints.BOTH;
+        cs.weightx = 0.0;
+        cs.weighty = 0.0;
+        cs.gridwidth = 2;
+        cs.gridx = 3;
+        cs.gridy = 9;
+        cs.insets = new Insets(10, 10, 10, 10);
+
+        Seite1.add(replayButton, cs);
+        replayButton.setVisible(false);
+
+        // Modus Wechseln Button
+        wechselnButton = new JButton("Neuer Modus");
+        //c.fill = GridBagConstraints.HORIZONTAL;
+        cs.weightx = 0.0;
+        cs.weighty = 0.0;
+        cs.gridwidth = 2;
+        cs.gridx = 5;
+        cs.gridy = 9;
+        cs.insets = new Insets(10, 10, 10, 10);
+        Seite1.add(wechselnButton, cs);
+        wechselnButton.setVisible(false);
+
+
+
+        //Seite1.add(Feld, java.awt.BorderLayout.CENTER);
+
 
 
 
 
     }
+
+    public void sperreButtons() {       // sperren der Einwurf-Buttons (bei Sieg angewendet)
+        int i;
+
+        for (i = 0; i <= 6; i++) {
+            wurfButton[i].setEnabled(false);
+        }
+    }
+
+    public void sperreButton(int i) {       // sperren eines Einwurf-Button, wenn Spalte voll
+            wurfButton[i].setEnabled(false);
+            wurfButton[i].setText("Spalte voll");
+    }
+
+    public void aktiviereButton(int i) {       // sperren eines Einwurf-Button, wenn Spalte voll
+        wurfButton[i].setEnabled(true);
+        wurfButton[i].setText("Einwerfen");
+    }
+
+    public void markiereAktuellerSpieler(int i) {       // faerbt den Hintergrund des aktuellen Spielers ein
+        if (i==1){ s1.setBackground(Color.red);s2.setBackground(Color.white);}
+        if (i==2){ s1.setBackground(Color.white);s2.setBackground(Color.yellow);}
+    }
+
+    public void aktiviereSpielwiederholungsButton() {   // macht den Spielwiederholungsbutton sichtbar
+        replayButton.setVisible(true);
+        wechselnButton.setVisible(true);
+    }
+
+
+
+    public JButton getReplayButton(){return replayButton;}
+    public JButton getWechselnButton(){return wechselnButton;}
+
 
     public JPanel getSeite1() {
         return Seite1;
@@ -82,23 +201,57 @@ public class SpielScreen extends JPanel{
         Seite1 = seite1;
     }
 
-    public JLabel[][] getStein() {
-        return stein;
+    public JLabel getStein(int i, int j) {
+        return stein[i][j];
     }
 
-    public void setStein(JLabel[][] stein) {
-        this.stein = stein;
+    public void setStein(int i, int j, int farbe) {
+
+        if(farbe==1)  stein[i][j].setIcon(Rot);
+        if(farbe==0)  stein[i][j].setIcon(Weiss);
+        if(farbe==2)  stein[i][j].setIcon(Gelb);
+
     }
 
-    public JButton[] getWurfButton() {return wurfButton;
+    public void setSteinSieg(int i, int j, int farbe) {     // Methode zum markieren der siegreichen Steinkombination(en)
+
+        if(farbe==1)  stein[i][j].setIcon(Rot_Sieg);
+        if(farbe==2)  stein[i][j].setIcon(Gelb_Sieg);
+
     }
+
+
+    public JButton getWurfButton(int  i) {return wurfButton[i];
+    }
+
+
+
 
     public void setWurfButton(JButton[] wurfButton) {
         this.wurfButton = wurfButton;
     }
 
+    public void setTextInfo(Spieler spieler1, Spieler spieler2){
 
+        s1.setText("Spieler 1\n " +
+                spieler1.getName()+"\n" +
+                "Dein Score \n" +
+                spieler1.getHighscore());
 
+        s2.setText("Spieler 2\n " +
+                spieler2.getName()+"\n" +
+                "Dein Score \n" +
+                spieler2.getHighscore());
+
+    }
+
+    public JLabel getTlabel() {
+        return tlabel;
+    }
+
+    public void setTlabel(JLabel tlabel) {
+        this.tlabel = tlabel;
+    }
 }
 
 

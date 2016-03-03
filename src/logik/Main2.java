@@ -9,9 +9,13 @@ package logik;
 
 import logik.Spielfeld2;
 
+import java.awt.*;
+
 public class Main2 {
 
     public static void main (String[] args) {
+           Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize(); double width = screenSize.getWidth(); double height = screenSize.getHeight();
+        System.out.println(width + " " + height);
 
         Spielfeld2 spielfeld1 = new Spielfeld2();
         // spielfeld1.ausgeben();
@@ -61,9 +65,15 @@ public class Main2 {
             int spalte_2=spielfeld1.entscheide_zug(aktiver_spieler, 2);
             int spalte_3=spielfeld1.entscheide_zug(aktiver_spieler, 3);
             int spalte=spielfeld1.entscheide_zug(aktiver_spieler, 4);
+
             if (spielfeld1.pruefe_sieg(aktiver_spieler)[spalte]){sieg=true;}
+            System.out.println (spielfeld1.pruefe_sieg(aktiver_spieler)[spalte]);
+
             spielfeld1.setzte_Stein(spalte, aktiver_spieler);
             spielfeld1.ausgeben();
+
+            System.out.println(spielfeld1.pruefe_sieg(aktiver_spieler)[spalte]);
+
             System.out.println(" Case 1 (Zufall): " + spalte_1);     //Gibt die Setzalternativen bei den verschiedenen Fällen an.
             System.out.println(" Case 2 (Gewinnen, Verlieren): " + spalte_2);
             System.out.println(" Case 3 (eigene Bewertung der Spalten): " + spalte_3);
@@ -71,7 +81,7 @@ public class Main2 {
 
 
             if (sieg){System.out.println("Spieler " + aktiver_spieler + " gewinnt!"); break;}
-            try {Thread.sleep(3000);} catch (InterruptedException e){System.out.println("ups");}
+            try {Thread.sleep(2000);} catch (InterruptedException e){System.out.println("ups");}
             aktiver_spieler=spielfeld1.get_gegner(aktiver_spieler);
         }
 

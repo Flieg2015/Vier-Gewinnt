@@ -90,17 +90,17 @@ else return 4;
             if (highscore < 51 && ausgang == 1) highscore = highscore + 5;
             if (highscore > 50 && ausgang == 1 && highscore < 101) highscore = highscore + 10;
             if (highscore > 100 && ausgang == 1 && highscore < 151) highscore = highscore + 15;
-            if (highscore > 200 && ausgang == 1) highscore = highscore + 20;
+            if (highscore > 150 && ausgang == 1) highscore = highscore + 20;
 
             if (highscore < 51 && ausgang == 2) highscore = highscore + 0;
             if (highscore > 50 && ausgang == 2 && highscore < 101) highscore = highscore + 5;
             if (highscore > 100 && ausgang == 2 && highscore < 151) highscore = highscore + 10;
-            if (highscore > 200 && ausgang == 2) highscore = highscore + 15;
+            if (highscore > 150 && ausgang == 2) highscore = highscore + 15;
 
             if (highscore < 51 && ausgang == 0) highscore = highscore - 2;
             if (highscore > 50 && ausgang == 0 && highscore < 101) highscore = highscore - 3;
             if (highscore > 100 && ausgang == 0 && highscore < 151) highscore = highscore - 4;
-            if (highscore > 200 && ausgang == 0) highscore = highscore - 5;
+            if (highscore > 150 && ausgang == 0) highscore = highscore - 5;
         }
         else if (!gegner.getName().equals("Computer") && ausgang==1) {
 

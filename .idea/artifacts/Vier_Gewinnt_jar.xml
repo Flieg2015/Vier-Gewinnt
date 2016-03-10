@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Vier-Gewinnt:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Vier_Gewinnt_jar</output-path>
+    <root id="archive" name="Vier-Gewinnt.jar">
+      <element id="module-output" name="Vier-Gewinnt" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SQLite/connector/sqlite-jdbc-3.8.11.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../mysql-connector-java-5.1.36/mysql-connector-java-5.1.36-bin.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

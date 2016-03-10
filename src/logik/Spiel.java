@@ -154,7 +154,8 @@ public class Spiel {
 
     public void replayMatch() {                 // Methode zur Spielwiederholung --> funktioniert noch nicht
         anzahl_spielzuege=0;
-        aktuellesSpielfeld=new Spielfeld2();
+        aktuellesSpielfeld.loesche_brett();
+
     }
 
     public boolean isSpielende() {

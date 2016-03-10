@@ -33,9 +33,15 @@ public class Spielfeld2 {
         }
     }
 
-    public void loesche_brett (){           // Loescht den aktuellen Brettinhalt
-        brett = new int[spalte][zeile];
-        System.out.println("Spielbrett geloescht");
+    public void loesche_brett () {           // Loescht den aktuellen Brettinhalt
+
+        for (int s = 0; s < spalte; s++) {
+            for (int z = 0; z < zeile; z++) {
+                brett[s][z] = 0;
+            }
+
+            System.out.println("Spielbrett geloescht");
+        }
     }
 
     public void setze_Zufallssteine (int Steinezahl, int Startspieler){      // setzt (Steinezahl) zufaellige Steine, beginnend mit (Startspieler)
@@ -671,6 +677,8 @@ public class Spielfeld2 {
     public int getbrett(int i, int j){
         return brett[i][j];
     }
+
+
 
 }
 

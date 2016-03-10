@@ -1,6 +1,7 @@
 package GUI_Versuch;
 
 import db.spieler.Spieler;
+import logik.Spiel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,7 +10,7 @@ import java.awt.*;
 /**
  * Created by tim on 08.01.16.
  */
-public class SpielScreen extends JPanel{
+public class SpielScreen extends JPanel {
 
     private Bilder meinespielsteine = new Bilder();
     private JPanel Seite1 = new JPanel(new GridBagLayout());
@@ -25,13 +26,12 @@ public class SpielScreen extends JPanel{
     private JTextArea s2;
 
 
-
     private JLabel tlabel = new JLabel();
-    private ImageIcon Weiss= new ImageIcon("src/pics/weiss1.png");
-    private ImageIcon Rot= new ImageIcon("src/pics/rot1.png");
-    private ImageIcon Gelb= new ImageIcon("src/pics/gelb1.png");
-    private ImageIcon Rot_Sieg= new ImageIcon("src/pics/rot1_gewinnt1.png");        // ImageIcon fuer roten Sieg
-    private ImageIcon Gelb_Sieg= new ImageIcon("src/pics/gelb1_gewinnt1.png");      // ImageIcon fuer gelben Sieg
+    private ImageIcon Weiss = new ImageIcon("src/pics/weiss1.png");
+    private ImageIcon Rot = new ImageIcon("src/pics/rot1.png");
+    private ImageIcon Gelb = new ImageIcon("src/pics/gelb1.png");
+    private ImageIcon Rot_Sieg = new ImageIcon("src/pics/rot1_gewinnt1.png");        // ImageIcon fuer roten Sieg
+    private ImageIcon Gelb_Sieg = new ImageIcon("src/pics/gelb1_gewinnt1.png");      // ImageIcon fuer gelben Sieg
     private JLabel dummy = new JLabel();
 
     private JButton[] wurfButton = new JButton[7];
@@ -40,11 +40,11 @@ public class SpielScreen extends JPanel{
 
 
     public SpielScreen() {
-        s1 = new JTextArea(5,20);
+        s1 = new JTextArea(5, 20);
         s1.setLineWrap(true); //Zeilenumbruch wird eingeschaltet
         s1.setWrapStyleWord(true); //Zeilenumbrüche erfolgen nur nach ganzen Wörtern
 
-        s2 = new JTextArea(5,20);
+        s2 = new JTextArea(5, 20);
         s2.setLineWrap(true);  //Zeilenumbruch wird eingeschaltet
         s2.setWrapStyleWord(true); //Zeilenumbrüche erfolgen nur nach ganzen Wörtern
 
@@ -80,8 +80,6 @@ public class SpielScreen extends JPanel{
         Seite1.add(s2, cs);
 
 
-
-
         //Feld.setBackground(Color.blue);
 
         //Spielstein
@@ -92,12 +90,11 @@ public class SpielScreen extends JPanel{
                 //Methode zum Zeichnen der Steine
 
 
-
-               stein[i][j] = new JLabel(Weiss);
+                stein[i][j] = new JLabel(Weiss);
                 cs.weightx = 0.0;
                 cs.gridwidth = 1;
-                cs.gridx = i+1;
-                cs.gridy = j+1;
+                cs.gridx = i + 1;
+                cs.gridy = j + 1;
                 cs.insets = new Insets(10, 10, 10, 10);
                 Seite1.add(stein[i][j], cs);
             }
@@ -110,7 +107,7 @@ public class SpielScreen extends JPanel{
             //c.fill = GridBagConstraints.HORIZONTAL;
             cs.weightx = 0.0;
             cs.gridwidth = 1;
-            cs.gridx = i+1;
+            cs.gridx = i + 1;
             cs.gridy = 8;
             cs.insets = new Insets(25, 10, 0, 0);
             Seite1.add(wurfButton[i], cs);
@@ -150,11 +147,7 @@ public class SpielScreen extends JPanel{
         wechselnButton.setVisible(false);
 
 
-
         //Seite1.add(Feld, java.awt.BorderLayout.CENTER);
-
-
-
 
 
     }
@@ -167,9 +160,18 @@ public class SpielScreen extends JPanel{
         }
     }
 
+    public void entsperreButtons() {       // sperren der Einwurf-Buttons (bei Sieg angewendet)
+        int i;
+
+        for (i = 0; i <= 6; i++) {
+            wurfButton[i].setEnabled(true);
+            wurfButton[i].setText("Einwerfen");
+        }
+    }
+
     public void sperreButton(int i) {       // sperren eines Einwurf-Button, wenn Spalte voll
-            wurfButton[i].setEnabled(false);
-            wurfButton[i].setText("Spalte voll");
+        wurfButton[i].setEnabled(false);
+        wurfButton[i].setText("Spalte voll");
     }
 
     public void aktiviereButton(int i) {       // sperren eines Einwurf-Button, wenn Spalte voll
@@ -178,19 +180,32 @@ public class SpielScreen extends JPanel{
     }
 
     public void markiereAktuellerSpieler(int i) {       // faerbt den Hintergrund des aktuellen Spielers ein
-        if (i==1){ s1.setBackground(Color.red);s2.setBackground(Color.white);}
-        if (i==2){ s1.setBackground(Color.white);s2.setBackground(Color.yellow);}
+        if (i == 1) {
+            s1.setBackground(Color.red);
+            s2.setBackground(Color.white);
+        }
+        if (i == 2) {
+            s1.setBackground(Color.white);
+            s2.setBackground(Color.yellow);
+        }
     }
 
     public void aktiviereSpielwiederholungsButton() {   // macht den Spielwiederholungsbutton sichtbar
         replayButton.setVisible(true);
         wechselnButton.setVisible(true);
     }
+    public void deaktiviereSpielwiederholungsButton() {   // macht den Spielwiederholungsbutton sichtbar
+        replayButton.setVisible(false);
+        wechselnButton.setVisible(false);
+    }
 
+    public JButton getReplayButton() {
+        return replayButton;
+    }
 
-
-    public JButton getReplayButton(){return replayButton;}
-    public JButton getWechselnButton(){return wechselnButton;}
+    public JButton getWechselnButton() {
+        return wechselnButton;
+    }
 
 
     public JPanel getSeite1() {
@@ -207,39 +222,38 @@ public class SpielScreen extends JPanel{
 
     public void setStein(int i, int j, int farbe) {
 
-        if(farbe==1)  stein[i][j].setIcon(Rot);
-        if(farbe==0)  stein[i][j].setIcon(Weiss);
-        if(farbe==2)  stein[i][j].setIcon(Gelb);
+        if (farbe == 1) stein[i][j].setIcon(Rot);
+        if (farbe == 0) stein[i][j].setIcon(Weiss);
+        if (farbe == 2) stein[i][j].setIcon(Gelb);
 
     }
 
     public void setSteinSieg(int i, int j, int farbe) {     // Methode zum markieren der siegreichen Steinkombination(en)
 
-        if(farbe==1)  stein[i][j].setIcon(Rot_Sieg);
-        if(farbe==2)  stein[i][j].setIcon(Gelb_Sieg);
+        if (farbe == 1) stein[i][j].setIcon(Rot_Sieg);
+        if (farbe == 2) stein[i][j].setIcon(Gelb_Sieg);
 
     }
 
 
-    public JButton getWurfButton(int  i) {return wurfButton[i];
+    public JButton getWurfButton(int i) {
+        return wurfButton[i];
     }
-
-
 
 
     public void setWurfButton(JButton[] wurfButton) {
         this.wurfButton = wurfButton;
     }
 
-    public void setTextInfo(Spieler spieler1, Spieler spieler2){
+    public void setTextInfo(Spieler spieler1, Spieler spieler2) {
 
         s1.setText("Spieler 1\n " +
-                spieler1.getName()+"\n" +
+                spieler1.getName() + "\n" +
                 "Dein Score \n" +
                 spieler1.getHighscore());
 
         s2.setText("Spieler 2\n " +
-                spieler2.getName()+"\n" +
+                spieler2.getName() + "\n" +
                 "Dein Score \n" +
                 spieler2.getHighscore());
 
@@ -252,6 +266,9 @@ public class SpielScreen extends JPanel{
     public void setTlabel(JLabel tlabel) {
         this.tlabel = tlabel;
     }
+
 }
+
+
 
 

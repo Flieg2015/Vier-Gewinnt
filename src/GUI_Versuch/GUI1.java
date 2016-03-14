@@ -259,6 +259,22 @@ public final class GUI1 extends JPanel {
             }
         });
 
+        spielScreen.getWechselnButton().addActionListener(new ActionListener() {          // Methode, um Spielwiederholung zu starten --> funktioniert noch nicht
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //cl.show(panels, "Spielscreen");
+                //aktuelles_Spiel.replayMatch();
+                aktuelles_Spiel.setSieg(false);
+                aktuelles_Spiel.setSpielende(false);
+                aktuelles_Spiel.setSpieler2(null);
+                aktuelles_Spiel.getAktuellesSpielfeld().loesche_brett();
+                spielScreen.deaktiviereSpielwiederholungsButton();
+                spielScreen.entsperreButtons();
+                       cl.show(panels, "Spielauswahl");
+                spielfeldAktualisieren();
+            }
+        });
+
 
         for(int i=0;i<7;i++) {
 

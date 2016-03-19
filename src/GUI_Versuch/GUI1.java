@@ -361,6 +361,7 @@ public final class GUI1 extends JPanel {
 
 
 private void spielfeldAktualisieren(){
+    spielScreen.bestenausblenden();
 int b=0;
 
     for (int i = 0; i <= 6; i++){
@@ -433,6 +434,8 @@ System.out.println("neuer HIGHSCORE"+aktuelles_Spiel.getSpieler1().getHighscore(
         spielerDAO.update(aktuelles_Spiel.getSieger());
         spielerDAO.update(aktuelles_Spiel.getVerlierer());
         spielScreen.aktiviereSpielwiederholungsButton();
+
+        spielScreen.bestenlistenangeben(aktuelles_Spiel.getSieger(),aktuelles_Spiel.getVerlierer());
 
 
 

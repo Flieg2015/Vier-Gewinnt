@@ -1,10 +1,14 @@
 package GUI_Versuch;
 
 import db.spieler.Spieler;
+import db.spieler.SpielerDAO;
+import db.spieler.SpielerDAOFactory;
+import db.spieler.SpielerDAOJDBCImpl;
 import logik.Spiel;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 
 /**
@@ -38,6 +42,7 @@ public class SpielScreen extends JPanel {
     private JButton replayButton = new JButton("Nochmal Spielen");
     private JButton wechselnButton = new JButton("Spielmodus wechseln");
 
+    private JTextArea bl = new JTextArea(5, 20);
 
     public SpielScreen() {
         s1 = new JTextArea(5, 20);
@@ -78,6 +83,21 @@ public class SpielScreen extends JPanel {
         cs.gridy = 2;
         cs.insets = new Insets(10, 10, 10, 10);
         Seite1.add(s2, cs);
+
+        // Sestenliste Anordnung
+
+        cs.weightx = 0.0;
+        cs.gridwidth = 1;
+        cs.gridx = 14;
+        cs.gridy = 2;
+        cs.insets = new Insets(10, 10, 10, 10);
+        Seite1.add(bl, cs);
+        //Zeilenumbruch wird eingeschaltet
+        bl.setLineWrap(true);
+
+        //Zeilenumbrüche erfolgen nur nach ganzen Wörtern
+        bl.setWrapStyleWord(true);
+        bl.setVisible(false);
 
 
         //Feld.setBackground(Color.blue);
@@ -194,6 +214,7 @@ public class SpielScreen extends JPanel {
         replayButton.setVisible(true);
         wechselnButton.setVisible(true);
     }
+
     public void deaktiviereSpielwiederholungsButton() {   // macht den Spielwiederholungsbutton sichtbar
         replayButton.setVisible(false);
         wechselnButton.setVisible(false);
@@ -267,8 +288,67 @@ public class SpielScreen extends JPanel {
         this.tlabel = tlabel;
     }
 
+
+    public void aktualsiereBestenliste(Spieler Gewinner, Spieler Verlierer) {
+        SpielerDAO dummy = SpielerDAOFactory.createSpielerDAO();
+String bestenText="Bestenliste\n";
+
+
+        Spieler spieler;
+        ArrayList<String> liste = dummy.getBestenliste();
+
+        boolean gewinnerdabei=false;
+        boolean verlieredabei=false;
+
+
+        while (liste.isEmpty() == false) {
+
+            spieler = dummy.findByName(liste.get(0));
+            liste.remove(0);
+
+            if (spieler.getName().equals(Gewinner.getName()) || Gewinner.getName().equals("Computer")  ) {
+                 gewinnerdabei=true;
+
+            }
+            if (spieler.getName().equals(Gewinner.getName()) ||  Gewinner.getName().equals("Computer")) {
+
+               verlieredabei=true;
+
+            }
+            String einfuegen=spieler.getName()+" " + spieler.getHighscore()+"\n";
+
+            bestenText+=einfuegen;
+
+
+
+        }
+
+        if(gewinnerdabei==false){
+            String einfuegen=Gewinner.getName()+" " + Gewinner.getHighscore()+"\n";
+
+            bestenText+=einfuegen;
+        }
+        if(verlieredabei==false){
+            String einfuegen=Verlierer.getName()+" " + Verlierer.getHighscore()+"\n";
+
+            bestenText+=einfuegen;
+        }
+
+
+bl.setText(bestenText);
+
+    }
+
+    public void bestenlistenangeben(Spieler Gewinner, Spieler Verlierer) {
+       aktualsiereBestenliste(Gewinner, Verlierer);
+bl.setVisible(true);
+
+    }
+
+    public void bestenausblenden() {
+
+        bl.setVisible(false);
+
+    }
+
 }
-
-
-
-

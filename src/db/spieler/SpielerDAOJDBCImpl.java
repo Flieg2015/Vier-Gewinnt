@@ -94,7 +94,7 @@ public class SpielerDAOJDBCImpl implements SpielerDAO {
         ArrayList<Spieler> list = new ArrayList<>();
 
         try {
-            String sql = "SELECT * FROM Spieler;";
+            String sql = "SELECT * FROM Spieler ORDER BY Highscore DESC;";
             stmt = s.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
@@ -143,6 +143,40 @@ public class SpielerDAOJDBCImpl implements SpielerDAO {
         }
     }
 
+    public void changePassword(String name, String Passwd) {
+        Spieler spieler=findByName(name);
+        spieler.setPasswd(Passwd);
+        try {
+            String sql = "UPDATE Spieler SET Passwort = '" + spieler.getPasswd() +
+                    "', Highscore = " + spieler.getHighscore() + " WHERE name = '" + spieler.getName() + "';";
+            stmt = s.createStatement();
+            stmt.executeUpdate(sql);
+            stmt.close();
+
+        } catch (SQLException e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
+    }
+    public void changeName(String name, String NewName) {
+        Spieler spieler=findByName(name);
+        spieler.setName(NewName);
+        try {
+            String sql = "UPDATE Spieler SET Passwort = '" + spieler.getPasswd() +
+                    "', Highscore = " + spieler.getHighscore() + " WHERE name = '" + spieler.getName() + "';";
+            stmt = s.createStatement();
+            stmt.executeUpdate(sql);
+            stmt.close();
+
+        } catch (SQLException e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
+    }
+
+
+
+
     @Override
     public void delete(Spieler spieler) {
         try {
@@ -173,7 +207,7 @@ public class SpielerDAOJDBCImpl implements SpielerDAO {
                 int highscore = rs.getInt("Highscore");
 
                 list.add(name);
-                list.add(Integer.toString(highscore));
+                //list.add(Integer.toString(highscore));
                 i++;
             }
             rs.close();

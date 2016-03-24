@@ -108,6 +108,10 @@ else return 4;
 
 
         }
+        else if (!gegner.getName().equals("Computer") && ausgang==0) {
+
+           highscore=highscore-5;
+        }
 
         if(highscore<0) highscore=0;
 

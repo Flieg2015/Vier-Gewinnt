@@ -12,7 +12,7 @@ public class Spiel {
     private db.spieler.Spieler spieler2;
     private db.spieler.Spieler aktuellerSpieler=spieler1;
     private db.spieler.Spieler KI=new Spieler("Computer");
-          // Die Ki kann 4 Stufen haben von 1 bis 4
+    // Die Ki kann 4 Stufen haben von 1 bis 4
 
 
     private Spielfeld2 aktuellesSpielfeld=new Spielfeld2();
@@ -32,7 +32,7 @@ public class Spiel {
 //        if (Math.random()<0.5) { aktuellerSpieler=spieler1; } else {aktuellerSpieler=spieler2;}       // Zufall, wer anfaengt
         aktuellerSpieler=spieler1;
 
-            }
+    }
 
     public Spiel (db.spieler.Spieler spieler1){                /** Spieler Mensch gegen Spieler Computer **/
         this.spieler1=spieler1;
@@ -117,8 +117,8 @@ public class Spiel {
     public Spieler getSieger() {         // gibt den Siegernamen als String aus
         switch(siegfarbe){
 
-           case 1:
-               return spieler1;
+            case 1:
+                return spieler1;
 
             case 2:
                 return spieler2;
@@ -166,4 +166,3 @@ public class Spiel {
         this.spielende = spielende;
     }
 }
-

@@ -48,7 +48,7 @@ public class Spielfeld2 {
         int ii;
 
         for (ii=0;ii<Steinezahl;ii++){
-           setzte_Stein((int)(Math.random()*7), (ii+Startspieler-1)%2+1);      // Modulo "%"
+            setzte_Stein((int)(Math.random()*7), (ii+Startspieler-1)%2+1);      // Modulo "%"
         }
         System.out.println(Steinezahl + " Zufallssteine hinzugefuegt (Startspieler " + Integer.toString(Startspieler) + ")");
     }
@@ -56,7 +56,7 @@ public class Spielfeld2 {
 
 
     public boolean pruefe_Steinsetzen(int spalte)      /** Die Methode prueft,
-                                                        ob man in der gewuenschten Spalte noch einen Stein setzen kann.**/
+     ob man in der gewuenschten Spalte noch einen Stein setzen kann.**/
     {
 
         return brett[spalte][0] == 0;
@@ -64,9 +64,9 @@ public class Spielfeld2 {
     }
 
     public void setzte_Stein(int spalte, int wert)      /** Diese Methode setzt einen Stein in eine angegebene Spalte,
-                                                            dabei wird zuerst ueberprueft, ob man die diese Spalte noch einen
-                                                            Stein setzen kann. Ist das Setzen nicht moeglich, so wird dies
-                                                            ausgegeben.**/
+     dabei wird zuerst ueberprueft, ob man die diese Spalte noch einen
+     Stein setzen kann. Ist das Setzen nicht moeglich, so wird dies
+     ausgegeben.**/
     {
 
         if(pruefe_Steinsetzen(spalte))
@@ -74,12 +74,12 @@ public class Spielfeld2 {
             int i = zeile - 1;
             while(brett[spalte][i]!=0)
             {
-           i--;
-
-        }
-            brett[spalte][i]=wert;
+                i--;
 
             }
+            brett[spalte][i]=wert;
+
+        }
         else{
             System.out.println("Stein setzen nicht moeglich");
         }
@@ -90,21 +90,17 @@ public class Spielfeld2 {
 
 
     /*public boolean pruefe_sieg_waagrecht(int w, int x, int y) {         // Diese Methode prueft, ob bei der Auswahl eines bestimmten Feldes, als bestimmter Spieler ein Sieg in waagrechter Richtung vorliegt. Es wird hierbei bisher nicht ueberprueft, ob dieses Feld ueberhaupt zum Setzen frei /moeglich ist. Dabei wird nicht gesetzt.
-
         int anzahl=1;
         int schrittweite=x;
-
         while (schrittweite+1<spalte && brett[schrittweite+1][y]==w) {
             anzahl++;
             schrittweite++;
         }
         schrittweite=x;
-
         while (schrittweite-1>=0 && brett[schrittweite-1][y]==w) {
             anzahl++;
             schrittweite--;
         }
-
         if (anzahl>=4) return true;
         else return false;
     } */
@@ -112,31 +108,25 @@ public class Spielfeld2 {
 
 
    /* public boolean pruefe_sieg_senkrecht(int w, int x, int y) {         /** Diese Methode prueft, ob bei der Auswahl eines bestimmten Feldes, als bestimmter Spieler ein Sieg in senkrechter Richtung vorliegt. Es wird hierbei bisher nicht ueberprueft, ob dieses Feld ueberhaupt zum Setzen frei/moeglich ist. Dabei wird nicht gesetzt.
-
         int anzahl=1;
         int schrittweite=y;
-
         while (schrittweite+1<zeile && brett [x][schrittweite+1]==w ) {
             anzahl++;
             schrittweite++;
         }
         schrittweite=y;
-
         while (schrittweite-1>=0 && brett[x][schrittweite-1]==w) {
             anzahl++;
             schrittweite--;
         }
-
         if (anzahl>=4) return true;
         else return false;
     }*/
 
  /*   public boolean pruefe_sieg_diagonal_nach_unten(int w, int x, int y) {   // Diese Methode prueft, ob bei der Auswahl eines bestimmten Feldes, als bestimmter Spieler ein Sieg in diagonaler Richtung, von rechts oben nach links unten, vorliegt. Es wird hierbei bisher nicht ueberprueft, ob dieses Feld ueberhaupt zum Setzen frei/moeglich ist. Dabei wird nicht gesetzt.
-
         int anzahl=1;
         int schrittweiteX=x;
         int schrittweiteY=y;
-
         while ((schrittweiteY+1<zeile || schrittweiteX+1<spalte) && brett [schrittweiteX+1][schrittweiteY+1]==w) {
             anzahl++;
             schrittweiteX++;
@@ -144,23 +134,19 @@ public class Spielfeld2 {
         }
         schrittweiteX=x;
         schrittweiteY=y;
-
         while ((schrittweiteX-1>=0  || schrittweiteY-1>=0) &&  brett[schrittweiteX-1][schrittweiteY-1]==w) {
             anzahl++;
             schrittweiteX--;
             schrittweiteY--;
         }
-
         if (anzahl>=4) return true;
         else return false;
     }*/
 
   /*  public boolean pruefe_sieg_diagonal_nach_oben(int w, int x, int y) {    // Diese Methode prueft, ob bei der Auswahl eines bestimmten Feldes, als bestimmter Spieler ein Sieg in diagonaler Richtung, von rechts unten nach links oben, vorliegt. Es wird hierbei bisher nicht ueberprueft, ob dieses Feld ueberhaupt zum Setzen frei/moeglich ist. Dabei wird nicht gesetzt.
-
         int anzahl=1;
         int schrittweiteX=x;
         int schrittweiteY=y;
-
         while ((schrittweiteY-1>=0 || schrittweiteX+1<spalte) && brett [schrittweiteX+1][schrittweiteY-1]==w) {
             anzahl++;
             schrittweiteX++;
@@ -168,13 +154,11 @@ public class Spielfeld2 {
         }
         schrittweiteX=x;
         schrittweiteY=y;
-
         while ((schrittweiteX-1>=0  || schrittweiteY+1<zeile) && brett[schrittweiteX-1][schrittweiteY+1]==w) {
             anzahl++;
             schrittweiteX--;
             schrittweiteY++;
         }
-
         if (anzahl>=4) return true;
         else return false;
     } */
@@ -318,13 +302,13 @@ public class Spielfeld2 {
 
         switch (typ) {
             case 1:     // waagrecht
-               for(ii=0;ii<6;ii++){
-                   try {
-                       Auswertungsarray[ii]= brett[x+relpos[ii]][y];       // Brettposition vorhanden, Brettwert eingelesen
-                   } catch (IndexOutOfBoundsException e) {                 // Brettposition nicht vorhanden, Programm wuerde abbrechen
-                       Auswertungsarray[ii]=-1;                            // -1 fuer "ausserhalb"
-                   }
-               }
+                for(ii=0;ii<6;ii++){
+                    try {
+                        Auswertungsarray[ii]= brett[x+relpos[ii]][y];       // Brettposition vorhanden, Brettwert eingelesen
+                    } catch (IndexOutOfBoundsException e) {                 // Brettposition nicht vorhanden, Programm wuerde abbrechen
+                        Auswertungsarray[ii]=-1;                            // -1 fuer "ausserhalb"
+                    }
+                }
                 break;
             case 2:     // senkrecht
                 for(ii=0;ii<6;ii++){
@@ -356,47 +340,42 @@ public class Spielfeld2 {
         }
         return Auswertungsarray;
     }
-  public double[] berechne_Zellwerte (int[] Auswertungsarray, int w){
-      double Wert_leer = 0.25;
-      double Wert_aussen = 0;
-      double Wert_fremd = 0;
-      double Wert_eigen = 1;   // muss wegen Siegpruefung 1 sein
-      double[] Zellwerte = new double[Auswertungsarray.length];
-      int ii;
-      
-      for(ii=0;ii<Auswertungsarray.length;ii++){
-          switch (Auswertungsarray[ii]) {
-              case -1:
-                  Zellwerte[ii]=Wert_aussen;
-                  break;
-              case 0:
-                  Zellwerte[ii]=Wert_leer;
-                  break;
-              default:
-                  if (Auswertungsarray[ii]==w){Zellwerte[ii]=Wert_eigen;}
-                  else {Zellwerte[ii]=Wert_fremd;}
-          }
-      }
-      return Zellwerte;
-  }
+    public double[] berechne_Zellwerte (int[] Auswertungsarray, int w){
+        double Wert_leer = 0.25;
+        double Wert_aussen = 0;
+        double Wert_fremd = 0;
+        double Wert_eigen = 1;   // muss wegen Siegpruefung 1 sein
+        double[] Zellwerte = new double[Auswertungsarray.length];
+        int ii;
+
+        for(ii=0;ii<Auswertungsarray.length;ii++){
+            switch (Auswertungsarray[ii]) {
+                case -1:
+                    Zellwerte[ii]=Wert_aussen;
+                    break;
+                case 0:
+                    Zellwerte[ii]=Wert_leer;
+                    break;
+                default:
+                    if (Auswertungsarray[ii]==w){Zellwerte[ii]=Wert_eigen;}
+                    else {Zellwerte[ii]=Wert_fremd;}
+            }
+        }
+        return Zellwerte;
+    }
 
 
 
 
     /*public float bewerte_waagrecht_alt (int w, int x, int y){           // Diese Methode bewertet in waagrechter Richtung.
-
         float waag=0;
-
         if (w==1) {  //Falls der Computer der Spieler mit dem Wert 1 ist
             int anzahl = 1; // anzahl eigene Steine in Vierer
             int schrittweite; // = x-3;
-
             int[] pos_vierer = {x-3, x-2, x-1, x};
             int i_pos_vierer;
-
             for(i_pos_vierer=0; i_pos_vierer<4;i_pos_vierer++) {
                 schrittweite = pos_vierer[i_pos_vierer];
-
                 if (schrittweite < 0 || schrittweite > 6) {  //Falls wir aus dem Spielfeld laufen, dann wird die Gewinnwahrscheinlichkeit nicht groesser.
                 } else {
                     switch (brett[schrittweite][y]) {     // Falls einer der vier betrachteten Werte 2 ist, gib fuer waag 0 aus.
@@ -409,13 +388,9 @@ public class Spielfeld2 {
                     }
                 }
             }
-
             //Hier muss die Methode selbstverstaendlich noch durchgefuehrt werden.
         }
-
-
         return waag;
-
     } **/
     public double bewerte_waagrecht (int w, int x, int y){
         double waag=0;
@@ -540,11 +515,11 @@ public class Spielfeld2 {
 
 
     public double bewerte (int w, int x, int y){               /** Diese Methode bewertet die moeglicherweise ausgewaehlte Spielposition
-                                                                    und gibt einen float-Wert zwischen -1 und 1 zurueck.
-                                                                    Dabei werden die Methoden bewerte_waagrecht(), bewerte_senkrecht(),
-                                                                    ... verwendet.
-                                                                    Es wird hierbei bisher nicht ueberprueft, ob das Feld frei ist
-                                                                    und auch nicht, ob ein Sieg vorliegt. Es wird nicht gesetzt. **/
+     und gibt einen float-Wert zwischen -1 und 1 zurueck.
+     Dabei werden die Methoden bewerte_waagrecht(), bewerte_senkrecht(),
+     ... verwendet.
+     Es wird hierbei bisher nicht ueberprueft, ob das Feld frei ist
+     und auch nicht, ob ein Sieg vorliegt. Es wird nicht gesetzt. **/
         double bew;
 
         bew = bewerte_waagrecht(w, x, y)+ bewerte_senkrecht(w, x, y)+ bewerte_diagonal_nach_rechts_oben(w, x, y)
@@ -554,7 +529,7 @@ public class Spielfeld2 {
         return bew;
     }
 
-       public double[] bewerte (int w){
+    public double[] bewerte (int w){
 
         double[] wert = {-1,-1,-1,-1,-1,-1,-1};
 
@@ -642,8 +617,8 @@ public class Spielfeld2 {
                 beste_spalte=0;
                 double[] bewertungswerte = bewerte(w);
                 for (ii = 0; ii <= 6; ii++) {
-                if (bewertungswerte[ii] > bewertungswerte[beste_spalte])
-                    beste_spalte = ii;
+                    if (bewertungswerte[ii] > bewertungswerte[beste_spalte])
+                        beste_spalte = ii;
                 }
                 break;
 
@@ -681,4 +656,3 @@ public class Spielfeld2 {
 
 
 }
-

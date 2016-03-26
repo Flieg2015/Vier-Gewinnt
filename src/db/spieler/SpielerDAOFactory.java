@@ -6,8 +6,8 @@ package db.spieler;
 public class SpielerDAOFactory {
 
     public static SpielerDAOJDBCImpl createSpielerDAO (){
-        return new SpielerDAOMySql(); //für SQL-Anbindung
-        //return new SpielerDAOSqlite();  //für SQLite-Anbindung
+        //return new SpielerDAOMySql(); //für SQL-Anbindung
+        return new SpielerDAOSqlite();  //für SQLite-Anbindung
     }
 
 }

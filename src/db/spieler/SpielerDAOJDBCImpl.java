@@ -51,7 +51,7 @@ public class SpielerDAOJDBCImpl implements SpielerDAO {
         return spieler;
     }
 
-// methodeprüft ob der Benutzer existiert
+    // methodeprüft ob der Benutzer existiert
     public boolean proofByName(String name_) {
         Spieler spieler = null;
         try {
@@ -223,5 +223,3 @@ public class SpielerDAOJDBCImpl implements SpielerDAO {
 
     }
 }
-
-

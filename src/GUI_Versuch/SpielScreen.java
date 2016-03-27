@@ -158,13 +158,29 @@ public class SpielScreen extends JPanel{
         cs.insets = new Insets(10, 10, 10, 10);
         Seite1.add(dummy1, cs);
 
-        dummy2 = new JLabel("");
+        dummy1 = new JLabel("");
         cs.weightx = 0.0;
         cs.weighty = 0.0;
         cs.gridx = 0;
         cs.gridy = 11;
         cs.insets = new Insets(10, 10, 10, 10);
-        Seite1.add(dummy2, cs);
+        Seite1.add(dummy1, cs);
+
+        dummy1 = new JLabel("");
+        cs.weightx = 0.0;
+        cs.weighty = 0.0;
+        cs.gridx = 0;
+        cs.gridy = 12;
+        cs.insets = new Insets(10, 10, 10, 10);
+        Seite1.add(dummy1, cs);
+
+        dummy1 = new JLabel("");
+        cs.weightx = 0.0;
+        cs.weighty = 0.0;
+        cs.gridx = 0;
+        cs.gridy = 13;
+        cs.insets = new Insets(10, 10, 10, 10);
+        Seite1.add(dummy1, cs);
 
         // Replay-Button
         nochmalButton = new JButton("Neues Spiel");

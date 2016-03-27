@@ -17,7 +17,6 @@ import java.util.ArrayList;
  */
 public class SpielScreen extends JPanel{
 
-    private Bilder meinespielsteine = new Bilder();
     private JPanel Seite1 = new JPanel(new GridBagLayout());
     //private JPanel Feld = new JPanel(new GridBagLayout());
 
@@ -29,23 +28,35 @@ public class SpielScreen extends JPanel{
 
     private JTextArea s1;
     private JTextArea s2;
-
-
-
     private JLabel tlabel = new JLabel();
-    private ImageIcon Weiss= new ImageIcon("src/pics/weiss1.png");
-    private ImageIcon Rot= new ImageIcon("src/pics/rot1.png");
-    private ImageIcon Gelb= new ImageIcon("src/pics/gelb1.png");
-    private ImageIcon Rot_Sieg= new ImageIcon("src/pics/rot1_gewinnt1.png");        // ImageIcon fuer roten Sieg
-    private ImageIcon Gelb_Sieg= new ImageIcon("src/pics/gelb1_gewinnt1.png");      // ImageIcon fuer gelben Sieg
     private JLabel dummy1 = new JLabel();
     private JLabel dummy2 = new JLabel();
-
     private JButton[] wurfButton = new JButton[7];
     private JButton nochmalButton = new JButton("Nochmal Spielen");
     private JButton wechselnButton = new JButton("Spielmodus wechseln");
-
     private JTextArea bl = new JTextArea(5, 20);
+    
+    //Einbinden der Spielsteine
+    URL urlWeiss = getClass().getResource("/GUI_Versuch/pics/weiss1.png");
+    ImageIcon iconWeiss = new ImageIcon(urlWeiss);
+    JLabel weiss = new JLabel(iconWeiss, JLabel.CENTER);
+
+    URL urlRot = getClass().getResource("/GUI_Versuch/pics/rot1.png");
+    ImageIcon iconRot = new ImageIcon(urlRot);
+    JLabel rot = new JLabel(iconRot, JLabel.CENTER);
+
+    URL urlGelb = getClass().getResource("/GUI_Versuch/pics/gelb1.png");
+    ImageIcon iconGelb = new ImageIcon(urlGelb);
+    JLabel gelb = new JLabel(iconGelb, JLabel.CENTER);
+
+    URL urlRotSieg = getClass().getResource("/GUI_Versuch/pics/rot1_gewinnt1.png");
+    ImageIcon iconRotSieg = new ImageIcon(urlRotSieg);
+    JLabel rotSieg = new JLabel(iconRotSieg, JLabel.CENTER);
+
+    URL urlGelbSieg = getClass().getResource("/GUI_Versuch/pics/gelb1_gewinnt1.png");
+    ImageIcon iconGelbSieg = new ImageIcon(urlGelbSieg);
+    JLabel gelbSieg = new JLabel(iconGelbSieg, JLabel.CENTER);
+    
 
 
     public SpielScreen() {
@@ -255,21 +266,20 @@ public class SpielScreen extends JPanel{
         return stein[i][j];
     }
 
-    public void setStein(int i, int j, int farbe) {
+       public void setStein(int i, int j, int farbe) {
 
-        if(farbe==1)  stein[i][j].setIcon(Rot);
-        if(farbe==0)  stein[i][j].setIcon(Weiss);
-        if(farbe==2)  stein[i][j].setIcon(Gelb);
+        if(farbe==1)  stein[i][j].setIcon(iconRot);
+        if(farbe==0)  stein[i][j].setIcon(iconWeiss);
+        if(farbe==2)  stein[i][j].setIcon(iconGelb);
 
     }
 
     public void setSteinSieg(int i, int j, int farbe) {     // Methode zum markieren der siegreichen Steinkombination(en)
 
-        if(farbe==1)  stein[i][j].setIcon(Rot_Sieg);
-        if(farbe==2)  stein[i][j].setIcon(Gelb_Sieg);
+        if(farbe==1)  stein[i][j].setIcon(iconRotSieg);
+        if(farbe==2)  stein[i][j].setIcon(iconGelbSieg);
 
     }
-
 
     public JButton getWurfButton(int  i) {return wurfButton[i];
     }

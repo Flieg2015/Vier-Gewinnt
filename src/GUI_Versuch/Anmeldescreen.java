@@ -6,7 +6,7 @@ import db.spieler.SpielerDAOFactory;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent
+import java.awt.event.ActionEvent;
 import java.net.URL;
 
 /**

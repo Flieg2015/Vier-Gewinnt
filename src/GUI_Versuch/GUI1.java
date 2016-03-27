@@ -27,7 +27,6 @@ public final class GUI1 extends JPanel {
 
     private Spiel aktuelles_Spiel = new Spiel();
     private CardLayout cl=new CardLayout();
-    private Bilder meinespielsteine = new Bilder();
     private JPanel panels= new JPanel(cl);
     private Anmeldescreen anmeldeScreen= new Anmeldescreen();
     //private Anmeldescreen anmeldeScreen2= new Anmeldescreen();
@@ -381,16 +380,6 @@ public final class GUI1 extends JPanel {
 
             System.out.println("neuer HIGHSCORE"+aktuelles_Spiel.getSpieler1().getHighscore());
 
-            //spielScreen.aktiviereSpielwiederholungsButton();
-            //try {
-            //    Thread.sleep(2000);
-            //} catch (InterruptedException e) {
-            //    e.printStackTrace();
-            //}
-            //cl.show(panels, "Endscreen");
-            //    aktuelles_Spiel.replayMatch();
-            //    changeSpieler();
-
             for (int i = 0; i <= 6; i++){           // Schleife, um siegreiche Steinkombination(en) zu markieren
                 for(int j = 5;  j >= 0; j--){
                     // Falls aktuelle Position gleich der Siegerfarbe und pruefe_Sieg fuer die Siegfarbe auch wahr ist, dann gehoert Stein zu einer Siegkombination
@@ -485,17 +474,7 @@ public final class GUI1 extends JPanel {
 
     }
 
-    /**public void paint(Graphics gr){
-     Graphics2D g = (Graphics2D) gr;
-     g.setColor(Color.BLUE);
-     g.fill(g.getClipBounds());
-     g.drawImage(meinespielsteine.rot, 12, 0, 100, 100, null); //Position x,y,Streckung x, Streckung y
-     g.drawImage(meinespielsteine.gelb, 120, 0, 50, 50, null);
-     g.drawImage(meinespielsteine.weiss, 250, 250, 75, 75, null);
-     }
-     */
-
-    public static void main(String[] args) {
+       public static void main(String[] args) {
         createGUI();
     }
 

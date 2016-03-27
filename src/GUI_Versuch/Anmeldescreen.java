@@ -105,7 +105,9 @@ public class Anmeldescreen extends JPanel {
         Seite1.add(registrierenButton, ca);
 
         //Bild auf der rechten Seite
-        bild = new JLabel(new ImageIcon("src/pics/spiel.png"));
+        URL url = getClass().getResource("/GUI_Versuch/pics/spiel.png");
+        ImageIcon icon = new ImageIcon(url);
+        JLabel bild = new JLabel(icon, JLabel.CENTER);
         ca.weightx = 0.5;
         ca.gridwidth = 0;
         ca.gridx = 3;

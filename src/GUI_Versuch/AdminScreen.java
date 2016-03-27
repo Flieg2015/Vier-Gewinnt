@@ -8,18 +8,19 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 
 /**
  * Created by Thomas on 22.02.2016.
  */
-public class AdminScreen extends JPanel implements ActionListener {
+public class AdminScreen extends JPanel implements ActionListener    {
 
     JFrame adminframe = new JFrame();
     JPanel adminSeite = new JPanel(new GridBagLayout());
     JLabel titel = new JLabel("Administrator-Modus");
 
     JLabel spielernameAlt = new JLabel("alter Spielername");
-    JLabel passwortAlt = new JLabel("altes Passwort");
+   // JLabel passwortAlt = new JLabel("altes Passwort");
     //JLabel highscoreAlt = new JLabel("alte Highscore");
     JTextField spielernameFeldAlt = new JTextField();
     JTextField passwortFeldAlt = new JTextField();
@@ -30,7 +31,7 @@ public class AdminScreen extends JPanel implements ActionListener {
     JTextField spielernameFeldNeu = new JTextField();
     JTextField passwortFeldNeu = new JTextField();
     JTextField highscoreFeldNeu = new JTextField();
-    JLabel dummy = new JLabel("Dummy");
+   JTextArea anzeige = new JTextArea(3,20);
 
 
 
@@ -68,7 +69,7 @@ public class AdminScreen extends JPanel implements ActionListener {
         c.insets = new Insets(10, 10, 10, 10);
         c.ipadx = 30;
         adminSeite.add(spielernameAlt, c);
-
+/*
         //Passwort Label
         c.weightx = 0.0;
         c.gridwidth = 1;
@@ -78,7 +79,7 @@ public class AdminScreen extends JPanel implements ActionListener {
         c.ipadx = 30;
         //c.fill = GridBagConstraints.HORIZONTAL;
         adminSeite.add(passwortAlt, c);
-
+*/
         /**
         //Highscore Label
         c.weightx = 0.0;
@@ -102,6 +103,7 @@ public class AdminScreen extends JPanel implements ActionListener {
         adminSeite.add(spielernameFeldAlt, c);
 
         //Passwort Textfeld
+/**
         c.weightx = 0.0;
         c.weighty = 0.0;
         c.gridwidth = 1;
@@ -110,7 +112,7 @@ public class AdminScreen extends JPanel implements ActionListener {
         c.ipadx = 200;
         c.insets = new Insets(10, 10, 10, 10);
         adminSeite.add(passwortFeldAlt, c);
-
+*/
 
 
         /**
@@ -225,28 +227,69 @@ public class AdminScreen extends JPanel implements ActionListener {
         //Dummy
         c.gridx = 0;
         c.gridy = 8;
-        adminSeite.add(dummy, c);
-        dummy.setVisible(false);
+        adminSeite.add(anzeige, c);
+        anzeige.setVisible(false);
 
 
     }
 
 
 
-    public void actionPerformed(ActionEvent evt)
-    {
+    public void actionPerformed(ActionEvent evt) {
+        SpielerDAO spielerDAO = SpielerDAOFactory.createSpielerDAO();
+        Spieler spieler = new Spieler(this.spielernameFeldAlt.getText());
 
-        if(evt.getSource() == this.beendenButton){
+        if (evt.getSource() == this.beendenButton) {
             adminframe.dispose();  //Schließen des HilfeFrames
         }
-        else if(evt.getSource() == this.spielerDatenAendernButton){
-            dummyaendern();
-        }
-        else if (evt.getSource() == this.spielerLoeschenButton){
-           dummyaendern();
-        }
 
+        if (spielerDAO.proofByName(spieler.getName()) == false) {
+            this.anzeigeAendern("Benutzername falsch");
+
+
+        } else {
+
+
+            if (evt.getSource() == this.spielerDatenAendernButton) {
+                spieler=spielerDAO.findByName(spieler.getName());
+                spielerDAO.delete(spieler);                      // Spieler wird aus DB gelöscht
+
+                String ausgabetext="";
+                if(!this.spielernameFeldNeu.getText().equals("") && spielerDAO.proofByName(this.spielernameFeldNeu.getText()) == false){
+                    spieler.setName(this.spielernameFeldNeu.getText());
+
+                   ausgabetext="Spielername auf " + spieler.getName() + " erfolgreich geändert \n";
+                }
+                else{this.anzeigeAendern("neuer Spielername ist leider belegt \n");}
+
+                if(!this.passwortFeldNeu.getText().equals("")){
+                    spieler.setPasswd(this.passwortFeldNeu.getText());
+                    ausgabetext=ausgabetext+("Spielerpasswort auf " + spieler.getPasswd() + " erfolgreich geändert\n");
+                }
+                if(!this.highscoreFeldNeu.getText().equals("")){
+                    int num=spieler.getHighscore();
+                    try {
+                        num = Integer.parseInt(this.highscoreFeldNeu.getText());
+                        ausgabetext=ausgabetext+("Highscore auf "+num+" geändert");
+                    }catch (NumberFormatException eN) {
+                        ausgabetext=("Ihre Eingabe war nicht korrekt! Nur Zahlen");
+                    }
+
+                    spieler.setHighscore(num);
+
+                }
+anzeigeAendern(ausgabetext);
+
+                spielerDAO.add(spieler);       // Spieler wird mit neuen Werten wieder in DB geschrieben
+
+            } else if (evt.getSource() == this.spielerLoeschenButton) {
+                spielerDAO.delete(spieler);
+                this.anzeigeAendern("Spieler " + spieler.getName() + " erfolgreich gelöscht");
+            }
+
+        }
     }
+
 
     public void aktiviereAdminScreen(){
         adminframe.setVisible(true);
@@ -294,8 +337,9 @@ public class AdminScreen extends JPanel implements ActionListener {
 
 
 
-    public void dummyaendern(){
-        dummy.setVisible(true);
+    public void anzeigeAendern(String neuerText){
+        anzeige.setText(neuerText);
+        anzeige.setVisible(true);
     }
 
 

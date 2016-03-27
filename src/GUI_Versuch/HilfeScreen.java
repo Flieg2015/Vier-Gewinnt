@@ -41,7 +41,10 @@ public class HilfeScreen extends JPanel implements ActionListener {
         c.insets = new Insets(25, 25, 25, 25);
         hilfeSeite.add(titel, c);
 
-        regeln = new JLabel(new ImageIcon("src/pics/regeln.png"));
+        //Einbinden des Bildes Info
+        URL url = getClass().getResource("/GUI_Versuch/pics/regeln.png");
+        ImageIcon icon = new ImageIcon(url);
+        JLabel regeln = new JLabel(icon, JLabel.CENTER);
         c.weightx = 0;
         c.gridwidth = 0;
         c.gridx = 0;

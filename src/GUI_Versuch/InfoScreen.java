@@ -44,14 +44,18 @@ public class InfoScreen extends JPanel implements ActionListener {
 
 
 
-        /**regeln = new JLabel(new ImageIcon("src/pics/info.png"));
+        //Einbinden des Bildes Info
+        URL url = getClass().getResource("/GUI_Versuch/pics/info.png");
+        ImageIcon icon = new ImageIcon(url);
+        JLabel info = new JLabel(icon, JLabel.CENTER);
+        //add(info);
         c.weightx = 0;
         c.gridwidth = 0;
         c.gridx = 0;
         c.gridy = 2;
         c.insets = new Insets(10, 10, 10, 10);
-        infoSeite.add(regeln);
-         */
+        infoSeite.add(info);
+
 
         // Hilfe Schliessen Button
         c.weightx = 0.0;

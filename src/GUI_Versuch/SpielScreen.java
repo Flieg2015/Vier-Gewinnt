@@ -10,6 +10,7 @@ import logik.Spiel;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
+import java.net.URL;
 
 
 /**
@@ -126,7 +127,7 @@ public class SpielScreen extends JPanel{
 
 
 
-                stein[i][j] = new JLabel(Weiss);
+                stein[i][j] = new JLabel(iconWeiss);
                 cs.weightx = 0.0;
                 cs.gridwidth = 1;
                 cs.gridx = i+1;

@@ -15,9 +15,9 @@ public class AuswahlScreen extends JPanel {
     JPanel Seite1 = new JPanel(new GridBagLayout());
     JLabel auswahl = new JLabel("Auswahl");
     JLabel info_spieler = new JLabel("Info-Spieler?!?");
-    JButton pvcButton = new JButton("Player vs. Computer");
+    JButton pvcButton = new JButton("Spiel gegen den Computer");
     JButton backButton = new JButton("Abmelden");
-    JButton pvpButton = new JButton("Player vs. Player");
+    JButton pvpButton = new JButton("Spiel gegen einen Mitspieler");
 
     public AuswahlScreen(){
 

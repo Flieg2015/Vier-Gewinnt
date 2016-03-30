@@ -411,9 +411,9 @@ public final class GUI1 extends JPanel {
         JFrame frame = new JFrame("Vier Gewinnt");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.pack();
-        frame.setSize(1080, 800);
-        final Dimension d = Toolkit.getDefaultToolkit().getScreenSize(); //Auslesen des Bildschirms
-        frame.setLocation((int) ((d.getWidth() - frame.getWidth()) / 2), (int) ((d.getHeight() - frame.getHeight()) / 2));
+        frame.setSize( Toolkit.getDefaultToolkit().getScreenSize() );
+        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        frame.setLocationRelativeTo(null);
         frame.setTitle("Vier Gewinnt");
 
 

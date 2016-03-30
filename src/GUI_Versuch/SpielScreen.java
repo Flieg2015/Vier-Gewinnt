@@ -61,6 +61,16 @@ public class SpielScreen extends JPanel{
 
 
     public SpielScreen() {
+        //dynmaisches Setzen der Spielsteingrösse
+        final Dimension d = Toolkit.getDefaultToolkit().getScreenSize(); //Auslesen des Bildschirms
+        int groesse = (int) (((d.getWidth()))/25);
+
+        iconWeiss.setImage(iconWeiss.getImage().getScaledInstance(groesse, groesse, Image.SCALE_DEFAULT));
+        iconRot.setImage(iconRot.getImage().getScaledInstance(groesse, groesse, Image.SCALE_DEFAULT));
+        iconGelb.setImage(iconGelb.getImage().getScaledInstance(groesse, groesse, Image.SCALE_DEFAULT));
+        iconRotSieg.setImage(iconRotSieg.getImage().getScaledInstance(groesse, groesse, Image.SCALE_DEFAULT));
+        iconGelbSieg.setImage(iconGelbSieg.getImage().getScaledInstance(groesse, groesse, Image.SCALE_DEFAULT));
+        
         s1 = new JTextArea(5,20);
         s1.setLineWrap(true); //Zeilenumbruch wird eingeschaltet
         s1.setWrapStyleWord(true); //Zeilenumbrüche erfolgen nur nach ganzen Wörtern

@@ -36,8 +36,8 @@ public class SpielScreen extends JPanel {
     private JButton nochmalButton = new JButton("Nochmal Spielen");
     private JButton wechselnButton = new JButton("Spielmodus wechseln");
     private JTextArea bl = new JTextArea(5, 20);
-    private JLabel zaehler = new JLabel();
-    private int count;
+    //private JLabel zaehler = new JLabel();
+    //private int count;
     private Spiel aktuellesSpiel = new Spiel();
 
 
@@ -101,7 +101,7 @@ public class SpielScreen extends JPanel {
         cs.insets = new Insets(10, 10, 10, 10);
         Seite1.add(tlabel, cs);
 
-
+/**
         //Zaehler
         zaehler.setFont(new Font("Arial", Font.BOLD, 20));
         cs.weightx = 0.0;
@@ -110,6 +110,7 @@ public class SpielScreen extends JPanel {
         cs.gridy = 0;
         cs.insets = new Insets(10, 10, 10, 10);
         Seite1.add(zaehler, cs);
+        */
 
         // s1 = new JLabel("Infos Spieler 1");
         cs.weightx = 0.0;

@@ -14,7 +14,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.util.TimerTask;
 
 
 public final class GUI1 extends JPanel {
@@ -32,9 +32,7 @@ public final class GUI1 extends JPanel {
     //private Anmeldescreen anmeldeScreen2= new Anmeldescreen();
     private AuswahlScreen auswahlScreen= new AuswahlScreen();
     private SpielScreen spielScreen=new SpielScreen();
-    private HilfeScreen hilfescreen = new HilfeScreen();
-    private InfoScreen infoscreen =new InfoScreen();
-
+    private  int count;
 
 
 
@@ -106,57 +104,57 @@ public final class GUI1 extends JPanel {
                             adminscreen.aktiviereAdminScreen();
                         } else {
 
-                        if (spieler.getPasswd().equals(mySpieler.getPasswd()) && aktuelles_Spiel.getSpieler1() == null) {
+                            if (spieler.getPasswd().equals(mySpieler.getPasswd()) && aktuelles_Spiel.getSpieler1() == null) {
 
-                            aktuelles_Spiel.setSpieler1(mySpieler);
-                            aktuelles_Spiel.getSpieler1().setFarbe(1);
-                            aktuelles_Spiel.setAktuellerSpieler(aktuelles_Spiel.getSpieler1());
+                                aktuelles_Spiel.setSpieler1(mySpieler);
+                                aktuelles_Spiel.getSpieler1().setFarbe(1);
+                                aktuelles_Spiel.setAktuellerSpieler(aktuelles_Spiel.getSpieler1());
 
-                            System.out.print("Spieler 1" + aktuelles_Spiel.getSpieler1().toString());
-                            auswahlScreen.getInfo_spieler().setText("Angemeldet als " + aktuelles_Spiel.getSpieler1().getName() + " dein Score " + aktuelles_Spiel.getSpieler1().getHighscore());
+                                System.out.print("Spieler 1" + aktuelles_Spiel.getSpieler1().toString());
+                                auswahlScreen.getInfo_spieler().setText("Angemeldet als " + aktuelles_Spiel.getSpieler1().getName() + " dein Score " + aktuelles_Spiel.getSpieler1().getHighscore());
 
-                            cl.next(panels); // Wechsel auf das nachste Panel                            // spieler1 wird gesetzt als angemeldet
+                                cl.next(panels); // Wechsel auf das nachste Panel                            // spieler1 wird gesetzt als angemeldet
 
-                            anmeldeScreen.getAusgabe().setForeground(Color.green);
-                            //ausgabe.setText(("Anmeldung Erfolgreich"));
-                            anmeldeScreen.getPasswortfeld().setText("");
-                            anmeldeScreen.getSpielernamefeld().setText("");
-                            anmeldeScreen.getAusgabe().setText((""));
-                            anmeldeScreen.getAusgabe().setForeground(Color.red);
-
-
-                        } else if (spieler.getPasswd().equals(mySpieler.getPasswd()) && aktuelles_Spiel.getSpieler2() == null && !aktuelles_Spiel.getSpieler1().equals(mySpieler)) {
-                            aktuelles_Spiel.setSpieler2(mySpieler);
-                            aktuelles_Spiel.getSpieler2().setFarbe(2);
-                            aktuelles_Spiel.setAktuellerSpieler(aktuelles_Spiel.getSpieler1());
+                                anmeldeScreen.getAusgabe().setForeground(Color.green);
+                                //ausgabe.setText(("Anmeldung Erfolgreich"));
+                                anmeldeScreen.getPasswortfeld().setText("");
+                                anmeldeScreen.getSpielernamefeld().setText("");
+                                anmeldeScreen.getAusgabe().setText((""));
+                                anmeldeScreen.getAusgabe().setForeground(Color.red);
 
 
-                            spielScreen.setTextInfo(aktuelles_Spiel.getSpieler1(), aktuelles_Spiel.getSpieler2());
-
-                            cl.show(panels, "Spielscreen"); // Wechsel auf das nachste Panel                            // spieler2 wird gesetzt als angemeldet
-                            System.out.print("Spieler 1" + aktuelles_Spiel.getSpieler1().toString());
-                            System.out.print("Spieler 2" + aktuelles_Spiel.getSpieler2().toString());
-
-                            anmeldeScreen.getPasswortfeld().setText("");
-                            anmeldeScreen.getSpielernamefeld().setText("");
-                            anmeldeScreen.getAusgabe().setText((""));
-                            anmeldeScreen.getAusgabe().setForeground(Color.red);
+                            } else if (spieler.getPasswd().equals(mySpieler.getPasswd()) && aktuelles_Spiel.getSpieler2() == null && !aktuelles_Spiel.getSpieler1().equals(mySpieler)) {
+                                aktuelles_Spiel.setSpieler2(mySpieler);
+                                aktuelles_Spiel.getSpieler2().setFarbe(2);
+                                aktuelles_Spiel.setAktuellerSpieler(aktuelles_Spiel.getSpieler1());
 
 
-                        } else {
-                            anmeldeScreen.getAusgabe().setText(("Passwd falsch"));
+                                spielScreen.setTextInfo(aktuelles_Spiel.getSpieler1(), aktuelles_Spiel.getSpieler2());
+
+                                cl.show(panels, "Spielscreen"); // Wechsel auf das nachste Panel                            // spieler2 wird gesetzt als angemeldet
+                                System.out.print("Spieler 1" + aktuelles_Spiel.getSpieler1().toString());
+                                System.out.print("Spieler 2" + aktuelles_Spiel.getSpieler2().toString());
+
+                                anmeldeScreen.getPasswortfeld().setText("");
+                                anmeldeScreen.getSpielernamefeld().setText("");
+                                anmeldeScreen.getAusgabe().setText((""));
+                                anmeldeScreen.getAusgabe().setForeground(Color.red);
+
+
+                            } else {
+                                anmeldeScreen.getAusgabe().setText(("Passwd falsch"));
+                            }
                         }
+
                     }
+
 
                 }
 
-
             }
 
-        }
 
-
-    });
+        });
 
 
         anmeldeScreen.registrierenButton.addActionListener(new ActionListener() {
@@ -203,9 +201,12 @@ public final class GUI1 extends JPanel {
                 aktuelles_Spiel.setAktuellerSpieler(aktuelles_Spiel.getSpieler1());
                 panels.updateUI();
 
-                spielScreen.setTextInfo(aktuelles_Spiel.getSpieler1(),aktuelles_Spiel.getSpieler2());
+                spielScreen.setTextInfo(aktuelles_Spiel.getSpieler1(), aktuelles_Spiel.getSpieler2());
+
 
                 cl.show(panels, "Spielscreen");
+               setTimer();
+
 
             }
         });
@@ -217,6 +218,7 @@ public final class GUI1 extends JPanel {
                 aktuelles_Spiel.setSpieler1(null);
 
                 cl.first(panels);
+
             }
         });
 
@@ -227,6 +229,8 @@ public final class GUI1 extends JPanel {
                 // setSpieler1(null);
 
                 cl.show(panels, "Anmeldescreen2");
+
+
             }
         });
 
@@ -333,6 +337,7 @@ public final class GUI1 extends JPanel {
 
     private void spielfeldAktualisieren(){
         spielScreen.bestenausblenden();
+        setTimer();
         int b=0;
 
         for (int i = 0; i <= 6; i++){
@@ -340,6 +345,7 @@ public final class GUI1 extends JPanel {
                 if(aktuelles_Spiel.getAktuellesSpielfeld().getbrett(i,j)==0)
                 {
                     spielScreen.setStein(i,j,0);
+
 
                 }
 
@@ -403,19 +409,72 @@ public final class GUI1 extends JPanel {
 
 
         }
-        spielScreen.setTextInfo(aktuelles_Spiel.getSpieler1(),aktuelles_Spiel.getSpieler2());
+        spielScreen.setTextInfo(aktuelles_Spiel.getSpieler1(), aktuelles_Spiel.getSpieler2());
 
     }
+
+    public void setTimer() {
+        count = 60;
+        java.util.Timer timer = new java.util.Timer();
+        TimerTask task = new TimerTask() {
+            @Override
+            public void run() {
+                spielScreen.setZaehler(count);
+                repaint();
+                if (aktuelles_Spiel.isSpielende() == false) {
+                    if (count > 0)
+                        count--;
+                    if (count == 0) {
+                        aktuelles_Spiel.setSpielende(true);
+                        spielScreen.aktiviereSpielwiederholungsButton();
+                        spielScreen.sperreButtons();
+                        spielScreen.getTlabel().setText("Das Spiel wurde nicht beendet!");
+                        //Anbindung an DB
+                    }
+
+
+
+                } else {
+                timer.cancel();
+                }
+            }
+        };
+        timer.schedule(task, 0, 1000);
+    }
+
+
+    public Spiel getAktuelles_Spiel() {
+        return aktuelles_Spiel;
+    }
+
+    public void setAktuelles_Spiel(Spiel aktuelles_Spiel) {
+        this.aktuelles_Spiel = aktuelles_Spiel;
+    }
+
+    public  void changeSpieler() {
+        // if (spieler1.equals(aktuellerSpieler)){aktuellerSpieler=spieler2;}
+        // if (spieler2.equals(aktuellerSpieler)){aktuellerSpieler=spieler1;}
+
+        if (aktuelles_Spiel.getSpieler1()== aktuelles_Spiel.getAktuellerSpieler()){aktuelles_Spiel.setAktuellerSpieler(aktuelles_Spiel.getSpieler2());}
+        else {aktuelles_Spiel.setAktuellerSpieler(aktuelles_Spiel.getSpieler1());}
+        spielScreen.markiereAktuellerSpieler(aktuelles_Spiel.getAktuellerSpieler().getFarbe());
+
+
+    }
+
+
 
     private static void createGUI() {
         JFrame frame = new JFrame("Vier Gewinnt");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.pack();
-        frame.setSize( Toolkit.getDefaultToolkit().getScreenSize() );
+
+        frame.setSize(Toolkit.getDefaultToolkit().getScreenSize());
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.setLocationRelativeTo(null);
-        frame.setTitle("Vier Gewinnt");
 
+
+        frame.setTitle("Vier Gewinnt");
 
 
         //Erzeugen der Menubar
@@ -462,39 +521,18 @@ public final class GUI1 extends JPanel {
         );
 
 
-
-
-
-
         GUI1 contentPane = new GUI1();
         contentPane.addComponentToPane(frame.getContentPane());
         frame.setVisible(true);
         frame.setLayout(null);
-
-
     }
 
-       public static void main(String[] args) {
+
+
+
+
+
+    public static void main(String[] args) {
         createGUI();
-    }
-
-
-    public Spiel getAktuelles_Spiel() {
-        return aktuelles_Spiel;
-    }
-
-    public void setAktuelles_Spiel(Spiel aktuelles_Spiel) {
-        this.aktuelles_Spiel = aktuelles_Spiel;
-    }
-
-    public  void changeSpieler() {
-        // if (spieler1.equals(aktuellerSpieler)){aktuellerSpieler=spieler2;}
-        // if (spieler2.equals(aktuellerSpieler)){aktuellerSpieler=spieler1;}
-
-        if (aktuelles_Spiel.getSpieler1()== aktuelles_Spiel.getAktuellerSpieler()){aktuelles_Spiel.setAktuellerSpieler(aktuelles_Spiel.getSpieler2());}
-        else {aktuelles_Spiel.setAktuellerSpieler(aktuelles_Spiel.getSpieler1());}
-        spielScreen.markiereAktuellerSpieler(aktuelles_Spiel.getAktuellerSpieler().getFarbe());
-
-
     }
 }

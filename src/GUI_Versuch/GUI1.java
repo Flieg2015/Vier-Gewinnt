@@ -205,7 +205,7 @@ public final class GUI1 extends JPanel {
 
 
                 cl.show(panels, "Spielscreen");
-               setTimer();
+               //setTimer();
 
 
             }
@@ -337,7 +337,7 @@ public final class GUI1 extends JPanel {
 
     private void spielfeldAktualisieren(){
         spielScreen.bestenausblenden();
-        setTimer();
+        //setTimer();
         int b=0;
 
         for (int i = 0; i <= 6; i++){
@@ -413,7 +413,7 @@ public final class GUI1 extends JPanel {
 
     }
 
-    public void setTimer() {
+    /**public void setTimer() {
         count = 60;
         java.util.Timer timer = new java.util.Timer();
         TimerTask task = new TimerTask() {
@@ -441,6 +441,7 @@ public final class GUI1 extends JPanel {
         };
         timer.schedule(task, 0, 1000);
     }
+    */
 
 
     public Spiel getAktuelles_Spiel() {

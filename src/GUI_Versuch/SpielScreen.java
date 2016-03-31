@@ -3,20 +3,21 @@ package GUI_Versuch;
 import db.spieler.Spieler;
 import db.spieler.SpielerDAO;
 import db.spieler.SpielerDAOFactory;
-import db.spieler.SpielerDAOJDBCImpl;
 import logik.Spiel;
 
-
+;
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.TimerTask;
 
 
 /**
  * Created by tim on 08.01.16.
  */
-public class SpielScreen extends JPanel{
+public class SpielScreen extends JPanel {
+
 
     private JPanel Seite1 = new JPanel(new GridBagLayout());
     //private JPanel Feld = new JPanel(new GridBagLayout());
@@ -31,12 +32,15 @@ public class SpielScreen extends JPanel{
     private JTextArea s2;
     private JLabel tlabel = new JLabel();
     private JLabel dummy1 = new JLabel();
-    private JLabel dummy2 = new JLabel();
     private JButton[] wurfButton = new JButton[7];
     private JButton nochmalButton = new JButton("Nochmal Spielen");
     private JButton wechselnButton = new JButton("Spielmodus wechseln");
     private JTextArea bl = new JTextArea(5, 20);
-    
+    private JLabel zaehler = new JLabel();
+    private int count;
+    private Spiel aktuellesSpiel = new Spiel();
+
+
     //Einbinden der Spielsteine
     URL urlWeiss = getClass().getResource("/GUI_Versuch/pics/weiss1.png");
     ImageIcon iconWeiss = new ImageIcon(urlWeiss);
@@ -57,23 +61,26 @@ public class SpielScreen extends JPanel{
     URL urlGelbSieg = getClass().getResource("/GUI_Versuch/pics/gelb1_gewinnt1.png");
     ImageIcon iconGelbSieg = new ImageIcon(urlGelbSieg);
     JLabel gelbSieg = new JLabel(iconGelbSieg, JLabel.CENTER);
-    
+
 
 
     public SpielScreen() {
-        //dynmaisches Setzen der Spielsteingrösse
         final Dimension d = Toolkit.getDefaultToolkit().getScreenSize(); //Auslesen des Bildschirms
-        int groesse = (int) (((d.getWidth()))/25);
+        int groesse = (int) (((d.getWidth()))/22);
 
         iconWeiss.setImage(iconWeiss.getImage().getScaledInstance(groesse, groesse, Image.SCALE_DEFAULT));
         iconRot.setImage(iconRot.getImage().getScaledInstance(groesse, groesse, Image.SCALE_DEFAULT));
         iconGelb.setImage(iconGelb.getImage().getScaledInstance(groesse, groesse, Image.SCALE_DEFAULT));
         iconRotSieg.setImage(iconRotSieg.getImage().getScaledInstance(groesse, groesse, Image.SCALE_DEFAULT));
         iconGelbSieg.setImage(iconGelbSieg.getImage().getScaledInstance(groesse, groesse, Image.SCALE_DEFAULT));
-        
+
+
         s1 = new JTextArea(5,20);
         s1.setLineWrap(true); //Zeilenumbruch wird eingeschaltet
         s1.setWrapStyleWord(true); //Zeilenumbrüche erfolgen nur nach ganzen Wörtern
+
+
+
 
         s2 = new JTextArea(5,20);
         s2.setLineWrap(true);  //Zeilenumbruch wird eingeschaltet
@@ -83,14 +90,26 @@ public class SpielScreen extends JPanel{
         cs.gridx = GridBagConstraints.REMAINDER;
         cs.fill = GridBagConstraints.HORIZONTAL;
 
+
+
         tlabel = new JLabel("Vier Gewinnt");
         tlabel.setFont(new Font("Arial", Font.BOLD, 25));
         cs.weightx = 0.5;
         cs.gridwidth = 0;
-        cs.gridx = 4;
+        cs.gridx = 0;
         cs.gridy = 0;
         cs.insets = new Insets(10, 10, 10, 10);
         Seite1.add(tlabel, cs);
+
+
+        //Zaehler
+        zaehler.setFont(new Font("Arial", Font.BOLD, 20));
+        cs.weightx = 0.0;
+        cs.gridwidth = 3;
+        cs.gridx = 4;
+        cs.gridy = 0;
+        cs.insets = new Insets(10, 10, 10, 10);
+        Seite1.add(zaehler, cs);
 
         // s1 = new JLabel("Infos Spieler 1");
         cs.weightx = 0.0;
@@ -136,7 +155,6 @@ public class SpielScreen extends JPanel{
                 //Methode zum Zeichnen der Steine
 
 
-
                 stein[i][j] = new JLabel(iconWeiss);
                 cs.weightx = 0.0;
                 cs.gridwidth = 1;
@@ -164,15 +182,16 @@ public class SpielScreen extends JPanel{
         cs.weightx = 0.0;
         cs.weighty = 0.0;
         cs.gridx = 0;
-        cs.gridy = 10;
+        cs.gridy = 9;
         cs.insets = new Insets(10, 10, 10, 10);
         Seite1.add(dummy1, cs);
+
 
         dummy1 = new JLabel("");
         cs.weightx = 0.0;
         cs.weighty = 0.0;
         cs.gridx = 0;
-        cs.gridy = 11;
+        cs.gridy = 10;
         cs.insets = new Insets(10, 10, 10, 10);
         Seite1.add(dummy1, cs);
 
@@ -191,6 +210,7 @@ public class SpielScreen extends JPanel{
         cs.gridy = 13;
         cs.insets = new Insets(10, 10, 10, 10);
         Seite1.add(dummy1, cs);
+
 
         // Replay-Button
         nochmalButton = new JButton("Neues Spiel");
@@ -219,7 +239,6 @@ public class SpielScreen extends JPanel{
 
 
 
-        //Seite1.add(Feld, java.awt.BorderLayout.CENTER);
 
 
 
@@ -293,7 +312,7 @@ public class SpielScreen extends JPanel{
         return stein[i][j];
     }
 
-       public void setStein(int i, int j, int farbe) {
+    public void setStein(int i, int j, int farbe) {
 
         if(farbe==1)  stein[i][j].setIcon(iconRot);
         if(farbe==0)  stein[i][j].setIcon(iconWeiss);
@@ -310,6 +329,7 @@ public class SpielScreen extends JPanel{
 
     public JButton getWurfButton(int  i) {return wurfButton[i];
     }
+
 
 
 
@@ -403,4 +423,8 @@ public class SpielScreen extends JPanel{
 
     }
 
+    public void setZaehler(int count) {
+        this.count = count;
+        zaehler.setText("Verbleibende Zeit: " + count);
+    }
 }

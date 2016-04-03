@@ -4,11 +4,9 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0472844-2193-4e2d-ac18-721ad096fb5b" name="Default" comment="Layout SpielScreen angepasst">
-      <change type="DELETED" beforePath="C:\Users\Cornelia\IdeaProjects\Vier-Gewinnt\src\db\Spieler\SpielerDAOSqlite" afterPath="" />
+    <list default="true" id="a0472844-2193-4e2d-ac18-721ad096fb5b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/spieler/spieler.s3db" afterPath="$PROJECT_DIR$/db/spieler/spieler.s3db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI_Versuch/GUI1.java" afterPath="$PROJECT_DIR$/src/GUI_Versuch/GUI1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI_Versuch/SpielScreen.java" afterPath="$PROJECT_DIR$/src/GUI_Versuch/SpielScreen.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="7c16e96b-fe73-4fef-944d-cb832d5cf785" name="Failed commit: Default" comment="Anmeldescreen jetzt mit gridbaglayout" />
@@ -50,10 +48,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SpielScreen.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SpielScreen.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI_Versuch/SpielScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.61445785">
+            <state vertical-scroll-proportion="0.0">
               <caret line="218" column="0" selection-start-line="218" selection-start-column="0" selection-end-line="218" selection-end-column="0" />
               <folding>
                 <element signature="e#9216#9217#0" expanded="true" />
@@ -73,6 +71,13 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="spiel.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI_Versuch/pics/spiel.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="AdminScreen.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI_Versuch/AdminScreen.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -85,11 +90,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GUI1.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GUI1.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GUI_Versuch/GUI1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="406" column="11" selection-start-line="406" selection-start-column="11" selection-end-line="406" selection-end-column="11" />
+            <state vertical-scroll-proportion="0.16666667">
+              <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -225,6 +230,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="Flieg2015 &lt;timmy2525@web.de&gt;" />
         <option value="Thomas &lt;thomas_ludwig@live.de&gt;" />
         <option value="Thomas &lt;thomas_ludwi&gt;" />
         <option value="Tim Steuer &lt;timmotios@gmail.com&gt;" />
@@ -291,8 +297,8 @@
         <option value="$PROJECT_DIR$/src/GUI_Versuch/Infoscreen.java" />
         <option value="$PROJECT_DIR$/src/db/spieler/SpielerDAOMySql.java" />
         <option value="$PROJECT_DIR$/src/GUI_Versuch/AdminScreen.java" />
-        <option value="$PROJECT_DIR$/src/GUI_Versuch/GUI1.java" />
         <option value="$PROJECT_DIR$/src/GUI_Versuch/SpielScreen.java" />
+        <option value="$PROJECT_DIR$/src/GUI_Versuch/GUI1.java" />
       </list>
     </option>
   </component>
@@ -386,6 +392,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="GUI_Versuch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Vier-Gewinnt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Vier-Gewinnt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GUI_Versuch" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pics" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1047,7 +1075,7 @@
       <workItem from="1459093901530" duration="360000" />
       <workItem from="1459094394652" duration="24000" />
       <workItem from="1459321157977" duration="595000" />
-      <workItem from="1459683430967" duration="3316000" />
+      <workItem from="1459683430967" duration="8227000" />
     </task>
     <task id="LOCAL-00001" summary="Cardlayout (sehr einfach gehalten, Card-Wechsel funktioniert)">
       <created>1445789157734</created>
@@ -1163,11 +1191,17 @@
       <option name="project" value="LOCAL" />
       <updated>1457980901610</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Layout SpielScreen angepasst">
+      <created>1459686998522</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1459686998522</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="177880000" />
+    <option name="totallyTimeSpent" value="182791000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1175,14 +1209,14 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31862745" sideWeight="0.3880484" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31862745" sideWeight="0.37897125" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14052288" sideWeight="0.5695915" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14052288" sideWeight="0.5771558" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30392158" sideWeight="0.43721634" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14052288" sideWeight="0.43040848" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14052288" sideWeight="0.42284417" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1732224" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1192,7 +1226,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2369281" sideWeight="0.82375187" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45751634" sideWeight="0.81467474" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1233,7 +1267,8 @@
     <MESSAGE value="1) Sprache in der GUI angepasst&#10;2) Endscreen entfern&#10;3) Buttons im Spielfeld sollten nun richtig angezeigt werden&#10;4) Bildschirm zu den Infos erscheint (incl. Bild und SchliessenButton)&#10;5) Bildschirm zur Anleitung erscheint (incl. Bild und SchliessenButton)&#10;6) Admin-Modus: Bildschirm erscheint -&gt; Benutzername Admin und Passwort Admin(!) müssen im Anmeldebildschirm eingegeben werden, Layout vorerst fertig wenn auch nicht schön, Action-Event-Listener sind fertig)&#10;&#10;TODO:&#10;Anbindung der Buttons im Adminmodus an die DB (da wollte ich gerade nicht rumpfuschen)&#10;anderen Anbindung der Bilder&#10;&#10;" />
     <MESSAGE value="1) Sprache in der GUI angepasst&#10;2) Infoscreen mit Bild erscheint und Button zum schließen des Screens&#10;3) AnleitungScreen mit Bild und Button&#10;4) Endscreen entfernt und ActionListener angepasst&#10;5) Buttons im Spielfeld sollten nun richrig erscheindn&#10;6) Admin-Screen:&#10;    erscheint nach Eingabe des Benutzernamens &quot;Admin&quot; und des Passwortes &quot;Admin&quot; automatisch&#10;    Layout soweit fertig (wenn auch nicht hübsch)&#10;    Actions-Event-Listener fertig (noch ein Dummy für manche Buttons)&#10;    &#10; TODO&#10; DB-Anbindung des Admin-Moduses (dazu bin ich noch nicht gekommen)&#10; anderes Einfügen der Bilder" />
     <MESSAGE value="Änderungen&#10;1) Endscreen entfernt und ActionListener angepasst&#10;2) Infoscreen und Anleitungsscreen funktionieren&#10;3) Buttons im Spielfeld sollten jetzt richtig angezeigt werden&#10;5) Admin-Modus&#10;   Screen wird geöffnet, wenn man als Benutzername und Passwort &quot;Admin&quot; eingibt&#10;   Layout soweit fertig (wenn auch nicht hübsch)&#10;   ActionEventListener sind fertig jedoch nicht alle Buttons angebunden&#10;   &#10;TODO&#10;DB-Anbindung des Admin-Modus&#10;anderen Einbindung der Bilder" />
-    <option name="LAST_COMMIT_MESSAGE" value="Änderungen&#10;1) Endscreen entfernt und ActionListener angepasst&#10;2) Infoscreen und Anleitungsscreen funktionieren&#10;3) Buttons im Spielfeld sollten jetzt richtig angezeigt werden&#10;5) Admin-Modus&#10;   Screen wird geöffnet, wenn man als Benutzername und Passwort &quot;Admin&quot; eingibt&#10;   Layout soweit fertig (wenn auch nicht hübsch)&#10;   ActionEventListener sind fertig jedoch nicht alle Buttons angebunden&#10;   &#10;TODO&#10;DB-Anbindung des Admin-Modus&#10;anderen Einbindung der Bilder" />
+    <MESSAGE value="Layout SpielScreen angepasst" />
+    <option name="LAST_COMMIT_MESSAGE" value="Layout SpielScreen angepasst" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1269,7 +1304,7 @@
           <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="25" />
+      <option name="time" value="28" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1278,50 +1313,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/GUI_Versuch/InfoScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI_Versuch/AuswahlScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="20" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#2162#2163#0" expanded="false" />
-            <element signature="e#2191#2192#0" expanded="false" />
-            <element signature="e#2235#2236#0" expanded="false" />
-            <element signature="e#2266#2267#0" expanded="false" />
-            <element signature="e#2300#2301#0" expanded="false" />
-            <element signature="e#2330#2331#0" expanded="false" />
-            <element signature="e#2376#2377#0" expanded="false" />
-            <element signature="e#2414#2415#0" expanded="false" />
-            <element signature="e#2453#2454#0" expanded="false" />
-            <element signature="e#2488#2489#0" expanded="false" />
-            <element signature="e#2544#2545#0" expanded="false" />
-            <element signature="e#2592#2593#0" expanded="false" />
-            <element signature="e#2629#2630#0" expanded="false" />
-            <element signature="e#2661#2662#0" expanded="false" />
-            <element signature="e#2712#2713#0" expanded="false" />
-            <element signature="e#2754#2755#0" expanded="false" />
-            <element signature="e#2792#2793#0" expanded="false" />
-            <element signature="e#2825#2826#0" expanded="false" />
-            <element signature="e#2878#2879#0" expanded="false" />
-            <element signature="e#2922#2923#0" expanded="false" />
-            <element signature="e#2959#2960#0" expanded="false" />
-            <element signature="e#2991#2992#0" expanded="false" />
-            <element signature="e#3042#3043#0" expanded="false" />
-            <element signature="e#3084#3085#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI_Versuch/Anmeldescreen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2149,19 +2140,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI_Versuch/GUI1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="406" column="11" selection-start-line="406" selection-start-column="11" selection-end-line="406" selection-end-column="11" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI_Versuch/SpielScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61445785">
+        <state vertical-scroll-proportion="0.0">
           <caret line="218" column="0" selection-start-line="218" selection-start-column="0" selection-end-line="218" selection-end-column="0" />
           <folding>
             <element signature="e#9216#9217#0" expanded="true" />
@@ -2176,6 +2157,47 @@
             <element signature="e#10481#10482#0" expanded="true" />
             <element signature="e#10525#10526#0" expanded="true" />
             <element signature="e#10561#10562#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI_Versuch/pics/spiel.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/db.Spieler">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>db.Spieler</OriginalElement>
+          <nodes>
+            <node x="" y="">db.spieler.SpielerDAOJDBCImpl</node>
+            <node x="" y="">db.spieler.SpielerDAOFactory</node>
+            <node x="" y="">db.spieler.SpielerDAO</node>
+            <node x="" y="">db.spieler.Spieler</node>
+            <node x="" y="">db.spieler.SpielerDAOMySql</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.8999999999999999" x="416.2222222222223" y="455.6666666666667" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Methods</Category>
+            <Category>Fields</Category>
+            <Category>Properties</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI_Versuch/GUI1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16666667">
+          <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>

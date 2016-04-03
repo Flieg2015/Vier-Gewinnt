@@ -99,62 +99,66 @@ public final class GUI1 extends JPanel {
 
                         //System.out.println(mySpieler.toString());
 
-                        if (mySpieler.getName().equals("Admin") && mySpieler.getPasswd().equals("Admin")) {  //Überprüfen ob der angemeldete Benutzer der Admin ist
+
+                        if (spieler.getPasswd().equals(mySpieler.getPasswd()) && aktuelles_Spiel.getSpieler1() == null ) {
+
+                            aktuelles_Spiel.setSpieler1(mySpieler);
+                            aktuelles_Spiel.getSpieler1().setFarbe(1);
+                            aktuelles_Spiel.setAktuellerSpieler(aktuelles_Spiel.getSpieler1());
+
+                            System.out.print("Spieler 1" + aktuelles_Spiel.getSpieler1().toString());
+                            auswahlScreen.getInfo_spieler().setText("Angemeldet als " + aktuelles_Spiel.getSpieler1().getName() + " dein Score " + aktuelles_Spiel.getSpieler1().getHighscore());
+
+                            cl.next(panels); // Wechsel auf das nachste Panel                            // spieler1 wird gesetzt als angemeldet
+
+                            anmeldeScreen.getAusgabe().setForeground(Color.green);
+                            //ausgabe.setText(("Anmeldung Erfolgreich"));
+                            anmeldeScreen.getPasswortfeld().setText("");
+                            anmeldeScreen.getSpielernamefeld().setText("");
+                            anmeldeScreen.getAusgabe().setText((""));
+                            anmeldeScreen.getAusgabe().setForeground(Color.red);
+
+
+                        } else if (spieler.getPasswd().equals(mySpieler.getPasswd()) && aktuelles_Spiel.getSpieler2() == null && !aktuelles_Spiel.getSpieler1().equals(mySpieler)  ) {
+                            aktuelles_Spiel.setSpieler2(mySpieler);
+                            aktuelles_Spiel.getSpieler2().setFarbe(2);
+                            aktuelles_Spiel.setAktuellerSpieler(aktuelles_Spiel.getSpieler1());
+
+
+                            spielScreen.setTextInfo(aktuelles_Spiel.getSpieler1(), aktuelles_Spiel.getSpieler2());
+
+                            cl.show(panels, "Spielscreen"); // Wechsel auf das nachste Panel                            // spieler2 wird gesetzt als angemeldet
+                            System.out.print("Spieler 1" + aktuelles_Spiel.getSpieler1().toString());
+                            System.out.print("Spieler 2" + aktuelles_Spiel.getSpieler2().toString());
+
+                            anmeldeScreen.getPasswortfeld().setText("");
+                            anmeldeScreen.getSpielernamefeld().setText("");
+                            anmeldeScreen.getAusgabe().setText((""));
+                            anmeldeScreen.getAusgabe().setForeground(Color.red);
+
+
+                        } else {
+                            anmeldeScreen.getAusgabe().setText(("Passwd falsch"));
+                        }
+                        if (mySpieler.getName().equals("Admin") && spieler.getPasswd().equals("Admin")) {  //Überprüfen ob der angemeldete Benutzer der Admin ist
+                           // cl.show(panels,"Anmeldescreen");
+                           //aktuelles_Spiel.setSpieler1(null);
+                           // aktuelles_Spiel.setSpieler2(null);
                             AdminScreen adminscreen = new AdminScreen();
                             adminscreen.aktiviereAdminScreen();
-                        } else {
-
-                            if (spieler.getPasswd().equals(mySpieler.getPasswd()) && aktuelles_Spiel.getSpieler1() == null) {
-
-                                aktuelles_Spiel.setSpieler1(mySpieler);
-                                aktuelles_Spiel.getSpieler1().setFarbe(1);
-                                aktuelles_Spiel.setAktuellerSpieler(aktuelles_Spiel.getSpieler1());
-
-                                System.out.print("Spieler 1" + aktuelles_Spiel.getSpieler1().toString());
-                                auswahlScreen.getInfo_spieler().setText("Angemeldet als " + aktuelles_Spiel.getSpieler1().getName() + " dein Score " + aktuelles_Spiel.getSpieler1().getHighscore());
-
-                                cl.next(panels); // Wechsel auf das nachste Panel                            // spieler1 wird gesetzt als angemeldet
-
-                                anmeldeScreen.getAusgabe().setForeground(Color.green);
-                                //ausgabe.setText(("Anmeldung Erfolgreich"));
-                                anmeldeScreen.getPasswortfeld().setText("");
-                                anmeldeScreen.getSpielernamefeld().setText("");
-                                anmeldeScreen.getAusgabe().setText((""));
-                                anmeldeScreen.getAusgabe().setForeground(Color.red);
-
-
-                            } else if (spieler.getPasswd().equals(mySpieler.getPasswd()) && aktuelles_Spiel.getSpieler2() == null && !aktuelles_Spiel.getSpieler1().equals(mySpieler)) {
-                                aktuelles_Spiel.setSpieler2(mySpieler);
-                                aktuelles_Spiel.getSpieler2().setFarbe(2);
-                                aktuelles_Spiel.setAktuellerSpieler(aktuelles_Spiel.getSpieler1());
-
-
-                                spielScreen.setTextInfo(aktuelles_Spiel.getSpieler1(), aktuelles_Spiel.getSpieler2());
-
-                                cl.show(panels, "Spielscreen"); // Wechsel auf das nachste Panel                            // spieler2 wird gesetzt als angemeldet
-                                System.out.print("Spieler 1" + aktuelles_Spiel.getSpieler1().toString());
-                                System.out.print("Spieler 2" + aktuelles_Spiel.getSpieler2().toString());
-
-                                anmeldeScreen.getPasswortfeld().setText("");
-                                anmeldeScreen.getSpielernamefeld().setText("");
-                                anmeldeScreen.getAusgabe().setText((""));
-                                anmeldeScreen.getAusgabe().setForeground(Color.red);
-
-
-                            } else {
-                                anmeldeScreen.getAusgabe().setText(("Passwd falsch"));
-                            }
                         }
 
                     }
 
-
                 }
+
 
             }
 
 
-        });
+
+
+    });
 
 
         anmeldeScreen.registrierenButton.addActionListener(new ActionListener() {

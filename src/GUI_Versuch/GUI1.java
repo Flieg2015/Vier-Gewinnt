@@ -398,6 +398,7 @@ public final class GUI1 extends JPanel {
 
         if(aktuelles_Spiel.isSpielende()){  // Hier kommt ales rein was Pasiert wenn das Spiel zu ende ist auch bei unentschieden Bestenliste usw.
             spielScreen.sperreButtons();
+
             SpielerDAO spielerDAO = SpielerDAOFactory.createSpielerDAO();
             spielerDAO.update(aktuelles_Spiel.getSieger());
             spielerDAO.update(aktuelles_Spiel.getVerlierer());

@@ -32,6 +32,9 @@ public class SpielScreen extends JPanel {
     private JTextArea s2;
     private JLabel tlabel = new JLabel();
     private JLabel dummy1 = new JLabel();
+    private JLabel dummy2 = new JLabel(); private JLabel dummy3 = new JLabel(); private JLabel dummy4 = new JLabel();
+
+
     private JButton[] wurfButton = new JButton[7];
     private JButton nochmalButton = new JButton("Nochmal Spielen");
     private JButton wechselnButton = new JButton("Spielmodus wechseln");
@@ -133,9 +136,10 @@ public class SpielScreen extends JPanel {
     // Bestenliste Anordnung
 
         cs.weightx = 0.0;
-        cs.gridwidth = 1;
-        cs.gridx = 14;
-        cs.gridy = 2;
+        //cs.gridwidth = 5;
+        cs.gridheight=3;
+        cs.gridx =9 ;
+        cs.gridy =3 ;
         cs.insets = new Insets(10, 10, 10, 10);
         Seite1.add(bl, cs);
         //Zeilenumbruch wird eingeschaltet
@@ -144,7 +148,7 @@ public class SpielScreen extends JPanel {
         //Zeilenumbrüche erfolgen nur nach ganzen Wörtern
         bl.setWrapStyleWord(true);
         bl.setVisible(false);
-
+        cs.gridheight=1;
 
         //Feld.setBackground(Color.blue);
 
@@ -188,29 +192,29 @@ public class SpielScreen extends JPanel {
         Seite1.add(dummy1, cs);
 
 
-        dummy1 = new JLabel("");
+        dummy2 = new JLabel("");
         cs.weightx = 0.0;
         cs.weighty = 0.0;
         cs.gridx = 0;
         cs.gridy = 10;
         cs.insets = new Insets(10, 10, 10, 10);
-        Seite1.add(dummy1, cs);
+        Seite1.add(dummy2, cs);
 
-        dummy1 = new JLabel("");
+        dummy3 = new JLabel("");
         cs.weightx = 0.0;
         cs.weighty = 0.0;
         cs.gridx = 0;
         cs.gridy = 12;
         cs.insets = new Insets(10, 10, 10, 10);
-        Seite1.add(dummy1, cs);
+        Seite1.add(dummy3, cs);
 
-        dummy1 = new JLabel("");
+        dummy4 = new JLabel("");
         cs.weightx = 0.0;
         cs.weighty = 0.0;
         cs.gridx = 0;
         cs.gridy = 13;
         cs.insets = new Insets(10, 10, 10, 10);
-        Seite1.add(dummy1, cs);
+        Seite1.add(dummy4, cs);
 
 
         // Replay-Button
@@ -423,9 +427,10 @@ public class SpielScreen extends JPanel {
         bl.setVisible(false);
 
     }
-
+/**
     public void setZaehler(int count) {
         this.count = count;
         zaehler.setText("Verbleibende Zeit: " + count);
     }
+ */
 }
